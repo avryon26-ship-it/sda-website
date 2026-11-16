@@ -1,0 +1,24 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# deps/builds
+node_modules/
+.next/
+out/
+target/
+build/
+dist/
+*.log
+.DS_Store
+# local data
+pgdata/
+backups/
+*.sql
+*.dump
+# raw source material never committed
+_source/
+# contact sheets are generated artifacts
+content/_review/
