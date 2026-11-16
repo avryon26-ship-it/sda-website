@@ -1,0 +1,662 @@
+{
+  "meta": {
+    "lang": "en",
+    "status": "draft: wording is cautious by design; every sentence listed in docs/claims-to-review.md still needs doctor and lawyer sign-off",
+    "notes": [
+      "No 'cure', 'permanent', 'AYUSH approved', 'no side effects' or COVID wording is used anywhere.",
+      "Qualifications (Dr./BAMS etc.) are deliberately omitted until the owner confirms them."
+    ]
+  },
+  "site": {
+    "name": "Sri Dhanvanthri Ayurveda Hospital",
+    "shortName": "Sri Dhanvanthri Ayurveda",
+    "city": "Tirunelveli",
+    "url": "https://sridhanvanthriayurveda.com",
+    "tagline": "Traditional Ayurvedic care in Tirunelveli, guided by a personal consultation",
+    "address": {
+      "line1": "L 153, Stage 3, TNHB Colony",
+      "line2": "V.M. Chatram",
+      "city": "Tirunelveli",
+      "region": "Tamil Nadu",
+      "postalCode": "627011",
+      "country": "IN"
+    },
+    "phones": [
+      "+91 90037 77757",
+      "+91 88837 77757",
+      "+91 80127 77757"
+    ],
+    "whatsapp": "919003777757",
+    "email": "dhanvanthriayurvedamedicals@gmail.com",
+    "facebook": "https://www.facebook.com/sridhanvanthriayurveda",
+    "pharmacyNote": "Sri Dhanvanthri Siddha Ayurveda Herbal Remedies, Narmadha Complex, Thoothukudi Main Road, KTC Nagar, Tirunelveli 627011 (as shown on the shopfront; confirm before publishing)",
+    "hours": null,
+    "disclaimer": "Information on this website is for general education and does not replace advice from a qualified doctor. Ayurvedic care is offered as supportive care alongside, not instead of, medical treatment. In an emergency, go to the nearest hospital or call 108."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "treatments": "Treatments",
+    "offerings": "Offerings",
+    "products": "Products",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "language": "தமிழ்",
+    "menu": "Menu",
+    "close": "Close",
+    "skip": "Skip to content"
+  },
+  "cta": {
+    "consult": "Consult on WhatsApp",
+    "call": "Call us",
+    "addToList": "Add to list",
+    "inList": "In your list",
+    "remove": "Remove",
+    "yourList": "Your consultation list",
+    "listEmpty": "Your list is empty. Add products you would like to discuss with the doctor.",
+    "listHint": "This is not an order. The doctor will speak with you first and advise what is suitable.",
+    "send": "Send to doctor on WhatsApp",
+    "bookVisit": "Plan your visit",
+    "viewAll": "View all",
+    "learnMore": "Learn more"
+  },
+  "seo": {
+    "home": {
+      "title": "Sri Dhanvanthri Ayurveda Hospital in Tirunelveli | Panchakarma & Varma Care",
+      "description": "Sri Dhanvanthri Ayurveda Hospital in Tirunelveli offers Panchakarma, Varma therapy, yoga guidance and herbal products, each planned after a personal consultation."
+    },
+    "about": {
+      "title": "About Us | Ayurveda Hospital in Tirunelveli",
+      "description": "Meet the team behind Sri Dhanvanthri Ayurveda in V.M. Chatram, Tirunelveli: our story, our people and how we plan care around each patient."
+    },
+    "gallery": {
+      "title": "Photo Gallery | Ayurveda Hospital in Tirunelveli",
+      "description": "Photographs of our clinic, team, herbal preparation and therapy rooms at Sri Dhanvanthri Ayurveda, Tirunelveli."
+    },
+    "contact": {
+      "title": "Contact & Directions | Ayurveda Hospital in Tirunelveli",
+      "description": "Find Sri Dhanvanthri Ayurveda at L 153, Stage 3, TNHB Colony, V.M. Chatram, Tirunelveli 627011. Call or message us on WhatsApp to speak to the doctor."
+    },
+    "ayurveda": {
+      "title": "What Is Ayurveda? Doshas, Diet & Care | Ayurveda Hospital in Tirunelveli",
+      "description": "A plain-language introduction to Ayurveda: the three doshas, how a practitioner assesses you, and how care is planned at our Tirunelveli hospital."
+    },
+    "panchakarma": {
+      "title": "Panchakarma Treatment in Tirunelveli | Ayurveda Hospital",
+      "description": "Panchakarma is a traditional five-part cleansing programme. Learn what it involves, who it may suit and how our doctor plans it in Tirunelveli."
+    },
+    "varmatherapy": {
+      "title": "Varma Therapy in Tirunelveli | Ayurveda Hospital",
+      "description": "Varma therapy is a traditional Tamil system working with vital points of the body. Learn how it is used for supportive care at our Tirunelveli hospital."
+    },
+    "yoga": {
+      "title": "Yoga & Meditation Guidance | Ayurveda Hospital in Tirunelveli",
+      "description": "Yoga and meditation guidance alongside Ayurvedic care at Sri Dhanvanthri Ayurveda, Tirunelveli, adapted to your age, health and daily routine."
+    },
+    "organic": {
+      "title": "Organic Food & Healthy Eating | Ayurveda Hospital in Tirunelveli",
+      "description": "Why diet matters in Ayurveda, and what organic food can and cannot offer. Practical guidance from Sri Dhanvanthri Ayurveda, Tirunelveli."
+    },
+    "narmadha": {
+      "title": "Narmadha Herbal Products | Ayurveda Hospital in Tirunelveli",
+      "description": "Narmadha herbal soap, oils, powders and sooranam from Sri Dhanvanthri Ayurveda. Build a list and consult our doctor on WhatsApp before you choose."
+    },
+    "offerings": {
+      "title": "Ayurvedic Treatment Packages | Ayurveda Hospital in Tirunelveli",
+      "description": "Panchakarma, de-stress, weight management, diabetes care, rejuvenation, fertility care, post-pregnancy care and herbal beauty programmes in Tirunelveli."
+    },
+    "treatments": {
+      "title": "Conditions We Support | Ayurveda Hospital in Tirunelveli",
+      "description": "Supportive Ayurvedic care for back and joint pain, skin concerns, neurological conditions, PCOD and more, planned after a personal consultation."
+    },
+    "products": {
+      "title": "Herbal Products & Consultation List | Ayurveda Hospital in Tirunelveli",
+      "description": "Browse Narmadha herbal products, add the ones you are curious about to a list, and send it to our doctor on WhatsApp for advice."
+    }
+  },
+  "home": {
+    "hero": {
+      "h1": "Sri Dhanvanthri Ayurveda Hospital in Tirunelveli",
+      "lead": "Traditional Ayurvedic care, planned around you after a personal conversation with our doctor.",
+      "image": "images/brand/dhanvanthri-illustration-banner.webp"
+    },
+    "intro": {
+      "heading": "Care that begins with listening",
+      "body": "Ayurveda, often called the science of life, looks at the whole person: body, mind, food, sleep and daily routine. At Sri Dhanvanthri Ayurveda in V.M. Chatram, Tirunelveli, nothing is prescribed before the doctor has spoken with you, asked about your history and understood what you hope to improve."
+    },
+    "pillars": [
+      {
+        "title": "Panchakarma",
+        "body": "A traditional five-part programme of cleansing and rejuvenation, planned individually.",
+        "href": "/panchakarma",
+        "image": "images/clinic/potli-therapy-session.webp"
+      },
+      {
+        "title": "Varma therapy",
+        "body": "Hands-on therapy based on the vital points described in the Tamil Varma tradition.",
+        "href": "/varmatherapy",
+        "image": "images/clinic/varma-therapy-session.webp"
+      },
+      {
+        "title": "Yoga & meditation",
+        "body": "Gentle, practical guidance to support calm, strength and flexibility.",
+        "href": "/yoga-meditation",
+        "image": "images/clinic/yoga-meditation-hilltop.webp"
+      },
+      {
+        "title": "Narmadha herbal products",
+        "body": "Soap, oils and powders prepared by our own herbal pharmacy.",
+        "href": "/narmadha-herbal",
+        "image": "images/products/narmadha-bathing-soap.webp"
+      }
+    ],
+    "howItWorks": {
+      "heading": "How consultation works",
+      "steps": [
+        {
+          "title": "Tell us your concern",
+          "body": "Message us on WhatsApp or call. You can add products you are curious about to your list."
+        },
+        {
+          "title": "Speak with the doctor",
+          "body": "The doctor talks with you first, asks about your health and tells you what may or may not be suitable."
+        },
+        {
+          "title": "Plan your care",
+          "body": "If you decide to proceed, a plan is agreed with you, whether a visit, a programme or a herbal product."
+        }
+      ],
+      "note": "We do not sell online and we do not take payments on this website."
+    },
+    "reviewNote": "Add real patient testimonials only with written consent and no outcome claims."
+  },
+  "about": {
+    "h1": "About Sri Dhanvanthri Ayurveda",
+    "lead": "A family-run Ayurvedic hospital and herbal pharmacy in V.M. Chatram, Tirunelveli.",
+    "story": [
+      "Sri Dhanvanthri Ayurveda is named after Lord Dhanvanthri, honoured in the Indian tradition as the physician of the gods and the source of Ayurveda.",
+      "We combine consultation, traditional therapies such as Panchakarma and Varma, yoga guidance and a herbal pharmacy that prepares the Narmadha range under one roof.",
+      "Because Ayurveda is personal, we begin every relationship with a conversation. The doctor reviews your history, your daily routine and your goals before suggesting anything."
+    ],
+    "teamHeading": "Our people",
+    "teamNote": "Qualifications are not shown until the owner supplies and confirms them.",
+    "values": [
+      {
+        "title": "Consultation first",
+        "body": "Nothing is recommended before the doctor has spoken with you."
+      },
+      {
+        "title": "Traditional methods",
+        "body": "We follow established Ayurvedic and Siddha practices and describe them honestly, without promising results."
+      },
+      {
+        "title": "Respect for your doctor",
+        "body": "Ayurvedic care here is offered as supportive care. Please continue any medicines your own doctor has prescribed unless they advise otherwise."
+      }
+    ]
+  },
+  "doctors": [
+    {
+      "slug": "s-rajkapoor",
+      "name": "S. Rajkapoor",
+      "jobTitle": "Managing Director",
+      "experience": "18 years of experience",
+      "experienceNote": "Old site is inconsistent: older About text says 18 years, newer text says over 20 years. Owner to confirm. Old text also calls him 'Brahmashree' and 'Traditional Ayurveda Vaidhyar' and founder of Sri Dhanvanthri Herbal Research Trust; use only titles the owner confirms. The 'permanently curing' wording was removed.",
+      "bio": "Leads the hospital and pharmacy and is the first point of contact for consultation requests.",
+      "image": "images/doctors/s-rajkapoor.webp",
+      "published": true
+    },
+    {
+      "slug": "mrs-r-shanthi",
+      "name": "Mrs. R. Shanthi",
+      "jobTitle": "Proprietor",
+      "bio": "Proprietor of Sri Dhanvanthri Ayurveda.",
+      "image": "images/doctors/mrs-r-shanthi.webp",
+      "published": true
+    },
+    {
+      "slug": "guru-brahmashree-a-m-robinson",
+      "name": "Guru Brahmashree A.M. Robinson",
+      "jobTitle": "Guru and teacher",
+      "experience": "50 years of experience in Varma, Panchakarma and meditation",
+      "experienceNote": "Old site is inconsistent: older text says 'has 50 years of very successful practice' (present tense), newer text says 'was a renowned practitioner ... over 50 years in Kerala' (past tense). Confirm whether he is living before publishing any present-tense bio. 'Dr.' is deliberately omitted until qualifications are confirmed.",
+      "bio": "Teacher in the Varma and Panchakarma traditions and in meditation (wording and tense pending owner confirmation).",
+      "image": null,
+      "published": false,
+      "pendingReason": "Waiting for the owner to confirm which photo is Guru Robinson (see content/images/doctors/robinson-candidate-*.webp)."
+    }
+  ],
+  "treatments": {
+    "h1": "Conditions we offer supportive care for",
+    "lead": "Ayurveda does not treat a diagnosis in isolation. After a consultation, the doctor may suggest therapies, diet and lifestyle guidance and herbal preparations to support your wellbeing alongside your regular medical care.",
+    "emergencyNote": "Stroke, chest pain, severe breathlessness and sudden weakness are medical emergencies. Call 108 or go to the nearest hospital first.",
+    "items": [
+      {
+        "slug": "stroke-paralysis",
+        "title": "Stroke and paralysis recovery support",
+        "body": "Therapies and exercise guidance that may support recovery and daily movement after the emergency phase has been treated in hospital."
+      },
+      {
+        "slug": "pcod",
+        "title": "PCOD",
+        "body": "Diet, lifestyle and traditional therapies the doctor may suggest as supportive care alongside gynaecological advice."
+      },
+      {
+        "slug": "rheumatoid-arthritis",
+        "title": "Rheumatoid arthritis",
+        "body": "Diet, yoga and herbal approaches traditionally used to support comfort and mobility; your rheumatologist's advice should continue."
+      },
+      {
+        "slug": "cervical-spondylosis",
+        "title": "Cervical spondylosis (neck)",
+        "body": "Panchakarma-based and Varma therapies traditionally used to ease stiffness and discomfort of the neck."
+      },
+      {
+        "slug": "lumbar-spondylosis",
+        "title": "Lumbar spondylosis (lower spine)",
+        "body": "Herbal oils, therapies and movement guidance traditionally used to support comfort of the lower back."
+      },
+      {
+        "slug": "lower-back-pain",
+        "title": "Lower back pain",
+        "body": "Assessment of posture, routine and diet, with therapies that may support comfort and mobility."
+      },
+      {
+        "slug": "motor-neuron-disease",
+        "title": "Motor neuron disease (MND)",
+        "body": "Supportive and rehabilitative care to help with comfort and daily living, alongside specialist neurological care."
+      },
+      {
+        "slug": "diabetic-neuropathy",
+        "title": "Diabetic neuropathy",
+        "body": "Supportive therapies, foot care guidance and diet advice, alongside regular diabetes management."
+      },
+      {
+        "slug": "skin-concerns",
+        "title": "Skin concerns",
+        "body": "Traditional skin care approaches including diet, herbal preparations and therapies, chosen after a consultation."
+      },
+      {
+        "slug": "health-and-beauty",
+        "title": "Health and beauty",
+        "body": "Skin and hair care based on your constitution (prakriti), with natural preparations."
+      },
+      {
+        "slug": "yoga-and-meditation",
+        "title": "Yoga and meditation training",
+        "body": "Guided practice to support calm, breathing and flexibility, adapted to your age and health.",
+        "href": "/yoga-meditation"
+      }
+    ]
+  },
+  "ayurveda": {
+    "h1": "Ayurveda: the science of life",
+    "lead": "Ayurveda is a traditional system of health that originated in the Indian subcontinent thousands of years ago.",
+    "sections": [
+      {
+        "heading": "The three doshas",
+        "body": "Ayurveda describes three basic constitutions or doshas: Vata, Pitta and Kapha. Traditionally, health is seen as a balance among them, shaped by diet, sleep, season, stress and habits."
+      },
+      {
+        "heading": "How a practitioner assesses you",
+        "body": "A practitioner may ask about your history, digestion, sleep and daily routine, observe the pulse and the body's signs, and then suggest diet and lifestyle changes, therapies or herbal preparations suited to you."
+      },
+      {
+        "heading": "Food and routine",
+        "body": "Ayurveda gives great importance to eating according to your constitution, hunger and the season, to regular sleep, and to managing stress. Individual advice differs, so please ask the doctor rather than following general rules."
+      },
+      {
+        "heading": "Choosing a practitioner",
+        "body": "Because many centres offer Ayurvedic services, we encourage you to consult only authorised Ayurvedic practitioners and to ask any centre about their qualifications and registration."
+      },
+      {
+        "heading": "Branches of Ayurveda",
+        "body": "Classical Ayurveda describes eight branches, including general medicine (Kaya Chikitsa), surgery (Shalya), ear, nose, throat and eye care (Shalakya), paediatrics (Baala), psychiatry (Graha), toxicology (Agada), rejuvenation (Rasayana) and fertility (Vajikarana)."
+      }
+    ],
+    "image": "images/stock-unverified/spices-and-roots.webp"
+  },
+  "panchakarma": {
+    "h1": "Panchakarma",
+    "lead": "Panchakarma, meaning five actions, is a traditional programme of cleansing and rejuvenation for the body and mind.",
+    "overview": "In Ayurveda, Panchakarma is traditionally used to help the body let go of what it no longer needs and to prepare it for rest and rebuilding. It is planned individually and carried out under supervision.",
+    "steps": [
+      {
+        "name": "Vamana",
+        "body": "A supervised therapeutic procedure traditionally associated with balancing Kapha."
+      },
+      {
+        "name": "Virechana",
+        "body": "A supervised cleansing of the digestive tract using medicines chosen by the doctor, traditionally associated with Pitta."
+      },
+      {
+        "name": "Vasti (Niruha and Anuvasana)",
+        "body": "Herbal medicated enemas, traditionally associated with Vata."
+      },
+      {
+        "name": "Nasya",
+        "body": "Medicated oils applied through the nose, traditionally used for the head and neck region."
+      },
+      {
+        "name": "Raktamokshana",
+        "body": "Traditionally described as the fifth action; used only where the doctor judges it appropriate."
+      }
+    ],
+    "preparation": "Panchakarma is usually preceded by oil massage (snehana) and sudation (swedana), with a light diet before and after. The doctor will explain what to expect and what to avoid.",
+    "benefits": [
+      "Traditionally used to support relaxation and a sense of wellbeing",
+      "Often taken as part of a seasonal or routine wellness plan",
+      "Planned together with diet and lifestyle guidance"
+    ],
+    "caution": "Panchakarma is not suitable for everyone, including some people who are pregnant, very weak, or have certain medical conditions. It should only be done after a consultation.",
+    "faq": [
+      {
+        "q": "How long does Panchakarma take?",
+        "a": "The duration depends on the person and the plan. The doctor will explain this at your consultation."
+      },
+      {
+        "q": "Is Panchakarma suitable for me?",
+        "a": "That depends on your age, health and medicines. Please speak with the doctor before booking."
+      },
+      {
+        "q": "Will I need to change my diet?",
+        "a": "Yes, usually a light diet is advised before and after the programme. The doctor will guide you."
+      }
+    ],
+    "image": "images/clinic/potli-therapy-session.webp"
+  },
+  "varmatherapy": {
+    "h1": "Varma therapy",
+    "lead": "Varmam is a branch of the Siddha tradition of Tamil Nadu that works with vital points (varma points) of the body.",
+    "overview": "Varma therapy is closely related to the ancient Tamil martial art varma kalai. Practitioners apply gentle, skilled pressure and manipulation to specific points. Traditionally it is used to support movement, comfort and relaxation.",
+    "classes": [
+      "Padu varmam: points affected by injury",
+      "Thodu varmam: points worked by touch",
+      "Thattu varmam: points worked by taps",
+      "Thaduvu varmam: points worked by massage"
+    ],
+    "classesNote": "Classical texts describe 12 padu varmam and 96 thodu varmam points as the most widely used.",
+    "benefits": [
+      "Traditionally used to support comfort and mobility",
+      "Often combined with oils, herbal preparations and exercises",
+      "Planned after a consultation so that it suits your condition"
+    ],
+    "caution": "Varma therapy is a skilled hands-on practice and should only be received from a trained practitioner after assessment.",
+    "image": "images/clinic/varma-therapy-session.webp"
+  },
+  "yoga": {
+    "h1": "Yoga and meditation",
+    "lead": "Yoga and Ayurveda come from the same Vedic tradition and are traditionally practised together.",
+    "sections": [
+      {
+        "heading": "Yoga as a practice of attention",
+        "body": "Dharana (focus), dhyana (reflective meditation) and samadhi (absorption) are the inner limbs of yoga described in Patanjali's Yoga Sutras."
+      },
+      {
+        "heading": "Yoga alongside Ayurvedic care",
+        "body": "Many people find that gentle postures, breathing practices (pranayama) and meditation fit well with an Ayurvedic routine."
+      },
+      {
+        "heading": "Guidance for you",
+        "body": "We suggest practices suited to your age, strength and health, and we recommend asking the doctor first if you have a medical condition."
+      }
+    ],
+    "caution": "Not every posture suits every body. Please speak with the doctor before starting if you are pregnant, recovering from surgery or have a medical condition.",
+    "image": "images/clinic/yoga-meditation-hilltop.webp"
+  },
+  "organic": {
+    "h1": "Organic food and healthy eating",
+    "lead": "In Ayurveda, food is the first form of care. Choosing fresh, minimally processed food is a good place to start.",
+    "sections": [
+      {
+        "heading": "What 'organic' means",
+        "body": "Organic usually refers to food grown without synthetic pesticides and fertilisers. Rules differ between countries, so look for recognised certification."
+      },
+      {
+        "heading": "What it may offer",
+        "body": "Organic produce generally has fewer pesticide residues and is often fresher. Evidence for nutritional differences is mixed, so we avoid promising health outcomes."
+      },
+      {
+        "heading": "Ayurvedic perspective",
+        "body": "Ayurveda pays attention to freshness, season, cooking method and eating according to appetite. The doctor can give you individual advice."
+      }
+    ],
+    "image": "images/stock-unverified/organic-vegetable-crate.webp"
+  },
+  "narmadha": {
+    "h1": "Narmadha herbal products",
+    "lead": "Herbal preparations from the Sri Dhanvanthri pharmacy. Browse, add to your list and speak to the doctor before you choose.",
+    "consultNote": "These products are not sold online. Please consult the doctor first: he or she will tell you if a product is suitable for you.",
+    "elakizhi": {
+      "heading": "Elakizhi (Ilakizhi)",
+      "body": "Elakizhi is a traditional sudation therapy in which warm pouches of medicinal leaves are applied to the body. It is performed at the clinic under supervision."
+    }
+  },
+  "offerings": {
+    "h1": "Ayurvedic treatment programmes",
+    "lead": "Our programmes are starting points. After a consultation the doctor adapts each one to you. Each tab has its own address you can share.",
+    "tabs": [
+      {
+        "slug": "panchakarma-packages",
+        "title": "Panchakarma",
+        "summary": "A supervised five-part cleansing and rejuvenation programme, planned individually.",
+        "body": "Panchakarma is often preceded by oil massage and sudation, and followed by a light diet. See our Panchakarma page for details."
+      },
+      {
+        "slug": "de-stress",
+        "title": "De-stress",
+        "summary": "Gentle therapies and routines traditionally used to support relaxation.",
+        "body": "May include Shirodhara (a thin stream of warm oil on the forehead), Abhyanga (oil massage), Pizhichil (warm oil bath) and Elakizhi (herbal leaf pouches), chosen after consultation."
+      },
+      {
+        "slug": "weight-management",
+        "title": "Weight management",
+        "summary": "Diet, movement and traditional therapies for a healthier routine.",
+        "body": "May include herbal powder massage (Udwarthanam), Kadikizhi, diet planning and yoga. Results vary, and the doctor will discuss realistic goals with you."
+      },
+      {
+        "slug": "diabetes-care",
+        "title": "Diabetes care support",
+        "summary": "Diet, lifestyle and supportive therapies alongside your regular diabetes management.",
+        "body": "Ayurveda describes many types of Madhumeha. Our programme is supportive only. Please continue your medicines and monitoring as advised by your doctor."
+      },
+      {
+        "slug": "cleansing-rejuvenation",
+        "title": "Cleansing and rejuvenation",
+        "summary": "A seasonal programme for rest and renewal.",
+        "body": "Combines gentle cleansing therapies, massage and diet, and rejuvenating (rasayana) herbs where the doctor judges appropriate."
+      },
+      {
+        "slug": "fertility-care",
+        "title": "Fertility care support",
+        "summary": "Supportive diet, lifestyle and therapies for couples.",
+        "body": "Offered as supportive care alongside modern medical evaluation; we do not promise outcomes."
+      },
+      {
+        "slug": "post-pregnancy-care",
+        "title": "Post-pregnancy care",
+        "summary": "Gentle rest, massage and nourishing diet after childbirth.",
+        "body": "Traditional postnatal care that may include oil massage and warm herbal preparations, after review by the doctor."
+      },
+      {
+        "slug": "herbal-beauty",
+        "title": "Herbal beauty",
+        "summary": "Skin and hair care with natural preparations, chosen for your constitution.",
+        "body": "May include herbal face and body treatments and diet advice. A patch test is advised before any new preparation."
+      }
+    ]
+  },
+  "gallery": {
+    "h1": "Gallery",
+    "lead": "A look inside our clinic, our team and our herbal pharmacy.",
+    "note": "Photographs are of our own clinic and team. Patient images are shown with consent."
+  },
+  "contact": {
+    "h1": "Contact and directions",
+    "lead": "Call or message us on WhatsApp to speak with the doctor before your visit.",
+    "form": {
+      "name": "Your name",
+      "phone": "Phone number",
+      "concern": "What would you like to discuss?",
+      "submit": "Send request",
+      "success": "Thank you. We have received your request and will call you soon.",
+      "error": "Sorry, something went wrong. Please call us or use WhatsApp.",
+      "consent": "I agree to be contacted by Sri Dhanvanthri Ayurveda about this request."
+    },
+    "newsletter": {
+      "heading": "Occasional updates",
+      "placeholder": "Email address",
+      "submit": "Subscribe",
+      "success": "Thanks for subscribing."
+    }
+  },
+  "products": [
+    {
+      "slug": "narmadha-bathing-soap",
+      "name": "Narmadha Ayurvedic Bathing Soap",
+      "category": "Skin care",
+      "image": "images/products/narmadha-bathing-soap.webp",
+      "summary": "A bathing soap made with herbal oils and flowers.",
+      "description": "A herbal bathing soap from the Narmadha range. The old site describes it as made with six herbal oils and herbal flowers. Please ask the doctor whether it suits your skin.",
+      "factsNeeded": [
+        "Full ingredient list",
+        "Net weight (pack shows 75 gm)",
+        "Licence/manufacturer details"
+      ],
+      "imageStatus": "clean packshot"
+    },
+    {
+      "slug": "narmadha-pain-care-oil",
+      "name": "Narmadha Pain Care Oil",
+      "category": "Herbal oils",
+      "image": "images/products/narmadha-pain-care-oil.webp",
+      "summary": "A herbal oil for external use.",
+      "description": "A herbal oil intended for external massage. Please consult the doctor about how and where to use it, especially if you have injuries, skin conditions or are pregnant.",
+      "factsNeeded": [
+        "Ingredients",
+        "Bottle size",
+        "Directions and cautions"
+      ],
+      "imageStatus": "old ad with baked-in text: replace with packshot"
+    },
+    {
+      "slug": "narmadha-pal-podi",
+      "name": "Narmadha Herbal Tooth Powder (Pal Podi)",
+      "category": "Daily care",
+      "image": "images/products/narmadha-pal-podi.webp",
+      "summary": "A herbal tooth powder.",
+      "description": "A traditional herbal tooth powder. Please ask the doctor and your dentist if you have gum or dental problems.",
+      "factsNeeded": [
+        "Ingredients",
+        "Pack size",
+        "Directions"
+      ],
+      "imageStatus": "old ad with baked-in text: replace with packshot"
+    },
+    {
+      "slug": "narmadha-sundavathal-sooranam",
+      "name": "Narmadha Sundavathal Sooranam",
+      "category": "Herbal powders",
+      "image": "images/products/narmadha-sundavathal-sooranam.webp",
+      "summary": "A traditional herbal powder (sooranam) made from sundavathal.",
+      "description": "A traditional powder prepared from sundavathal (dried turkey berry). Dosage and timing should be advised by the doctor.",
+      "factsNeeded": [
+        "Ingredients",
+        "Pack size",
+        "Dosage as advised by the doctor"
+      ],
+      "imageStatus": "old ad with baked-in text: replace with packshot"
+    },
+    {
+      "slug": "narmadha-kesha-raksha-oil",
+      "name": "Narmadha Kesha Raksha Oil",
+      "category": "Hair care",
+      "image": "images/products/narmadha-kesha-raksha-oil.webp",
+      "summary": "A herbal hair oil.",
+      "description": "A herbal hair oil for external use. Please do a patch test first and ask the doctor if you have scalp conditions.",
+      "factsNeeded": [
+        "Ingredients",
+        "Bottle size (shows 100 ml)",
+        "Directions"
+      ],
+      "imageStatus": "old ad with baked-in text: replace with packshot"
+    },
+    {
+      "slug": "narmadha-omam-water",
+      "name": "Narmadha Omam Water",
+      "category": "Herbal liquids",
+      "image": "images/products/narmadha-omma-water.webp",
+      "summary": "A traditional ajwain (omam) distillate.",
+      "description": "A traditional preparation based on ajwain (omam). Please ask the doctor before use, especially for children and pregnant women.",
+      "factsNeeded": [
+        "Ingredients",
+        "Bottle size",
+        "Directions"
+      ],
+      "imageStatus": "old ad with baked-in text: replace with packshot"
+    },
+    {
+      "slug": "narmadha-thakasa-sooranam",
+      "name": "Narmadha Thakasa Sooranam",
+      "category": "Herbal powders",
+      "image": "images/products/narmadha-thakasa-sooranam.webp",
+      "summary": "A traditional herbal powder (sooranam).",
+      "description": "A traditional herbal powder. Dosage and timing should be advised by the doctor.",
+      "factsNeeded": [
+        "Ingredients",
+        "Pack size",
+        "Dosage as advised by the doctor"
+      ],
+      "imageStatus": "old ad with baked-in text: replace with packshot"
+    },
+    {
+      "slug": "narmadha-seerana-sanjeevi-sooranam",
+      "name": "Narmadha Seerana Sanjeevi Sooranam",
+      "category": "Herbal powders",
+      "image": "images/products/narmadha-seerana-sanjeevi-sooranam.webp",
+      "summary": "A traditional herbal powder (sooranam) taken with digestion in mind.",
+      "description": "A traditional herbal powder. Please consult the doctor for dosage and suitability.",
+      "factsNeeded": [
+        "Ingredients",
+        "Pack size",
+        "Dosage as advised by the doctor"
+      ],
+      "imageStatus": "old ad with baked-in text: replace with packshot"
+    },
+    {
+      "slug": "narmadha-dried-fig",
+      "name": "Narmadha Dried Fig (Ular Athipalam)",
+      "category": "Foods",
+      "image": "images/products/narmadha-dried-fig.webp",
+      "summary": "Dried figs.",
+      "description": "Dried figs sold through our pharmacy. As with any food, please ask the doctor if you have diabetes or other dietary restrictions.",
+      "factsNeeded": [
+        "Source and packing details",
+        "Pack size"
+      ],
+      "imageStatus": "old ad with baked-in text: replace with packshot"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need to consult the doctor before using a product?",
+      "a": "Yes. We ask every patient to speak with the doctor first, because suitability depends on your health, age and any medicines you take."
+    },
+    {
+      "q": "Can I buy products on this website?",
+      "a": "No. This website does not take payments. Add products to your list and send it to the doctor on WhatsApp to start a conversation."
+    },
+    {
+      "q": "What happens when I send my list?",
+      "a": "A WhatsApp message opens with your list filled in. We also save your request so the doctor can follow up with a call."
+    },
+    {
+      "q": "Is Ayurvedic care a replacement for my regular treatment?",
+      "a": "No. It is offered as supportive care. Please continue medicines prescribed by your doctor unless they advise otherwise."
+    },
+    {
+      "q": "Where are you located?",
+      "a": "L 153, Stage 3, TNHB Colony, V.M. Chatram, Tirunelveli 627011."
+    }
+  ]
+}

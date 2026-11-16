@@ -1,0 +1,646 @@
+[
+  {
+    "file": "images/doctors/s-rajkapoor.webp",
+    "width": 800,
+    "height": 800,
+    "kb": 58,
+    "status": "include",
+    "category": "people",
+    "alt": {
+      "en": "Portrait of S. Rajkapoor, Managing Director of Sri Dhanvanthri Ayurveda",
+      "ta": "ஸ்ரீ தன்வந்திரி ஆயுர்வேதாவின் நிர்வாக இயக்குநர் எஸ். ராஜ்கபூரின் உருவப்படம்"
+    },
+    "source": "faculties/rounded/1.webp",
+    "note": null
+  },
+  {
+    "file": "images/doctors/mrs-r-shanthi.webp",
+    "width": 800,
+    "height": 800,
+    "kb": 66,
+    "status": "include",
+    "category": "people",
+    "alt": {
+      "en": "Portrait of Mrs. R. Shanthi, Proprietor of Sri Dhanvanthri Ayurveda",
+      "ta": "ஸ்ரீ தன்வந்திரி ஆயுர்வேதாவின் உரிமையாளர் திருமதி ஆர். சாந்தி அவர்களின் உருவப்படம்"
+    },
+    "source": "faculties/rounded/2.webp",
+    "note": null
+  },
+  {
+    "file": "images/doctors/robinson-candidate-hilltop.webp",
+    "width": 600,
+    "height": 400,
+    "kb": 46,
+    "status": "pending-confirmation",
+    "category": "people",
+    "alt": {
+      "en": "Elderly yoga practitioner seated in meditation on a rock with hills behind",
+      "ta": "மலைப்பின்னணியில் பாறையில் தியான நிலையில் அமர்ந்துள்ள முதிய யோகா பயிற்சியாளர்"
+    },
+    "source": "other/about-us-robinson-2.jpg",
+    "note": "Is this Guru Brahmashree A.M. Robinson? Also used by the old site as the yoga page photo."
+  },
+  {
+    "file": "images/doctors/robinson-candidate-group.webp",
+    "width": 600,
+    "height": 400,
+    "kb": 16,
+    "status": "pending-confirmation",
+    "category": "people",
+    "alt": {
+      "en": "Group of men in white dhotis standing together, an older photograph",
+      "ta": "வெள்ளை ஆடையில் நிற்கும் ஆண்கள் குழு, பழைய புகைப்படம்"
+    },
+    "source": "about-us/robinson.webp",
+    "note": "Group photo of five men in white; which one is Guru Brahmashree A.M. Robinson? Old photo, 600x400 only."
+  },
+  {
+    "file": "images/clinic/managing-director-at-desk.webp",
+    "width": 512,
+    "height": 512,
+    "kb": 19,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Managing Director writing at his desk surrounded by herbal medicines",
+      "ta": "மூலிகை மருந்துகளுக்கு நடுவே மேசையில் எழுதிக்கொண்டிருக்கும் நிர்வாக இயக்குநர்"
+    },
+    "source": "gallery/1.webp",
+    "note": null
+  },
+  {
+    "file": "images/clinic/team-green-uniform-pharmacy.webp",
+    "width": 512,
+    "height": 512,
+    "kb": 43,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Clinic team in green uniforms standing in front of the herbal pharmacy",
+      "ta": "மூலிகை மருந்தகத்தின் முன் பச்சை சீருடையில் நிற்கும் குழுவினர்"
+    },
+    "source": "gallery/2.webp",
+    "note": "Staff faces visible: confirm staff consent."
+  },
+  {
+    "file": "images/clinic/team-at-shopfront.webp",
+    "width": 980,
+    "height": 980,
+    "kb": 144,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Team standing at the green shopfront of Sri Dhanvanthri Siddha Ayurveda Herbal Remedies",
+      "ta": "ஸ்ரீ தன்வந்திரி சித்த ஆயுர்வேத மூலிகை மருந்தகத்தின் முன் குழுவினர்"
+    },
+    "source": "gallery/3.webp",
+    "note": "Staff faces visible: confirm staff consent."
+  },
+  {
+    "file": "images/clinic/team-in-reception.webp",
+    "width": 980,
+    "height": 980,
+    "kb": 156,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Clinic team in the reception area with framed awards on the wall",
+      "ta": "சுவரில் விருதுகளுடன் வரவேற்பறையில் குழுவினர்"
+    },
+    "source": "gallery/4.webp",
+    "note": "Staff faces visible: confirm staff consent."
+  },
+  {
+    "file": "images/clinic/therapists-in-white-coats.webp",
+    "width": 980,
+    "height": 980,
+    "kb": 187,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Group of therapists in white coats smiling at the camera",
+      "ta": "வெள்ளை கோட் அணிந்த சிகிச்சையாளர்கள் குழு"
+    },
+    "source": "gallery/5.webp",
+    "note": "Staff faces visible: confirm staff consent."
+  },
+  {
+    "file": "images/clinic/therapists-preparing-herbs.webp",
+    "width": 980,
+    "height": 980,
+    "kb": 169,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Therapists standing around a stone grinder preparing fresh herbs",
+      "ta": "கல் உரலில் மூலிகைகளை அரைத்துத் தயாரிக்கும் சிகிச்சையாளர்கள்"
+    },
+    "source": "gallery/6.webp",
+    "note": "Staff faces visible: confirm staff consent."
+  },
+  {
+    "file": "images/clinic/therapists-grinding-herbs.webp",
+    "width": 980,
+    "height": 980,
+    "kb": 148,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Women therapists grinding medicinal leaves on a stone",
+      "ta": "கல்லில் மூலிகை இலைகளை அரைக்கும் பெண் சிகிச்சையாளர்கள்"
+    },
+    "source": "gallery/7.webp",
+    "note": "Staff faces visible: confirm staff consent."
+  },
+  {
+    "file": "images/clinic/managing-director-portrait.webp",
+    "width": 512,
+    "height": 512,
+    "kb": 29,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Managing Director seated in front of an illustrated Dhanvanthri backdrop",
+      "ta": "தன்வந்திரி ஓவியப் பின்னணியின் முன் அமர்ந்துள்ள நிர்வாக இயக்குநர்"
+    },
+    "source": "gallery/12.webp",
+    "note": null
+  },
+  {
+    "file": "images/clinic/shoulder-therapy-session.webp",
+    "width": 1000,
+    "height": 1000,
+    "kb": 32,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Therapist treating a patient’s shoulder and back",
+      "ta": "நோயாளியின் தோள்பட்டை மற்றும் முதுகில் சிகிச்சை அளிக்கும் சிகிச்சையாளர்"
+    },
+    "source": "gallery/13.webp",
+    "note": "Real patient (back only). Confirm patient consent."
+  },
+  {
+    "file": "images/clinic/lamp-and-flower-altar.webp",
+    "width": 1000,
+    "height": 1000,
+    "kb": 45,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Traditional brass lamp and marigold garlands on a wooden table",
+      "ta": "மர மேசையில் பாரம்பரிய குத்துவிளக்கும் மலர் மாலைகளும்"
+    },
+    "source": "gallery/14.webp",
+    "note": null
+  },
+  {
+    "file": "images/clinic/body-therapy-session.webp",
+    "width": 1000,
+    "height": 1000,
+    "kb": 26,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Patient lying down during a traditional body therapy session",
+      "ta": "பாரம்பரிய உடல் சிகிச்சையின்போது படுத்திருக்கும் நோயாளி"
+    },
+    "source": "gallery/15.webp",
+    "note": "Real patient (face not visible). Confirm patient consent."
+  },
+  {
+    "file": "images/clinic/lamp-and-flower-altar-2.webp",
+    "width": 1000,
+    "height": 1000,
+    "kb": 41,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Brass lamp, flowers and a framed deity picture on a table",
+      "ta": "மேசையில் குத்துவிளக்கு, மலர்கள் மற்றும் தெய்வப் படம்"
+    },
+    "source": "gallery/16.webp",
+    "note": null
+  },
+  {
+    "file": "images/clinic/managing-director-in-pharmacy.webp",
+    "width": 1000,
+    "height": 1000,
+    "kb": 38,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Managing Director holding a bar of herbal soap inside the pharmacy",
+      "ta": "மருந்தகத்தினுள் மூலிகை சோப்பைக் காட்டும் நிர்வாக இயக்குநர்"
+    },
+    "source": "gallery/17.webp",
+    "note": null
+  },
+  {
+    "file": "images/clinic/potli-therapy-session.webp",
+    "width": 1280,
+    "height": 853,
+    "kb": 106,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Therapist applying herbal potli to a patient during a Panchakarma session",
+      "ta": "பஞ்சகர்மா சிகிச்சையில் மூலிகைக் கிழி வைத்து சிகிச்சை அளிக்கும் சிகிச்சையாளர்"
+    },
+    "source": "other/panchakarma.jpg",
+    "note": "Real patient (back only). Confirm patient consent."
+  },
+  {
+    "file": "images/clinic/varma-therapy-session.webp",
+    "width": 1280,
+    "height": 720,
+    "kb": 155,
+    "status": "include",
+    "category": "clinic",
+    "alt": {
+      "en": "Varma therapy session in progress in the clinic",
+      "ta": "மருத்துவமனையில் நடைபெறும் வர்ம சிகிச்சை"
+    },
+    "source": "other/varmatherapy.jpg",
+    "note": "Real patient. Confirm patient consent."
+  },
+  {
+    "file": "images/clinic/yoga-meditation-hilltop.webp",
+    "width": 1156,
+    "height": 650,
+    "kb": 128,
+    "status": "pending-confirmation",
+    "category": "clinic",
+    "alt": {
+      "en": "Yoga practitioner meditating on a rock with hills behind",
+      "ta": "மலைப்பின்னணியில் பாறையில் தியானம் செய்யும் யோகா பயிற்சியாளர்"
+    },
+    "source": "other/yoga-meditation.jpg",
+    "note": "Same person as the Robinson candidate photo; confirm identity and permission."
+  },
+  {
+    "file": "images/brand/dhanvanthri-illustration-banner.webp",
+    "width": 1600,
+    "height": 600,
+    "kb": 129,
+    "status": "include",
+    "category": "brand",
+    "alt": {
+      "en": "Illustration of Lord Dhanvanthri and the sages of Ayurveda on a green background",
+      "ta": "பச்சை பின்னணியில் தன்வந்திரி பகவான் மற்றும் ஆயுர்வேத முனிவர்களின் ஓவியம்"
+    },
+    "source": "slider/New-edited/1.jpg",
+    "note": null
+  },
+  {
+    "file": "images/brand/logo.webp",
+    "width": 640,
+    "height": 296,
+    "kb": 18,
+    "status": "include",
+    "category": "brand",
+    "alt": {
+      "en": "Sri Dhanvanthri Ayurveda logo",
+      "ta": "ஸ்ரீ தன்வந்திரி ஆயுர்வேதா சின்னம்"
+    },
+    "source": "logo/logo.png",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/herbs-brass-pots-banner.webp",
+    "width": 1600,
+    "height": 600,
+    "kb": 112,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Brass pots and bowls of herbs and spices",
+      "ta": "பித்தளைப் பாத்திரங்களும் மூலிகை, மசாலாக்களும்"
+    },
+    "source": "slider/New-edited/2.jpg",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/spices-and-herbs-banner.webp",
+    "width": 1600,
+    "height": 600,
+    "kb": 233,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Colourful spices and fresh herbs on a wooden table",
+      "ta": "மரமேசையில் வண்ண மசாலாக்களும் மூலிகைகளும்"
+    },
+    "source": "slider/New-edited/3.jpg",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/herbs-brass-pots-banner-2.webp",
+    "width": 1600,
+    "height": 600,
+    "kb": 122,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Brass pots and herbs, soft green background",
+      "ta": "பித்தளைப் பாத்திரங்களும் மூலிகைகளும்"
+    },
+    "source": "slider/New-edited/4.jpg",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/orchid-stones-bamboo-banner.webp",
+    "width": 1600,
+    "height": 600,
+    "kb": 89,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Orchid, stones and a candle beside bamboo",
+      "ta": "மூங்கில் அருகே ஆர்க்கிட் மலர், கற்கள் மற்றும் மெழுகுவர்த்தி"
+    },
+    "source": "slider/New-edited/6.jpg",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/back-massage-spa.webp",
+    "width": 1280,
+    "height": 858,
+    "kb": 79,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Back massage with herbal pouches and oils",
+      "ta": "மூலிகை கிழிகளுடன் முதுகு மசாஜ்"
+    },
+    "source": "banners/young-man-spa-treatment-recreation-rest-relaxation-massage-hygh-angle-view.webp",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/physiotherapy-knee.webp",
+    "width": 1280,
+    "height": 853,
+    "kb": 40,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Physiotherapist treating a patient’s knee",
+      "ta": "நோயாளியின் முழங்காலுக்கு பிசியோதெரபி சிகிச்சை"
+    },
+    "source": "banners/close-up-physiotherapist-massaging-patient.webp",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/organic-vegetable-crate.webp",
+    "width": 1280,
+    "height": 853,
+    "kb": 61,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Crate of fresh organic vegetables",
+      "ta": "புதிய இயற்கை காய்கறிகள் நிறைந்த பெட்டி"
+    },
+    "source": "banners/close-up-box-with-ripe-vegetables.webp",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/shirodhara.webp",
+    "width": 1000,
+    "height": 668,
+    "kb": 46,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Shirodhara: warm oil poured on the forehead",
+      "ta": "சிரோதாரா: நெற்றியில் வெதுவெதுப்பான எண்ணெய் ஊற்றும் சிகிச்சை"
+    },
+    "source": "offerings/ayurveda-0.jpg",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/herbal-potli-back-massage.webp",
+    "width": 1000,
+    "height": 691,
+    "kb": 70,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Woman receiving a back massage with herbal pouches",
+      "ta": "மூலிகைக் கிழிகளுடன் முதுகு மசாஜ் பெறும் பெண்"
+    },
+    "source": "offerings/imageuploadscovered20200612imageuploadscovered20200612imageuploadscovered20200612500jpgjpgjpg.jpg",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/herbs-on-brass-plate.webp",
+    "width": 1000,
+    "height": 1000,
+    "kb": 58,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Dried medicinal roots and barks on a brass plate",
+      "ta": "பித்தளைத் தட்டில் உலர்ந்த மூலிகை வேர்கள், பட்டைகள்"
+    },
+    "source": "gallery/29.webp",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/spices-and-roots.webp",
+    "width": 1000,
+    "height": 1000,
+    "kb": 92,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Assorted spices, roots and a clay pot",
+      "ta": "பல்வேறு மசாலாக்கள், வேர்கள் மற்றும் மண்பானை"
+    },
+    "source": "gallery/30.webp",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/herbal-powder-and-scoop.webp",
+    "width": 1000,
+    "height": 1000,
+    "kb": 44,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Herbal powder in a wooden bowl with scoop",
+      "ta": "மரக்கிண்ணத்தில் மூலிகைப் பொடியும் கரண்டியும்"
+    },
+    "source": "gallery/31.webp",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/herbal-potli-pair.webp",
+    "width": 512,
+    "height": 512,
+    "kb": 16,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Two herbal potli pouches",
+      "ta": "இரண்டு மூலிகைக் கிழிகள்"
+    },
+    "source": "gallery/33.webp",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/grains-and-spices-plate.webp",
+    "width": 1000,
+    "height": 1000,
+    "kb": 86,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Plate of lentils, grains and spices",
+      "ta": "பருப்பு, தானியம் மற்றும் மசாலாக்கள் அடங்கிய தட்டு"
+    },
+    "source": "gallery/35.webp",
+    "note": null
+  },
+  {
+    "file": "images/stock-unverified/potli-massage-hands.webp",
+    "width": 1000,
+    "height": 1000,
+    "kb": 25,
+    "status": "stock-unverified",
+    "category": "stock",
+    "alt": {
+      "en": "Hands applying herbal potli on the back",
+      "ta": "முதுகில் மூலிகைக் கிழி வைக்கும் கைகள்"
+    },
+    "source": "gallery/37.webp",
+    "note": null
+  },
+  {
+    "file": "images/products/narmadha-bathing-soap.webp",
+    "width": 512,
+    "height": 512,
+    "kb": 13,
+    "status": "include",
+    "category": "product",
+    "alt": {
+      "en": "Narmadha Ayurvedic bathing soap pack",
+      "ta": "நர்மதா ஆயுர்வேத குளியல் சோப்பு"
+    },
+    "source": "gallery/38.webp",
+    "note": null
+  },
+  {
+    "file": "images/products/narmadha-pain-care-oil.webp",
+    "width": 1575,
+    "height": 1575,
+    "kb": 97,
+    "status": "provisional-product",
+    "category": "product",
+    "alt": {
+      "en": "Narmadha Pain Care Oil bottle",
+      "ta": "நர்மதா வலி நிவாரண எண்ணெய் புட்டி"
+    },
+    "source": "other/narmadha-knee-pain-oil.webp",
+    "note": null
+  },
+  {
+    "file": "images/products/narmadha-pal-podi.webp",
+    "width": 1575,
+    "height": 1575,
+    "kb": 116,
+    "status": "provisional-product",
+    "category": "product",
+    "alt": {
+      "en": "Narmadha herbal tooth powder jars",
+      "ta": "நர்மதா பல் பொடி ஜாடிகள்"
+    },
+    "source": "other/narmadha-palpodi.webp",
+    "note": null
+  },
+  {
+    "file": "images/products/narmadha-sundavathal-sooranam.webp",
+    "width": 1600,
+    "height": 1600,
+    "kb": 118,
+    "status": "provisional-product",
+    "category": "product",
+    "alt": {
+      "en": "Narmadha Sundavathal Sooranam jar",
+      "ta": "நர்மதா சுண்டவத்தல் சூரணம் ஜாடி"
+    },
+    "source": "other/narmadha-sundavathal-sooranam.webp",
+    "note": null
+  },
+  {
+    "file": "images/products/narmadha-kesha-raksha-oil.webp",
+    "width": 1600,
+    "height": 1600,
+    "kb": 107,
+    "status": "provisional-product",
+    "category": "product",
+    "alt": {
+      "en": "Narmadha Kesha Raksha hair oil bottle",
+      "ta": "நர்மதா கேசரக்சா தலை எண்ணெய் புட்டி"
+    },
+    "source": "other/narmatha-kesha-raksha-oil.webp",
+    "note": null
+  },
+  {
+    "file": "images/products/narmadha-omma-water.webp",
+    "width": 1600,
+    "height": 1600,
+    "kb": 105,
+    "status": "provisional-product",
+    "category": "product",
+    "alt": {
+      "en": "Narmadha Omam Water bottle",
+      "ta": "நர்மதா ஓமவாட்டர் புட்டி"
+    },
+    "source": "other/narmadha-omma-watter.webp",
+    "note": null
+  },
+  {
+    "file": "images/products/narmadha-thakasa-sooranam.webp",
+    "width": 1600,
+    "height": 1600,
+    "kb": 109,
+    "status": "provisional-product",
+    "category": "product",
+    "alt": {
+      "en": "Narmadha Thakasa Sooranam jar",
+      "ta": "நர்மதா தாகச பொடி சூரணம் ஜாடி"
+    },
+    "source": "other/narmadha-thakasa-sooranam.webp",
+    "note": null
+  },
+  {
+    "file": "images/products/narmadha-seerana-sanjeevi-sooranam.webp",
+    "width": 1600,
+    "height": 1600,
+    "kb": 113,
+    "status": "provisional-product",
+    "category": "product",
+    "alt": {
+      "en": "Narmadha Seerana Sanjeevi Sooranam jar",
+      "ta": "நர்மதா சீரண சஞ்சீவி சூரணம் ஜாடி"
+    },
+    "source": "other/narmadha-seerana-sanjeevi-sooranam.webp",
+    "note": null
+  },
+  {
+    "file": "images/products/narmadha-dried-fig.webp",
+    "width": 1329,
+    "height": 1329,
+    "kb": 78,
+    "status": "provisional-product",
+    "category": "product",
+    "alt": {
+      "en": "Bowl of dried figs (Ular Athipalam)",
+      "ta": "உலர் அத்திப்பழம்"
+    },
+    "source": "other/narmadha-ular-athipalam.webp",
+    "note": null
+  }
+]
