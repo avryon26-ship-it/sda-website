@@ -1,24 +1,17 @@
 import type { Metadata, Viewport } from 'next';
 import '../globals.css';
-import { display, body } from '@/lib/fonts-latin';
+import { cormorant, instrument, hanken, dmsans } from '@/lib/fonts-latin';
+import { taSerif, taSans } from '@/lib/fonts-tamil';
 import { SITE_URL } from '@/lib/content';
-import SiteHeader from '@/components/SiteHeader';
-import SiteFooter from '@/components/SiteFooter';
-import ActionBar from '@/components/ActionBar';
 
-export const metadata: Metadata = { metadataBase: new URL(SITE_URL), robots: { index: false, follow: false } /* staging: flipped on in the SEO phase */ };
-export const viewport: Viewport = { themeColor: '#14281D', width: 'device-width', initialScale: 1 };
+export const metadata: Metadata = { metadataBase: new URL(SITE_URL), robots: { index: false, follow: false } /* staging: switched on in the SEO phase */ };
+export const viewport: Viewport = { themeColor: '#F4ECDD', width: 'device-width', initialScale: 1 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const fonts = [cormorant, instrument, hanken, dmsans, taSerif, taSans].map(f => f.variable).join(' ');
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body>
-        <a href="#main" className="skip-link">Skip to content</a>
-        <SiteHeader locale="en" altHref="/ta" />
-        {children}
-        <SiteFooter locale="en" />
-        <ActionBar locale="en" />
-      </body>
+    <html lang="en" className={fonts}>
+      <body>{children}</body>
     </html>
   );
 }
