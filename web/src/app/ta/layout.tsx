@@ -4,7 +4,7 @@ import { displayTa, bodyTa } from '@/lib/fonts-tamil';
 import { SITE_URL } from '@/lib/content';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import ActionBar from '@/components/ActionBar';
 
 export const metadata: Metadata = { metadataBase: new URL(SITE_URL), robots: { index: false, follow: false } };
 export const viewport: Viewport = { themeColor: '#14281D', width: 'device-width', initialScale: 1 };
@@ -17,7 +17,7 @@ export default function TamilLayout({ children }: { children: React.ReactNode })
         <SiteHeader locale="ta" altHref="/" />
         {children}
         <SiteFooter locale="ta" />
-        <FloatingWhatsApp locale="ta" />
+        <ActionBar locale="ta" />
       </body>
     </html>
   );

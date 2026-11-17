@@ -2,170 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ------------------------------------------------------------------
-   Design tokens: warm cream, deep green, gold accents
-   Contrast (checked): ink #1B2A21 on cream #F7F1E3 = 13:1,
-   gold-700 #7A5A12 on cream = 5.6:1, cream on forest-800 = 10:1.
-   Gold-500 is decorative only (borders, icons), never body text.
-------------------------------------------------------------------- */
+/* ==================================================================
+   Quiet luxury: ivory, deep forest, brass. Restraint, big type, air.
+   Contrast (checked): ink #1B241F on ivory #FAF6EC 15:1; muted #4A554E on ivory 7.4:1;
+   brass-700 #7A5C1E on ivory 5.8:1 (text); brass-300 #D9BC7A on forest-900 9:1.
+   brass-500 is decoration only (hairlines, icons).
+================================================================== */
 :root {
-  --cream: #f7f1e3;
-  --ink: #1b2a21;
-  --forest: #1f3d2b;
-  --gold: #b8923a;
-
-  --glass-bg: rgba(255, 251, 242, 0.9);        /* solid-ish fallback */
-  --glass-dark-bg: rgba(14, 31, 22, 0.88);
-  --glass-border: rgba(255, 255, 255, 0.7);
-  --glass-dark-border: rgba(255, 255, 255, 0.18);
-  --blur: 18px;
-
-  /* Spring easing. linear() approximates a critically-underdamped spring; cubic-bezier is the fallback. */
+  --ivory: #faf6ec;
+  --ink: #1b241f;
+  --glass-light: rgba(250, 246, 236, 0.9);       /* solid-ish fallback */
+  --glass-dark: rgba(10, 31, 23, 0.82);
   --spring: cubic-bezier(0.34, 1.4, 0.5, 1);
-  --spring-dur: 650ms;
+  --spring-dur: 700ms;
+  --bar-h: 64px;
 }
 @supports (transition-timing-function: linear(0, 1)) {
-  :root {
-    --spring: linear(0, 0.009, 0.035 2.1%, 0.141 4.4%, 0.723 12.9%, 0.938 16.7%, 1.017 19.4%, 1.067 22.4%, 1.087 25.8%, 1.077 29.5%, 1.04 34.2%, 1.005 39.3%, 0.99 45.6%, 0.998 59%, 1);
-  }
+  :root { --spring: linear(0, 0.009, 0.035 2.1%, 0.141 4.4%, 0.723 12.9%, 0.938 16.7%, 1.017 19.4%, 1.067 22.4%, 1.087 25.8%, 1.077 29.5%, 1.04 34.2%, 1.005 39.3%, 0.99 45.6%, 0.998 59%, 1); }
 }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
 body {
-  margin: 0;
-  background-color: var(--cream);
-  color: var(--ink);
+  margin: 0; background: var(--ivory); color: var(--ink);
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1.0625rem; line-height: 1.7; font-weight: 450;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  padding-bottom: calc(84px + env(safe-area-inset-bottom)); /* room for the phone action bar */
 }
-:lang(ta) body, body:lang(ta) { line-height: 1.85; }
-h1, h2, h3, .font-display { font-family: var(--font-display), serif; letter-spacing: -0.01em; line-height: 1.12; }
-:lang(ta) h1, :lang(ta) h2, :lang(ta) h3 { letter-spacing: 0; line-height: 1.3; }
-:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 8px; }
-::selection { background: rgba(184, 146, 58, 0.35); }
+@media (min-width: 1024px) { body { padding-bottom: 0; } }
+h1, h2, h3 { font-family: var(--font-display), Georgia, serif; font-weight: 400; letter-spacing: -0.015em; line-height: 1.08; text-wrap: balance; }
+p { text-wrap: pretty; }
+:lang(ta) body { line-height: 1.85; }
+:lang(ta) h1, :lang(ta) h2, :lang(ta) h3 { font-weight: 500; letter-spacing: 0; line-height: 1.32; }
+:focus-visible { outline: 3px solid #b08d4a; outline-offset: 3px; border-radius: 6px; }
+::selection { background: rgba(176, 141, 74, 0.3); }
+
+.display-1 { font-size: clamp(2.6rem, 9.4vw, 5.2rem); }
+.display-2 { font-size: clamp(2.05rem, 6.2vw, 3.5rem); }
+.display-3 { font-size: clamp(1.55rem, 4.2vw, 2.1rem); }
+:lang(ta) .display-1 { font-size: clamp(2.1rem, 7.4vw, 4rem); }
+:lang(ta) .display-2 { font-size: clamp(1.7rem, 5.4vw, 2.9rem); }
 
 @layer components {
-/* ------------------------------------------------------------------
-   Liquid glass
-   Layers, bottom to top: translucent fill (+ blur and saturate),
-   1px light inner border, layered soft shadows, specular highlight (::before).
-   Blur is progressive: only with backdrop-filter support AND
-   no reduced-transparency preference. Otherwise the solid fill is used.
-------------------------------------------------------------------- */
-.glass, .glass-dark, .glass-lite {
-  position: relative;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 28px;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.85),
-    inset 0 -1px 0 rgba(20, 40, 29, 0.05),
-    0 1px 2px rgba(20, 40, 29, 0.06),
-    0 10px 24px -10px rgba(20, 40, 29, 0.2),
-    0 30px 60px -28px rgba(20, 40, 29, 0.28);
-  isolation: isolate;
-}
-.glass-dark {
-  background: var(--glass-dark-bg);
-  border-color: var(--glass-dark-border);
-  color: var(--cream);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.28),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.3),
-    0 12px 28px -10px rgba(0, 0, 0, 0.45),
-    0 36px 70px -30px rgba(0, 0, 0, 0.5);
-}
-/* specular highlight along the top edge */
-.glass::before, .glass-dark::before, .glass-lite::before {
-  content: '';
-  position: absolute; inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0, rgba(255, 255, 255, 0) 56px);
-  mix-blend-mode: soft-light;
-}
-.glass-dark::before { background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0, rgba(255, 255, 255, 0) 64px); mix-blend-mode: normal; }
+  /* ---------- Liquid glass (used sparingly) ----------
+     bar: header + phone action bar. pill: chips over photos.
+     Layers: translucent fill (+blur/saturate), 1px light inner border,
+     layered soft shadows, specular top highlight (::before). */
+  .glass-bar, .glass-pill, .glass-dark {
+    position: relative; isolation: isolate;
+    background: var(--glass-light);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1px 2px rgba(15, 43, 32, 0.06), 0 12px 30px -12px rgba(15, 43, 32, 0.28);
+  }
+  .glass-dark { background: var(--glass-dark); border-color: rgba(255, 255, 255, 0.2); color: #fff; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 14px 34px -12px rgba(0, 0, 0, 0.5); }
+  .glass-bar::before, .glass-pill::before, .glass-dark::before {
+    content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 38px); mix-blend-mode: soft-light;
+  }
+  .glass-bar { border-radius: 0; border-width: 0 0 1px 0; border-color: rgba(122, 92, 30, 0.2); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset; }
 
-@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  @media (prefers-reduced-transparency: no-preference) {
-    /* Always-blurred surfaces: nav, hero card, open mobile menu (keep to ~2 on phones). */
-    .glass { --glass-bg: rgba(255, 251, 242, 0.58); -webkit-backdrop-filter: blur(var(--blur)) saturate(170%); backdrop-filter: blur(var(--blur)) saturate(170%); }
-    .glass-dark { --glass-dark-bg: rgba(14, 31, 22, 0.58); -webkit-backdrop-filter: blur(var(--blur)) saturate(150%); backdrop-filter: blur(var(--blur)) saturate(150%); }
-    /* Lite surfaces: translucent but NOT blurred on phones (cheap GPUs).
-       Desktop with a real pointer gets the full effect. */
-    .glass-lite { --glass-bg: rgba(255, 251, 242, 0.72); }
-    @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
-      .glass-lite { --glass-bg: rgba(255, 251, 242, 0.68); -webkit-backdrop-filter: blur(16px) saturate(160%); backdrop-filter: blur(16px) saturate(160%); }
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    @media (prefers-reduced-transparency: no-preference) {
+      .glass-bar { --glass-light: rgba(250, 246, 236, 0.72); -webkit-backdrop-filter: blur(18px) saturate(180%); backdrop-filter: blur(18px) saturate(180%); }
+      .glass-dark { --glass-dark: rgba(10, 31, 23, 0.5); -webkit-backdrop-filter: blur(16px) saturate(150%); backdrop-filter: blur(16px) saturate(150%); }
+      /* chips: translucent but unblurred on phones; blurred on desktop only */
+      .glass-pill { --glass-light: rgba(255, 255, 255, 0.72); }
+      @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+        .glass-pill { --glass-light: rgba(255, 255, 255, 0.5); -webkit-backdrop-filter: blur(16px) saturate(170%); backdrop-filter: blur(16px) saturate(170%); }
+      }
     }
   }
-}
-/* Mobile menu: near-opaque on purpose (readable over any photo, no extra blur layer) */
-.menu-panel.glass { --glass-bg: rgba(255, 251, 242, 0.97); -webkit-backdrop-filter: none; backdrop-filter: none; }
-@media (prefers-contrast: more) {
-  .glass, .glass-lite { --glass-bg: #fffdf7; border-color: var(--ink); }
-  .glass-dark { --glass-dark-bg: #0e1f16; }
-}
+  @media (prefers-contrast: more) { .glass-bar, .glass-pill { --glass-light: #fffdf7; } .glass-dark { --glass-dark: #0a1f17; } }
 
-/* Scrim behind any text placed over photography */
-.scrim::after {
-  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(14, 31, 22, 0.55) 0%, rgba(14, 31, 22, 0.35) 40%, rgba(14, 31, 22, 0.78) 100%);
-}
+  .scrim::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(10, 31, 23, 0.1) 0%, rgba(10, 31, 23, 0.25) 45%, rgba(10, 31, 23, 0.8) 100%); }
 
-/* ------------------------------------------------------------------
-   Motion: spring hover, spring menu, scroll reveal.
-   All of it is off when the visitor asks for reduced motion.
-------------------------------------------------------------------- */
-.lift { transition: transform var(--spring-dur) var(--spring), box-shadow 300ms ease; will-change: transform; }
-@media (hover: hover) and (pointer: fine) {
-  .lift:hover { transform: translateY(-6px) scale(1.012); }
-}
-.press { transition: transform 350ms var(--spring), background-color 200ms ease, box-shadow 250ms ease; }
-.press:active { transform: scale(0.96); }
-@media (hover: hover) { .press:hover { transform: scale(1.04); } }
+  /* ---------- Motion ---------- */
+  .lift { transition: transform var(--spring-dur) var(--spring); }
+  @media (hover: hover) and (pointer: fine) { .lift:hover { transform: translateY(-5px); } .zoom img { transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.2, 1); } .zoom:hover img { transform: scale(1.05); } }
+  .press { transition: transform 400ms var(--spring), background-color 200ms ease; }
+  .press:active { transform: scale(0.96); }
+  @media (hover: hover) { .press:hover { transform: scale(1.03); } }
+  [data-reveal='pre'] { opacity: 0; transform: translateY(26px); }
+  [data-reveal='in'] { opacity: 1; transform: none; transition: opacity 700ms ease, transform 1000ms var(--spring); transition-delay: var(--d, 0ms); }
+  .menu-sheet { opacity: 0; transform: translateY(-14px); visibility: hidden; transition: opacity 220ms ease, transform 560ms var(--spring), visibility 0s linear 560ms; }
+  .menu-sheet[data-open='true'] { opacity: 1; transform: none; visibility: visible; transition-delay: 0s; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
+    [data-reveal='pre'] { opacity: 1; transform: none; }
+    .lift:hover, .press:hover, .press:active, .zoom:hover img { transform: none; }
+  }
 
-[data-reveal='pre'] { opacity: 0; transform: translateY(28px) scale(0.985); }
-[data-reveal='in'] { opacity: 1; transform: none; transition: opacity 600ms ease, transform 900ms var(--spring); transition-delay: var(--d, 0ms); }
+  /* ---------- Buttons ---------- */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 52px; padding: 0.8rem 1.7rem; border-radius: 999px; font-weight: 650; font-size: 1rem; letter-spacing: 0.01em; line-height: 1.2; text-decoration: none; cursor: pointer; border: 1px solid transparent; white-space: nowrap; }
+  .btn-brass { background: linear-gradient(180deg, #e3c887, #c4a15a); color: #1b241f; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 10px 22px -10px rgba(122, 92, 30, 0.8); }
+  .btn-forest { background: #0f2b20; color: #faf6ec; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 10px 22px -10px rgba(10, 31, 23, 0.7); }
+  .btn-outline { background: transparent; color: #0f2b20; border-color: rgba(15, 43, 32, 0.35); }
+  .btn-outline-light { background: rgba(255, 255, 255, 0.08); color: #fff; border-color: rgba(255, 255, 255, 0.5); }
 
-.menu-panel { transform-origin: top right; transition: opacity 220ms ease, transform 520ms var(--spring), visibility 0s linear 520ms; opacity: 0; transform: translateY(-12px) scale(0.92); visibility: hidden; }
-.menu-panel[data-open='true'] { opacity: 1; transform: none; visibility: visible; transition-delay: 0s; }
+  /* ---------- Editorial bits ---------- */
+  .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #7a5c1e; }
+  .on-dark .eyebrow, .eyebrow.on-dark { color: #d9bc7a; }
+  :lang(ta) .eyebrow { letter-spacing: 0.04em; text-transform: none; font-size: 0.9rem; }
+  .hairline { height: 1px; background: linear-gradient(90deg, rgba(176, 141, 74, 0), rgba(176, 141, 74, 0.8), rgba(176, 141, 74, 0)); border: 0; }
+  .arch { border-radius: 999px 999px 32px 32px; }
+  .numeral { font-family: var(--font-display), serif; font-size: 1rem; color: #7a5c1e; letter-spacing: 0.1em; }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
-  [data-reveal='pre'] { opacity: 1; transform: none; }
-  .lift:hover, .press:hover, .press:active { transform: none; }
-}
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .chev { transform: rotate(180deg); }
+  .chev { transition: transform 450ms var(--spring); }
 
-/* ------------------------------------------------------------------
-   Buttons
-------------------------------------------------------------------- */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-  min-height: 48px; padding: 0.75rem 1.5rem; border-radius: 999px;
-  font-weight: 600; font-size: 1rem; line-height: 1.2; text-decoration: none; cursor: pointer;
-  border: 1px solid transparent;
-}
-.btn-primary { background: var(--forest); color: var(--cream); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 8px 20px -8px rgba(20, 40, 29, 0.6); }
-.btn-primary:hover { background: #2c5a3f; }
-.btn-gold { background: linear-gradient(180deg, #e2c77a, #b8923a); color: #1b2a21; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 8px 20px -8px rgba(122, 90, 18, 0.7); }
-.btn-ghost { background: rgba(255, 255, 255, 0.14); color: #fff; border-color: rgba(255, 255, 255, 0.55); }
-.btn-ghost-dark { background: rgba(255, 255, 255, 0.5); color: var(--ink); border-color: rgba(31, 61, 43, 0.35); }
-
-.eyebrow { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5a12; }
-:lang(ta) .eyebrow { letter-spacing: 0.02em; text-transform: none; font-size: 0.9rem; }
-.gold-rule { height: 1px; background: linear-gradient(90deg, transparent, #b8923a, transparent); border: 0; }
-
-details > summary { list-style: none; cursor: pointer; }
-details > summary::-webkit-details-marker { display: none; }
-details[open] .chev { transform: rotate(180deg); }
-.chev { transition: transform 400ms var(--spring); }
-
-.skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: var(--forest); color: var(--cream); padding: 0.75rem 1rem; border-radius: 12px; transition: top 0.2s; }
-.skip-link:focus { top: 1rem; }
+  .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: #0f2b20; color: #faf6ec; padding: 0.75rem 1rem; border-radius: 12px; transition: top 0.2s; }
+  .skip-link:focus { top: 1rem; }
 }
