@@ -1,1 +1,1 @@
-{ "name": "sda-tools", "private": true, "type": "module", "devDependencies": { "sharp": "^0.33.5" } }
+{"name":"sda-tools","private":true,"type":"module","devDependencies":{"sharp":"^0.33.5"},"dependencies":{"puppeteer-core":"^25.17.0"}}

@@ -58,7 +58,9 @@
     "send": "Send to doctor on WhatsApp",
     "bookVisit": "Plan your visit",
     "viewAll": "View all",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "freeConsult": "Free consultation on WhatsApp",
+    "freeConsultNote": "Owner to confirm that the first consultation is free."
   },
   "seo": {
     "home": {
@@ -118,7 +120,14 @@
     "hero": {
       "h1": "Sri Dhanvanthri Ayurveda Hospital in Tirunelveli",
       "lead": "Traditional Ayurvedic care, planned around you after a personal conversation with our doctor.",
-      "image": "images/brand/dhanvanthri-illustration-banner.webp"
+      "image": "images/clinic/team-at-shopfront.webp",
+      "lines": [
+        "Sri Dhanvanthri",
+        "*Ayurveda* Hospital",
+        "in Tirunelveli"
+      ],
+      "caption": "The team at the pharmacy entrance, V.M. Chatram, Tirunelveli",
+      "imageAlt": "The Sri Dhanvanthri team standing at the green entrance of the herbal pharmacy in V.M. Chatram, Tirunelveli"
     },
     "intro": {
       "heading": "Care that begins with listening",
@@ -168,7 +177,62 @@
       ],
       "note": "We do not sell online and we do not take payments on this website."
     },
-    "reviewNote": "Add real patient testimonials only with written consent and no outcome claims."
+    "reviewNote": "Add real patient testimonials only with written consent and no outcome claims.",
+    "story": [
+      {
+        "kicker": "First",
+        "title": "We begin by *listening*",
+        "body": "Nothing is prescribed before the doctor has spoken with you. He asks about your health, your food, your sleep and what you hope will change. Some days that conversation is the whole visit.",
+        "image": "images/clinic/managing-director-portrait.webp",
+        "alt": "The Managing Director seated in front of an illustrated Dhanvanthri backdrop"
+      },
+      {
+        "kicker": "Then",
+        "title": "Herbs, prepared by *hand*",
+        "body": "You may see our therapists grinding fresh leaves on a stone in the courtyard. Our own pharmacy prepares the Narmadha range, and the doctor tells you what may suit you and what may not.",
+        "image": "images/clinic/therapists-preparing-herbs.webp",
+        "alt": "Therapists standing around a stone grinder preparing fresh herbs"
+      },
+      {
+        "kicker": "Then",
+        "title": "Therapies with *patience*",
+        "body": "Panchakarma and Varma are slow, hands-on work. They are planned for one person at a time, and explained before they begin.",
+        "image": "images/clinic/varma-therapy-session.webp",
+        "alt": "A Varma therapy session in a calm treatment room"
+      },
+      {
+        "kicker": "Finally",
+        "title": "A plan you *agree* to",
+        "body": "If you decide to go ahead, a plan is agreed with you: a visit, a programme or a herbal product. If something is not right for you, we will say so.",
+        "image": "images/clinic/lamp-and-flower-altar-2.webp",
+        "alt": "A brass lamp and marigold garlands in the clinic"
+      }
+    ],
+    "sections": {
+      "story": "The story",
+      "treatments": "Treatments",
+      "treatmentsLead": "Supportive care, planned after a conversation. Choose a line to see where it happens.",
+      "how": "How consultation works",
+      "people": "The doctor and team",
+      "gallery": "The place",
+      "products": "From our pharmacy",
+      "productsLead": "Not a shop. Pick what you are curious about, add it to your list, and talk to the doctor first.",
+      "voices": "In their words",
+      "faq": "Questions",
+      "visit": "Visit us"
+    },
+    "voicesPlaceholder": "Patient words appear here once each person has given written permission. No outcome claims.",
+    "hoursPlaceholder": "Opening hours: to be confirmed by the clinic",
+    "mapLink": "Open in Google Maps",
+    "peopleStory": {
+      "s-rajkapoor": "Leads the hospital and the pharmacy, and is usually the first voice you will hear when you call.",
+      "mrs-r-shanthi": "Proprietor of Sri Dhanvanthri Ayurveda."
+    },
+    "stepsArt": [
+      "A message",
+      "A lamp",
+      "A mortar"
+    ]
   },
   "about": {
     "h1": "About Sri Dhanvanthri Ayurveda",
@@ -234,58 +298,69 @@
       {
         "slug": "stroke-paralysis",
         "title": "Stroke and paralysis recovery support",
-        "body": "Therapies and exercise guidance that may support recovery and daily movement after the emergency phase has been treated in hospital."
+        "body": "Therapies and exercise guidance that may support recovery and daily movement after the emergency phase has been treated in hospital.",
+        "short": "Stroke recovery"
       },
       {
         "slug": "pcod",
         "title": "PCOD",
-        "body": "Diet, lifestyle and traditional therapies the doctor may suggest as supportive care alongside gynaecological advice."
+        "body": "Diet, lifestyle and traditional therapies the doctor may suggest as supportive care alongside gynaecological advice.",
+        "short": "PCOD"
       },
       {
         "slug": "rheumatoid-arthritis",
         "title": "Rheumatoid arthritis",
-        "body": "Diet, yoga and herbal approaches traditionally used to support comfort and mobility; your rheumatologist's advice should continue."
+        "body": "Diet, yoga and herbal approaches traditionally used to support comfort and mobility; your rheumatologist's advice should continue.",
+        "short": "Rheumatoid arthritis"
       },
       {
         "slug": "cervical-spondylosis",
         "title": "Cervical spondylosis (neck)",
-        "body": "Panchakarma-based and Varma therapies traditionally used to ease stiffness and discomfort of the neck."
+        "body": "Panchakarma-based and Varma therapies traditionally used to ease stiffness and discomfort of the neck.",
+        "short": "Neck and cervical spine"
       },
       {
         "slug": "lumbar-spondylosis",
         "title": "Lumbar spondylosis (lower spine)",
-        "body": "Herbal oils, therapies and movement guidance traditionally used to support comfort of the lower back."
+        "body": "Herbal oils, therapies and movement guidance traditionally used to support comfort of the lower back.",
+        "short": "Lower spine"
       },
       {
         "slug": "lower-back-pain",
         "title": "Lower back pain",
-        "body": "Assessment of posture, routine and diet, with therapies that may support comfort and mobility."
+        "body": "Assessment of posture, routine and diet, with therapies that may support comfort and mobility.",
+        "short": "Lower back pain"
       },
       {
         "slug": "motor-neuron-disease",
         "title": "Motor neuron disease (MND)",
-        "body": "Supportive and rehabilitative care to help with comfort and daily living, alongside specialist neurological care."
+        "body": "Supportive and rehabilitative care to help with comfort and daily living, alongside specialist neurological care.",
+        "short": "Motor neuron disease"
       },
       {
         "slug": "diabetic-neuropathy",
         "title": "Diabetic neuropathy",
-        "body": "Supportive therapies, foot care guidance and diet advice, alongside regular diabetes management."
+        "body": "Supportive therapies, foot care guidance and diet advice, alongside regular diabetes management.",
+        "short": "Diabetic neuropathy"
       },
       {
         "slug": "skin-concerns",
         "title": "Skin concerns",
-        "body": "Traditional skin care approaches including diet, herbal preparations and therapies, chosen after a consultation."
+        "body": "Traditional skin care approaches including diet, herbal preparations and therapies, chosen after a consultation.",
+        "short": "Skin care"
       },
       {
         "slug": "health-and-beauty",
         "title": "Health and beauty",
-        "body": "Skin and hair care based on your constitution (prakriti), with natural preparations."
+        "body": "Skin and hair care based on your constitution (prakriti), with natural preparations.",
+        "short": "Health and beauty"
       },
       {
         "slug": "yoga-and-meditation",
         "title": "Yoga and meditation training",
         "body": "Guided practice to support calm, breathing and flexibility, adapted to your age and health.",
-        "href": "/yoga-meditation"
+        "href": "/yoga-meditation",
+        "short": "Yoga and meditation"
       }
     ]
   },

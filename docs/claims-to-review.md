@@ -83,3 +83,19 @@ Sources are paths inside the old `public_html/pages/`. Quotes are shortened.
 
 ### Stock photography (licence)
 15 images of herbs, spas, vegetables and physiotherapy look like stock photos (listed in `content/photo-sources.md` under HOLD). If they were downloaded from a free or paid library, check the licence allows commercial use or buy replacements. Do not publish until confirmed.
+
+## 3. Factual statements on the new pages (confirm each is true)
+
+| Where | Statement | Why it needs confirming |
+|---|---|---|
+| Home, hero button and closing line | "Free consultation on WhatsApp" | Is the first consultation actually free? If not, change to "Consult on WhatsApp" |
+| Home, story 1 | "Some days that conversation is the whole visit." | Is this true of your practice? |
+| Home, story 2 | "You may see our therapists grinding fresh leaves on a stone in the courtyard." | Based on the photographs; confirm it still happens |
+| Home, story 2 | "Our own pharmacy prepares the Narmadha range." | Confirm Narmadha products are made by you (not only sold by you) |
+| Home, story 3 | "planned for one person at a time, and explained before they begin" | Confirm this describes how therapies are run |
+| Home, story 4 | "If something is not right for you, we will say so." | A promise in the doctor's voice; confirm |
+| Home, people | S. Rajkapoor "is usually the first voice you will hear when you call." | Confirm who answers the phones |
+| Home, gallery | Photo captions and "patient images are shown with consent" | Consent must exist before the images go live |
+| Footer | Address, three phone numbers, Facebook link, Google Maps search link | Confirm all are current. Opening hours are a labelled placeholder |
+| Panchakarma page | Five actions and what each is "traditionally associated with"; contraindication note | Doctor to confirm accuracy and extend the caution list |
+| Whole site | `noindex` is on while this is staging | Must be switched off at launch (see launch checklist) |

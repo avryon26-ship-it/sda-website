@@ -11,12 +11,14 @@ if (!R || !C) { console.error('usage: node build-images.mjs <assets> <content>')
 const IMG = path.join(C, 'images');
 fs.rmSync(IMG, { recursive: true, force: true });
 
-async function encode(srcPath, outPath, maxW, alpha) {
+async function encode(srcPath, outPath, maxW, alpha, grade) {
   let width = maxW;
   for (let attempt = 0; attempt < 8; attempt++) {
     for (let q = 82; q >= 40; q -= 6) {
-      const buf = await sharp(srcPath).rotate()
-        .resize({ width, withoutEnlargement: true })
+      let pipe = sharp(srcPath).rotate().resize({ width, withoutEnlargement: true });
+      // one-time warm grade: calm neon colours toward the paper palette (baked, never a live CSS filter)
+      if (grade) pipe = pipe.modulate({ saturation: 0.74 }).recomb([[1.03, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 0.9]]);
+      const buf = await pipe
         .webp({ quality: q, effort: 5, alphaQuality: alpha ? 80 : 100, smartSubsample: true })
         .toBuffer();
       if (buf.length <= MAX_KB * 1024) { fs.mkdirSync(path.dirname(outPath), { recursive: true }); fs.writeFileSync(outPath, buf); return { q, width, bytes: buf.length }; }
@@ -31,7 +33,7 @@ for (const m of manifest) {
   const sp = path.join(R, m.src);
   if (!fs.existsSync(sp)) { console.error('MISSING', m.src); process.exit(1); }
   const meta = await sharp(sp).metadata();
-  const r = await encode(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha);
+  const r = await encode(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha, m.grade);
   const o = await sharp(path.join(IMG, m.out)).metadata();
   rows.push({ ...m, srcW: meta.width, srcH: meta.height, outW: o.width, outH: o.height, kb: Math.round(r.bytes / 1024) });
 }

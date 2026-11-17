@@ -26,3 +26,19 @@ export function waLink(number: string, text: string) {
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 }
 export const telHref = (p: string) => `tel:${p.replace(/\s/g, '')}`;
+
+export const mapsUrl = (c: Content) => {
+  const a = c.site.address;
+  const q = `Sri Dhanvanthri Ayurveda, ${a.line1}, ${a.line2}, ${a.city} ${a.postalCode}`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+};
+/** Alternate-language path for the language switch. */
+export function altPath(locale: Locale, pathname: string): string {
+  if (locale === 'en') return pathname === '/' ? '/ta' : `/ta${pathname}`;
+  const p = pathname.replace(/^\/ta/, '');
+  return p === '' ? '/' : p;
+}
+export const consultMsg = (locale: Locale, about?: string) =>
+  locale === 'ta'
+    ? `வணக்கம், ${about ? about + ' பற்றி ' : ''}மருத்துவரிடம் ஆலோசனை பெற விரும்புகிறேன்.`
+    : `Hello, I would like to consult the doctor${about ? ' about ' + about : ''}.`;

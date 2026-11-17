@@ -73,7 +73,7 @@
     "file": "images/clinic/team-green-uniform-pharmacy.webp",
     "width": 512,
     "height": 512,
-    "kb": 43,
+    "kb": 42,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -87,7 +87,7 @@
     "file": "images/clinic/team-at-shopfront.webp",
     "width": 980,
     "height": 980,
-    "kb": 144,
+    "kb": 134,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -101,7 +101,7 @@
     "file": "images/clinic/team-in-reception.webp",
     "width": 980,
     "height": 980,
-    "kb": 156,
+    "kb": 148,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -115,7 +115,7 @@
     "file": "images/clinic/therapists-in-white-coats.webp",
     "width": 980,
     "height": 980,
-    "kb": 187,
+    "kb": 183,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -129,7 +129,7 @@
     "file": "images/clinic/therapists-preparing-herbs.webp",
     "width": 980,
     "height": 980,
-    "kb": 169,
+    "kb": 161,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -143,7 +143,7 @@
     "file": "images/clinic/therapists-grinding-herbs.webp",
     "width": 980,
     "height": 980,
-    "kb": 148,
+    "kb": 140,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -157,7 +157,7 @@
     "file": "images/clinic/managing-director-portrait.webp",
     "width": 512,
     "height": 512,
-    "kb": 29,
+    "kb": 28,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -199,7 +199,7 @@
     "file": "images/clinic/body-therapy-session.webp",
     "width": 1000,
     "height": 1000,
-    "kb": 26,
+    "kb": 27,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -241,7 +241,7 @@
     "file": "images/clinic/potli-therapy-session.webp",
     "width": 1280,
     "height": 853,
-    "kb": 106,
+    "kb": 100,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -255,7 +255,7 @@
     "file": "images/clinic/varma-therapy-session.webp",
     "width": 1280,
     "height": 720,
-    "kb": 155,
+    "kb": 146,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -269,7 +269,7 @@
     "file": "images/clinic/yoga-meditation-hilltop.webp",
     "width": 1156,
     "height": 650,
-    "kb": 128,
+    "kb": 127,
     "status": "pending-confirmation",
     "category": "clinic",
     "alt": {
@@ -311,7 +311,7 @@
     "file": "images/stock-unverified/herbs-brass-pots-banner.webp",
     "width": 1600,
     "height": 600,
-    "kb": 112,
+    "kb": 103,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -325,7 +325,7 @@
     "file": "images/stock-unverified/spices-and-herbs-banner.webp",
     "width": 1600,
     "height": 600,
-    "kb": 233,
+    "kb": 213,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -339,7 +339,7 @@
     "file": "images/stock-unverified/herbs-brass-pots-banner-2.webp",
     "width": 1600,
     "height": 600,
-    "kb": 122,
+    "kb": 113,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -353,7 +353,7 @@
     "file": "images/stock-unverified/orchid-stones-bamboo-banner.webp",
     "width": 1600,
     "height": 600,
-    "kb": 89,
+    "kb": 82,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -381,7 +381,7 @@
     "file": "images/stock-unverified/physiotherapy-knee.webp",
     "width": 1280,
     "height": 853,
-    "kb": 40,
+    "kb": 41,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -395,7 +395,7 @@
     "file": "images/stock-unverified/organic-vegetable-crate.webp",
     "width": 1280,
     "height": 853,
-    "kb": 61,
+    "kb": 59,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -409,7 +409,7 @@
     "file": "images/stock-unverified/shirodhara.webp",
     "width": 1000,
     "height": 668,
-    "kb": 46,
+    "kb": 44,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -423,7 +423,7 @@
     "file": "images/stock-unverified/herbal-potli-back-massage.webp",
     "width": 1000,
     "height": 691,
-    "kb": 70,
+    "kb": 68,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -437,7 +437,7 @@
     "file": "images/stock-unverified/herbs-on-brass-plate.webp",
     "width": 1000,
     "height": 1000,
-    "kb": 58,
+    "kb": 56,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -451,7 +451,7 @@
     "file": "images/stock-unverified/spices-and-roots.webp",
     "width": 1000,
     "height": 1000,
-    "kb": 92,
+    "kb": 89,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -465,7 +465,7 @@
     "file": "images/stock-unverified/herbal-powder-and-scoop.webp",
     "width": 1000,
     "height": 1000,
-    "kb": 44,
+    "kb": 45,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -493,7 +493,7 @@
     "file": "images/stock-unverified/grains-and-spices-plate.webp",
     "width": 1000,
     "height": 1000,
-    "kb": 86,
+    "kb": 85,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {

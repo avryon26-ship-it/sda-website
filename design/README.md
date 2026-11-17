@@ -37,3 +37,22 @@ Easing `cubic-bezier(0.22, 1, 0.36, 1)`; reveals 600-1000 ms, hovers 200-320 ms;
 - Type large and confident: yes at 1440 and 820. At 390 the hero is 54px; Tamil is smaller by necessity.
 - Real photography: used only as provisional. The supplied photos are the weakest part (neon colours, ad graphics, low resolution). A warm grade helps; a half-day shoot would help most.
 - Bugs found while reviewing: Tamil display overflowed its column (fixed with a separate Tamil scale); one Tailwind palette change needed a dev-server restart.
+
+---
+## Update: decisions and first build (home + Panchakarma)
+
+**Decided:** Instrument Serif (display) + Hanken Grotesk (body); Noto Serif/Sans Tamil. The unused faces (Cormorant, DM Sans) and the `/design` route were removed so production ships two Latin faces. The `/design` page remains in git history; its screenshots are `design/screenshots/system-*.jpg`.
+
+**Built:** shared shell (header, mobile menu overlay, footer with giant wordmark, phone action bar), full home page (hero, pinned story, treatments index, how-it-works with drawn line, people, masonry gallery with lightbox, product shelf strip, voices placeholder, FAQ) and `/panchakarma`, each in English and Tamil (`/ta`, `/ta/panchakarma`). Screenshots: `design/screenshots/built-*.jpg`.
+
+**Measured (lab, 4x CPU slowdown, ~1.6 Mbps / 150 ms):** LCP 1.3 s (home), 1.9 s (Tamil home), 0.9 s (Panchakarma); CLS 0; 350-500 KB transferred; GSAP/Lenis are not requested on phones. Real Lighthouse runs in the QA phase.
+
+**Motion implementation notes:** pinning uses CSS `position: sticky` (more robust than script pinning) with an IntersectionObserver swapping the image; GSAP ScrollTrigger drives parallax (max 8%) and the scrubbed line, Lenis smooth scroll, all loaded after first paint and only on desktop-class devices (fine pointer, >= 1024px, >= 6 cores, >= 4 GB, no save-data, no reduced motion).
+
+**Fixes made while reviewing:** headline covered faces (crop moved); portrait cutouts had colour fringes (now on ink green); Tamil overflowed on phones (header title, menu words, hero scale, buttons, product labels, footer columns, header breakpoint); Tamil has no italic (colour only); hero caption hidden behind the phone action bar (clearance added). Horizontal overflow is 0 from 360 to 1440 px on all four pages (`tools/overflow.mjs`).
+
+**Self-critique, still open:**
+- The hero photo is a 980 px square stretched full-bleed: soft on large screens. A new landscape photograph of the entrance or the doctor is the single biggest upgrade available.
+- The supplied photos are saturated and uneven even after a warm grade.
+- Three photos show patients being treated; the portrait of the Managing Director in the story is an illustrated backdrop shot. All need consent/replacement.
+- Nav links to pages not yet built (About, Treatments, Offerings, Products, Gallery, Contact) 404 until those pages exist.

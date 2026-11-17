@@ -1,11 +1,12 @@
-import Link from 'next/link';
-export default function Home() {
-  return (
-    <main className="wrap py-24">
-      <p className="label">Sri Dhanvanthri Ayurveda · Tirunelveli</p>
-      <h1 className="mt-6" style={{ fontSize: 'var(--fs-h1)' }}>Design proposal <em>in review</em></h1>
-      <p className="mt-8 max-w-xl text-[1.15rem]">The previous look has been withdrawn. The new design system is on one page, for your approval, before any page is built.</p>
-      <Link href="/design" className="btn btn-primary mt-10">Open the design system</Link>
-    </main>
-  );
-}
+import type { Metadata } from 'next';
+import { getContent } from '@/lib/content';
+import HomeView from '@/components/HomeView';
+
+const c = getContent('en');
+export const metadata: Metadata = {
+  title: c.seo.home.title,
+  description: c.seo.home.description,
+  alternates: { canonical: '/', languages: { en: '/', ta: '/ta', 'x-default': '/' } },
+  openGraph: { title: c.seo.home.title, description: c.seo.home.description, url: '/', locale: 'en_IN', type: 'website', images: ['/images/clinic/team-at-shopfront.webp'] },
+};
+export default function Page() { return <HomeView locale="en" />; }

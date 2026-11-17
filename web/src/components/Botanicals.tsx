@@ -127,3 +127,37 @@ export function KolamRule({ className = '' }: { className?: string }) {
     </svg>
   );
 }
+
+/* Step drawings, same hand and stroke as the plants. */
+export function MessageArt(p: P) {
+  return (
+    <Svg {...p} title={p.title} vb="0 0 200 200">
+      <path d="M34 36h132a14 14 0 0 1 14 14v70a14 14 0 0 1-14 14H96l-30 28v-28H34a14 14 0 0 1-14-14V50a14 14 0 0 1 14-14Z" />
+      <path d="M44 68h54M44 86h38" />
+      <Leaf x={140} y={118} a={-18} L={34} w={11} />
+      <Leaf x={140} y={118} a={42} L={24} w={8} />
+    </Svg>
+  );
+}
+export function LampArt(p: P) {
+  return (
+    <Svg {...p} title={p.title} vb="0 0 200 200">
+      <path d="M100 118C84 98 88 72 100 46C112 72 116 98 100 118Z" />
+      <path d="M100 112C93 102 94 88 100 76C106 88 107 102 100 112Z" />
+      <path d="M48 124H152C152 150 130 168 100 168C70 168 48 150 48 124Z" />
+      <path d="M82 168L74 186H126L118 168" />
+      <path d="M60 78L48 70M140 78L152 70M100 30V20" />
+    </Svg>
+  );
+}
+export function MortarArt(p: P) {
+  return (
+    <Svg {...p} title={p.title} vb="0 0 200 200">
+      <path d="M36 112H164C164 150 142 172 100 172C58 172 36 150 36 112Z" />
+      <path d="M72 172L66 188H134L128 172" />
+      <path d="M122 110L158 44C161 38 170 40 170 47C170 50 169 52 167 55L132 108" />
+      <Leaf x={70} y={112} a={-22} L={44} w={14} />
+      <Leaf x={86} y={112} a={26} L={36} w={12} />
+    </Svg>
+  );
+}
