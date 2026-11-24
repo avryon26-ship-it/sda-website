@@ -2,7 +2,7 @@
 
 Everything in the old `assets/` folder that is **not** in `content/images/`, with the reason. Fonts, JS, CSS and icon-font folders (`fontawesome`, `js`, `css`, `swiper`, `svg`, `icons`) are code, not photos, and are omitted from this list.
 
-299 files excluded of 345 scanned (403 MB).
+298 files excluded of 345 scanned (402 MB).
 
 | File | Size | Reason |
 |---|---|---|
@@ -197,7 +197,6 @@ Everything in the old `assets/` folder that is **not** in `content/images/`, wit
 | `logo/favicon.png` | 57 KB | Alternate logo/favicon variant; logo.png used |
 | `logo/favicon2.png` | 54 KB | Alternate logo/favicon variant; logo.png used |
 | `logo/favicon3.png` | 50 KB | Alternate logo/favicon variant; logo.png used |
-| `logo/log-large.png` | 541 KB | Alternate logo/favicon variant; logo.png used |
 | `logo/logo-stroked.png` | 96 KB | Alternate logo/favicon variant; logo.png used |
 | `offerings/500.jpg` | 201 KB | Old offerings thumbnail or upload-named duplicate; low resolution |
 | `offerings/ayurveda-1.jpg` | 141 KB | Infographic with baked-in claims (“Removes bad toxins”, “Balances hormones”) |

@@ -27,6 +27,7 @@ Statuses: **Use** = clinic's own photo; **PENDING** = identity/use needs the own
 | `clinic/varma-therapy-session.webp` | `other/varmatherapy.jpg` | Use | 1280×720, 146 KB | Real patient. Confirm patient consent. |
 | `clinic/yoga-meditation-hilltop.webp` | `other/yoga-meditation.jpg` | PENDING: owner must confirm | 1156×650, 127 KB | Same person as the Robinson candidate photo; confirm identity and permission. |
 | `brand/dhanvanthri-illustration-banner.webp` | `slider/New-edited/1.jpg` | Use | 1600×600, 129 KB |  |
+| `brand/logo-large.webp` | `logo/log-large.png` | Use | 1200×555, 78 KB |  |
 | `brand/logo.webp` | `logo/logo.png` | Use | 640×296, 18 KB |  |
 | `stock-unverified/herbs-brass-pots-banner.webp` | `slider/New-edited/2.jpg` | HOLD: licence unknown | 1600×600, 103 KB |  |
 | `stock-unverified/spices-and-herbs-banner.webp` | `slider/New-edited/3.jpg` | HOLD: licence unknown | 1600×600, 213 KB |  |

@@ -57,6 +57,7 @@ export const manifest = [
     en: 'Illustration of Lord Dhanvanthri and the sages of Ayurveda on a green background', ta: 'பச்சை பின்னணியில் தன்வந்திரி பகவான் மற்றும் ஆயுர்வேத முனிவர்களின் ஓவியம்' },
 
   // ---- brand --------------------------------------------------------------
+  { src: 'logo/log-large.png', out: 'brand/logo-large.webp', alpha: true, maxW: 1200, status: 'include', cat: 'brand', en: 'Sri Dhanvanthri Ayurveda Marunthagam logo', ta: 'ஸ்ரீ தன்வந்திரி ஆயுர்வேத மருந்தகம் சின்னம்' },
   { src: 'logo/logo.png', out: 'brand/logo.webp', alpha: true, maxW: 800, status: 'include', cat: 'brand', en: 'Sri Dhanvanthri Ayurveda logo', ta: 'ஸ்ரீ தன்வந்திரி ஆயுர்வேதா சின்னம்' },
 
   // ---- stock-looking images (licence unknown) -----------------------------

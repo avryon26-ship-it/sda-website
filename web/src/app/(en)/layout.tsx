@@ -7,7 +7,7 @@ import SiteFooter from '@/components/SiteFooter';
 import ActionBar from '@/components/ActionBar';
 import Motion from '@/components/Motion';
 
-export const metadata: Metadata = { metadataBase: new URL(SITE_URL), robots: { index: false, follow: false } /* staging: switched on in the SEO phase */ };
+export const metadata: Metadata = { metadataBase: new URL(SITE_URL), icons: { icon: [{ url: '/images/brand/favicon-32.png', sizes: '32x32', type: 'image/png' }, { url: '/images/brand/icon-192.png', sizes: '192x192', type: 'image/png' }], apple: '/images/brand/apple-touch-icon.png' }, manifest: '/site.webmanifest', robots: { index: false, follow: false } /* staging: switched on in the SEO phase */ };
 export const viewport: Viewport = { themeColor: '#F4ECDD', width: 'device-width', initialScale: 1 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

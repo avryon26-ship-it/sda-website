@@ -42,6 +42,13 @@ for (const m of manifest) {
 const icons = [['fav/android-icon-192x192.png', 'brand/icon-192.png'], ['fav/logo512.png', 'brand/icon-512.png'], ['fav/apple-icon-180x180.png', 'brand/apple-touch-icon.png'], ['fav/favicon-32x32.png', 'brand/favicon-32.png']];
 for (const [s, d] of icons) { const dp = path.join(IMG, d); fs.mkdirSync(path.dirname(dp), { recursive: true }); fs.copyFileSync(path.join(R, '..', s), dp); }
 
+// -------- default social-share card: the logo on paper, 1200x630 --------
+{
+  const logo = await sharp(path.join(R, 'logo/log-large.png')).resize({ width: 820 }).png().toBuffer();
+  await sharp({ create: { width: 1200, height: 630, channels: 3, background: '#F4ECDD' } })
+    .composite([{ input: logo, gravity: 'center' }]).jpeg({ quality: 88 }).toFile(path.join(IMG, 'brand/og-default.jpg'));
+}
+
 // -------- machine-readable manifest ----------------------------------------
 fs.writeFileSync(path.join(C, 'images.json'), JSON.stringify(rows.map(r => ({
   file: 'images/' + r.out, width: r.outW, height: r.outH, kb: r.kb, status: r.status, category: r.cat, alt: { en: r.en, ta: r.ta }, source: r.src, note: r.note ?? null,

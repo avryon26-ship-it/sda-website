@@ -294,6 +294,20 @@
     "note": null
   },
   {
+    "file": "images/brand/logo-large.webp",
+    "width": 1200,
+    "height": 555,
+    "kb": 78,
+    "status": "include",
+    "category": "brand",
+    "alt": {
+      "en": "Sri Dhanvanthri Ayurveda Marunthagam logo",
+      "ta": "ஸ்ரீ தன்வந்திரி ஆயுர்வேத மருந்தகம் சின்னம்"
+    },
+    "source": "logo/log-large.png",
+    "note": null
+  },
+  {
     "file": "images/brand/logo.webp",
     "width": 640,
     "height": 296,

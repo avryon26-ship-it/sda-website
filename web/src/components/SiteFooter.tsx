@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { type Locale, getContent, localePath, NAV, telHref, mapsUrl } from '@/lib/content';
 import { KolamRule } from './Botanicals';
 
@@ -8,7 +9,13 @@ export default function SiteFooter({ locale }: { locale: Locale }) {
   return (
     <footer className="on-dark mt-32 pb-24 lg:pb-10">
       <div className="wrap pt-20">
-        <KolamRule className="text-sage" />
+        <div className="flex flex-wrap items-center justify-between gap-8">
+          <Link href={localePath(locale, '/')} className="inline-block rounded-[3px] bg-paper p-4 sm:p-5" aria-label={c.site.name}>
+            <Image src="/images/brand/logo-large.webp" alt={c.site.name} width={1200} height={555} sizes="240px" className="h-auto w-[200px] sm:w-[240px]" loading="lazy" />
+          </Link>
+          <p className="max-w-xs text-[0.95rem] text-[rgb(244_236_221/0.8)]">{c.site.tagline}</p>
+        </div>
+        <div className="mt-14"><KolamRule className="text-sage" /></div>
         <div className="mt-16 grid gap-14 md:grid-cols-12">
           <div className="md:col-span-4">
             <p className="label text-sage">{c.home.sections.visit}</p>
