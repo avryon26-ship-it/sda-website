@@ -22,3 +22,6 @@ backups/
 _source/
 # contact sheets are generated artifacts
 content/_review/
+
+# demo request store (patient data)
+web/data/

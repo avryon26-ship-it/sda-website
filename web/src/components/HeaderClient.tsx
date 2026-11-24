@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { altPath, type Locale } from '@/lib/content';
+import { CartButton } from './cart/CartButtons';
 
 type Item = { href: string; label: string };
 export default function HeaderClient({ locale, home, title, sub, items, labels, wa, call }: {
@@ -32,9 +33,10 @@ export default function HeaderClient({ locale, home, title, sub, items, labels, 
         <nav aria-label="Main" className={`hidden items-center gap-7 ${locale === 'ta' ? 'xl:flex' : 'lg:flex'}`}>
           {items.map(i => <Link key={i.href} href={i.href} className="navlink" aria-current={pathname === i.href ? 'page' : undefined}>{i.label}</Link>)}
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Link href={alt} lang={locale === 'en' ? 'ta' : 'en'} hrefLang={locale === 'en' ? 'ta' : 'en'} className="langlink">{labels.language}</Link>
           <a href={wa} className={`btn btn-primary hidden !min-h-[46px] !px-5 text-[0.92rem] ${locale === 'ta' ? '2xl:inline-flex' : 'xl:inline-flex'}`}>{labels.consult}</a>
+          <CartButton />
           <button ref={btn} type="button" className={`menu-btn ${locale === 'ta' ? 'xl:hidden' : 'lg:hidden'}`} aria-expanded={open} aria-controls="menu-overlay" onClick={() => setOpen(true)}>
             <span className="sr-only">{labels.menu}</span>
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" aria-hidden="true"><path d="M3 8h18M3 16h18" /></svg>

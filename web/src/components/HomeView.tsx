@@ -5,6 +5,7 @@ import images from '@/content/images.json';
 import Rich from './Rich';
 import TreatmentIndex from './TreatmentIndex';
 import GalleryGrid, { type Shot } from './GalleryGrid';
+import { AddButton } from './cart/CartButtons';
 import { MessageArt, LampArt, MortarArt, Tulsi, Neem } from './Botanicals';
 
 const src = (p: string) => `/${p}`;
@@ -46,8 +47,6 @@ export default function HomeView({ locale }: { locale: Locale }) {
   });
 
   const arts = [MessageArt, LampArt, MortarArt];
-  const jarW = ['11rem', '13.5rem', '12rem', '10.5rem', '14rem', '11.5rem', '12.5rem', '10rem', '13rem'];
-  const jarPad = ['1rem', '1.6rem', '1.1rem', '0.7rem', '1.8rem', '1rem', '1.3rem', '0.8rem', '1.5rem'];
 
   return (
     <main id="main">
@@ -178,25 +177,25 @@ export default function HomeView({ locale }: { locale: Locale }) {
             <p className="max-w-sm md:col-span-4 md:col-start-9 md:pt-8" style={{ fontSize: 'var(--fs-lead)', lineHeight: 1.55 }}>{S.productsLead}</p>
           </div>
           <div className="mt-16">
-            <div className="strip" tabIndex={0} role="region" aria-label={S.products} style={{ alignItems: 'flex-end', borderBottom: '1px solid var(--ink)' }}>
-              {c.products.map((p, i) => (
-                <div key={p.slug} className="jar-item" style={{ width: jarW[i % jarW.length] }}>
-                  <Link href={localePath(locale, `/products/${p.slug}`)} className="jar block no-underline">
-                    <div className="jar-lid" style={{ width: '50%' }} />
-                    <div className="jar-body !w-full" style={{ paddingBlock: jarPad[i % jarPad.length] }}>
-                      <div className="jar-label">
-                        <p className="label !text-[0.6rem]">Narmadha</p>
-                        <p className="font-display mt-1 text-[1.3rem] leading-tight">{p.name.replace(/^(Narmadha|நர்மதா)\s*/i, '')}</p>
-                        <p className="mt-1 text-[0.8rem] text-moss">{p.category}</p>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
+            <div className="strip" tabIndex={0} role="region" aria-label={S.products}>
+              {c.products.map(p => {
+                const href = localePath(locale, `/products/${p.slug}`);
+                return (
+                  <div key={p.slug} className="jar-item pcard w-[17rem] sm:w-[19rem]">
+                    <Link href={href} className="pcard-img" tabIndex={-1} aria-hidden="true">
+                      <span className="pcard-tag">{p.category}</span>
+                      <Image src={src(p.image)} alt="" fill sizes="19rem" loading="lazy" />
+                    </Link>
+                    <h3 className="mt-4"><Link href={href}>{p.name}</Link></h3>
+                    <p className="mt-1 line-clamp-2 flex-1 text-[0.95rem] text-moss">{p.summary}</p>
+                    <AddButton slug={p.slug} className="mt-4 w-full" />
+                  </div>
+                );
+              })}
             </div>
             <p className="mt-6 text-[0.95rem] text-moss">{h.howItWorks.note}</p>
             <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
-              <Link href={localePath(locale, '/products')} className="link font-semibold">{c.cta.viewAll} →</Link>
+              <Link href={localePath(locale, '/products')} className="btn btn-primary">{c.cta.viewAll}<Arrow /></Link>
               <a href={wa} className="link font-semibold">{c.cta.consult}</a>
             </div>
           </div>

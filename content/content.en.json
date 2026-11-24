@@ -101,7 +101,7 @@
     },
     "narmadha": {
       "title": "Narmadha Herbal Products | Ayurveda Hospital in Tirunelveli",
-      "description": "Narmadha herbal soap, oils, powders and sooranam from Sri Dhanvanthri Ayurveda. Build a list and consult our doctor on WhatsApp before you choose."
+      "description": "Narmadha herbal soap, oils, powders and sooranam from Sri Dhanvanthri Ayurveda. Add them to your consultation cart and our doctor calls you before anything is given."
     },
     "offerings": {
       "title": "Ayurvedic Treatment Packages | Ayurveda Hospital in Tirunelveli",
@@ -113,7 +113,7 @@
     },
     "products": {
       "title": "Herbal Products & Consultation List | Ayurveda Hospital in Tirunelveli",
-      "description": "Browse Narmadha herbal products, add the ones you are curious about to a list, and send it to our doctor on WhatsApp for advice."
+      "description": "Browse Narmadha herbal products, add the ones you are curious about to your consultation cart, and send it to our doctor. He calls you and advises what suits you."
     }
   },
   "home": {
@@ -164,7 +164,7 @@
       "steps": [
         {
           "title": "Tell us your concern",
-          "body": "Message us on WhatsApp or call. You can add products you are curious about to your list."
+          "body": "Add products you are curious about to your cart and send it, or message us on WhatsApp or call."
         },
         {
           "title": "Speak with the doctor",
@@ -216,7 +216,7 @@
       "people": "The doctor and team",
       "gallery": "The place",
       "products": "From our pharmacy",
-      "productsLead": "Not a shop. Pick what you are curious about, add it to your list, and talk to the doctor first.",
+      "productsLead": "No payment online. Add what you are curious about to your cart and send it to the doctor: he calls you and advises first.",
       "voices": "In their words",
       "faq": "Questions",
       "visit": "Visit us"
@@ -500,7 +500,7 @@
   },
   "narmadha": {
     "h1": "Narmadha herbal products",
-    "lead": "Herbal preparations from the Sri Dhanvanthri pharmacy. Browse, add to your list and speak to the doctor before you choose.",
+    "lead": "Herbal preparations from the Sri Dhanvanthri pharmacy. Browse, add to your cart and send it to the doctor: he calls you before anything is given.",
     "consultNote": "These products are not sold online. Please consult the doctor first: he or she will tell you if a product is suitable for you.",
     "elakizhi": {
       "heading": "Elakizhi (Ilakizhi)",
@@ -719,11 +719,11 @@
     },
     {
       "q": "Can I buy products on this website?",
-      "a": "No. This website does not take payments. Add products to your list and send it to the doctor on WhatsApp to start a conversation."
+      "a": "You can add products to your cart, but there is no online payment. Send the cart to the doctor: he calls you, checks what suits you, and then you collect from the pharmacy."
     },
     {
-      "q": "What happens when I send my list?",
-      "a": "A WhatsApp message opens with your list filled in. We also save your request so the doctor can follow up with a call."
+      "q": "What happens when I send my cart?",
+      "a": "The doctor sees it on his screen, calls you at the time you chose, and records his advice. You can follow it on your tracking page."
     },
     {
       "q": "Is Ayurvedic care a replacement for my regular treatment?",

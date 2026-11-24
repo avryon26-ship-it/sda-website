@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import '../globals.css';
 import { instrument, hanken } from '@/lib/fonts-latin';
 import { taSerif, taSans } from '@/lib/fonts-tamil';
-import { SITE_URL } from '@/lib/content';
+import { SITE_URL, catalogue, localePath } from '@/lib/content';
+import CartProvider from '@/components/cart/CartProvider';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import ActionBar from '@/components/ActionBar';
@@ -15,12 +16,14 @@ export default function TamilLayout({ children }: { children: React.ReactNode })
   return (
     <html lang="ta" className={`${taSerif.variable} ${taSans.variable} ${instrument.variable} ${hanken.variable}`}>
       <body>
+        <CartProvider locale="ta" catalogue={catalogue('ta')} consultHref={localePath('ta', '/consult')}>
         <a href="#main" className="skip-link">உள்ளடக்கத்திற்குச் செல்</a>
         <SiteHeader locale="ta" />
         {children}
         <SiteFooter locale="ta" />
         <ActionBar locale="ta" />
         <Motion />
+        </CartProvider>
       </body>
     </html>
   );

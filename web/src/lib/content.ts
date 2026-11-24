@@ -42,3 +42,7 @@ export const consultMsg = (locale: Locale, about?: string) =>
   locale === 'ta'
     ? `வணக்கம், ${about ? about + ' பற்றி ' : ''}மருத்துவரிடம் ஆலோசனை பெற விரும்புகிறேன்.`
     : `Hello, I would like to consult the doctor${about ? ' about ' + about : ''}.`;
+
+/** Slim product list for the client-side cart. */
+export const catalogue = (locale: Locale) =>
+  getContent(locale).products.map(p => ({ slug: p.slug, name: p.name, category: p.category, image: p.image }));

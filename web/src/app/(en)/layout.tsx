@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import '../globals.css';
 import { instrument, hanken } from '@/lib/fonts-latin';
-import { SITE_URL } from '@/lib/content';
+import { SITE_URL, catalogue, localePath } from '@/lib/content';
+import CartProvider from '@/components/cart/CartProvider';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import ActionBar from '@/components/ActionBar';
@@ -14,12 +15,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${instrument.variable} ${hanken.variable}`}>
       <body>
+        <CartProvider locale="en" catalogue={catalogue('en')} consultHref={localePath('en', '/consult')}>
         <a href="#main" className="skip-link">Skip to content</a>
         <SiteHeader locale="en" />
         {children}
         <SiteFooter locale="en" />
         <ActionBar locale="en" />
         <Motion />
+        </CartProvider>
       </body>
     </html>
   );
