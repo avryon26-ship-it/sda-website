@@ -1,76 +1,87 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { type Locale, getContent, localePath, telHref } from '@/lib/content';
+import { type Locale, getContent, localePath, telHref, waLink, consultMsg } from '@/lib/content';
 import { productMeta, CONCERNS } from '@/lib/ui';
+import { torn } from '@/lib/torn';
+import { ht } from '@/lib/img';
 import Rich from './Rich';
 import { ConsultButton } from './cart/CartButtons';
 import ProductCard from './shop/ProductCard';
-import { Tulsi, Neem, Lotus, Turmeric } from './Botanicals';
+import { MessageArt, LampArt, MortarArt, Tulsi, Neem, Lotus, KolamRule } from './Botanicals';
 
 const src = (p: string) => `/${p}`;
-const Arrow = ({ s = 18 }: { s?: number }) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
-const Check = () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7" /></svg>;
+const Arrow = ({ s = 18 }: { s?: number }) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
+const Sec = ({ n, label }: { n: string; label: string }) => <div className="secno label"><span>{n}</span><span>{label}</span></div>;
 
+/** Words for this page. Facts that are not confirmed (years of practice, free) are not stated as numbers or badges. */
 const H = {
   en: {
-    badge: 'Free consultation call',
-    h1: 'Natural healing, *guided by our doctor.*',
-    lead: 'Ayurveda, Siddha and Varma care in Tirunelveli. Tell us what is troubling you and the doctor calls you back, free, before anything is prescribed.',
+    kicker: 'Doctor first',
+    deck: 'Nothing is prescribed until the doctor has *listened*.',
+    lead: 'Ayurveda, Siddha and Varma care in V.M. Chatram, Tirunelveli. Tell us what is troubling you and the doctor calls you back, at the time you choose, before anything is given.',
     talk: 'Talk to the doctor',
-    free: 'free',
-    shop: 'Shop herbal remedies',
-    trust: [['18+', 'years of practice'], ['9', 'own herbal remedies'], ['0', 'payment online']],
-    docCard: 'Managing Director',
-    bubble: 'Calls back at your chosen time',
+    spTitle: 'The doctor calls you back',
+    spBody: 'Tell us your concern and the best time to call. No payment is taken on this website.',
+    stamp: 'No online payment',
+    fig: 'FIG. 1.',
     concernH: 'What is troubling you?',
     concernL: 'Tap one. The doctor will call you about it.',
+    storyTag: 'The story',
+    howTag: 'How it works',
     howH: 'Three simple steps',
-    how: [['Tell us', 'Tap “Talk to the doctor” or add remedies to your cart. Two minutes, no account.'], ['The doctor calls', 'He listens to your health, food, sleep and medicines, in Tamil or English.'], ['Get your plan', 'Collect suitable remedies from our pharmacy, or visit for therapy.']],
+    how: [['Tell us', 'Tap “Talk to the doctor” or add remedies to your cart. Two minutes, no account.'], ['The doctor calls', 'He listens to your health, food, sleep and medicines, in Tamil or English.'], ['Your plan', 'If suitable, collect from the pharmacy. If not, he may ask you to visit.']],
+    therTag: 'Therapies',
     therH: 'Therapies at the hospital',
     therL: 'Traditional, hands-on care, planned for one person at a time.',
+    docTag: 'The doctor',
     docH: 'Meet the doctor',
     docQ: 'Nothing is prescribed before I have listened to you. Some days, that conversation is the whole visit.',
     docCta: 'Request a call from him',
-    shopH: 'From our own pharmacy',
-    shopL: 'Add to cart and send it to the doctor. He confirms what suits you before anything is given.',
-    shopAll: 'See all remedies',
-    whyH: 'Why families choose us',
-    why: [['Consultation first', 'The doctor speaks with you before any remedy or therapy.'], ['Our own pharmacy', 'The Narmadha range is prepared under the same roof.'], ['Traditional therapies', 'Panchakarma, Varma, Elakizhi and yoga, done by hand.'], ['Alongside your doctor', 'Supportive care. We never ask you to stop your medicines.']],
+    shopTag: 'Pharmacy',
+    shopH: 'From our pharmacy',
+    shopL: 'Add what you are curious about to your cart and send it to the doctor. He confirms what suits you before anything is given.',
+    shopAll: 'All remedies',
+    placeTag: 'The place',
     placeH: 'Inside the hospital',
+    faqTag: 'Questions',
     faqH: 'Questions people ask',
-    endH: 'Not sure where to start?',
-    endL: 'Tell the doctor what is troubling you. He will call you back, free.',
+    endH: 'Come and *talk* to the doctor first.',
     orCall: 'or call',
+    datePlaces: 'Panchakarma · Varma · Yoga · Herbal',
   },
   ta: {
-    badge: 'இலவச ஆலோசனை அழைப்பு',
-    h1: 'இயற்கை நலம், *மருத்துவரின் வழிகாட்டலில்.*',
-    lead: 'திருநெல்வேலியில் ஆயுர்வேதம், சித்தம், வர்ம சிகிச்சை. உங்கள் பிரச்சினையைச் சொல்லுங்கள், மருத்துவர் இலவசமாக அழைப்பார்.',
+    kicker: 'முதலில் மருத்துவர்',
+    deck: 'மருத்துவர் *கேட்கும்* வரை எதுவும் பரிந்துரைக்கப்படுவதில்லை.',
+    lead: 'திருநெல்வேலி வி.எம். சத்திரத்தில் ஆயுர்வேதம், சித்தம், வர்ம சிகிச்சை. உங்கள் பிரச்சினையைச் சொல்லுங்கள்; எதுவும் வழங்கும் முன், நீங்கள் சொல்லும் நேரத்தில் மருத்துவர் அழைப்பார்.',
     talk: 'மருத்துவரிடம் பேசுங்கள்',
-    free: 'இலவசம்',
-    shop: 'மூலிகைப் பொருட்கள்',
-    trust: [['18+', 'ஆண்டு அனுபவம்'], ['9', 'சொந்த மூலிகைப் பொருட்கள்'], ['0', 'ஆன்லைன் கட்டணம்']],
-    docCard: 'நிர்வாக இயக்குநர்',
-    bubble: 'நீங்கள் சொல்லும் நேரத்தில் அழைப்பார்',
+    spTitle: 'மருத்துவர் உங்களை அழைப்பார்',
+    spBody: 'உங்கள் பிரச்சினையையும் அழைக்க ஏற்ற நேரத்தையும் சொல்லுங்கள். இந்த இணையதளத்தில் பணம் வாங்கப்படுவதில்லை.',
+    stamp: 'ஆன்லைன் கட்டணம் இல்லை',
+    fig: 'படம் 1.',
     concernH: 'உங்கள் பிரச்சினை என்ன?',
     concernL: 'ஒன்றைத் தொடுங்கள். மருத்துவர் அழைப்பார்.',
+    storyTag: 'எங்கள் கதை',
+    howTag: 'எப்படி',
     howH: 'மூன்று எளிய படிகள்',
-    how: [['சொல்லுங்கள்', '“மருத்துவரிடம் பேசுங்கள்” என்பதைத் தொடுங்கள் அல்லது பொருட்களைக் கூடையில் சேர்க்கவும்.'], ['மருத்துவர் அழைப்பார்', 'உங்கள் உடல்நலம், உணவு, தூக்கம், மருந்துகள் பற்றிக் கேட்பார்.'], ['உங்கள் திட்டம்', 'பொருத்தமான மருந்துகளை மருந்தகத்தில் பெறலாம், அல்லது சிகிச்சைக்கு வரலாம்.']],
+    how: [['சொல்லுங்கள்', '“மருத்துவரிடம் பேசுங்கள்” என்பதைத் தொடுங்கள் அல்லது பொருட்களைக் கூடையில் சேர்க்கவும்.'], ['மருத்துவர் அழைப்பார்', 'உங்கள் உடல்நலம், உணவு, தூக்கம், மருந்துகள் பற்றிக் கேட்பார்.'], ['உங்கள் திட்டம்', 'பொருத்தமானால் மருந்தகத்தில் பெறலாம்; இல்லையெனில் வருமாறு கேட்கலாம்.']],
+    therTag: 'சிகிச்சைகள்',
     therH: 'மருத்துவமனையில் சிகிச்சைகள்',
     therL: 'ஒவ்வொருவருக்கும் தனியாகத் திட்டமிடப்படும் பாரம்பரிய சிகிச்சை.',
+    docTag: 'மருத்துவர்',
     docH: 'மருத்துவரைச் சந்தியுங்கள்',
     docQ: 'உங்களைக் கேட்காமல் எதையும் பரிந்துரைப்பதில்லை. சில நாட்களில் அந்த உரையாடலே முழு வருகை.',
     docCta: 'அவரிடம் அழைப்பு கோருங்கள்',
-    shopH: 'எங்கள் சொந்த மருந்தகத்திலிருந்து',
-    shopL: 'கூடையில் சேர்த்து மருத்துவருக்கு அனுப்புங்கள். பொருத்தமானதை அவர் உறுதி செய்வார்.',
+    shopTag: 'மருந்தகம்',
+    shopH: 'எங்கள் மருந்தகத்திலிருந்து',
+    shopL: 'விரும்பியதைக் கூடையில் சேர்த்து மருத்துவருக்கு அனுப்புங்கள். எதுவும் வழங்கும் முன் பொருத்தமானதை அவர் உறுதி செய்வார்.',
     shopAll: 'அனைத்துப் பொருட்களும்',
-    whyH: 'குடும்பங்கள் எங்களைத் தேர்வு செய்வது ஏன்',
-    why: [['முதலில் ஆலோசனை', 'எந்த மருந்துக்கும் முன் மருத்துவர் உங்களுடன் பேசுவார்.'], ['சொந்த மருந்தகம்', 'நர்மதா பொருட்கள் இங்கேயே தயாரிக்கப்படுகின்றன.'], ['பாரம்பரிய சிகிச்சைகள்', 'பஞ்சகர்மா, வர்மம், இலைக்கிழி, யோகா.'], ['உங்கள் மருத்துவருடன்', 'துணை சிகிச்சை. உங்கள் மருந்துகளை நிறுத்தச் சொல்வதில்லை.']],
+    placeTag: 'எங்கள் இடம்',
     placeH: 'மருத்துவமனைக்குள்',
+    faqTag: 'கேள்விகள்',
     faqH: 'அடிக்கடி கேட்கப்படும் கேள்விகள்',
-    endH: 'எங்கே தொடங்குவது என்று தெரியவில்லையா?',
-    endL: 'உங்கள் பிரச்சினையை மருத்துவரிடம் சொல்லுங்கள். அவர் இலவசமாக அழைப்பார்.',
+    endH: 'முதலில் மருத்துவருடன் *பேசுங்கள்*.',
     orCall: 'அல்லது அழைக்கவும்',
+    datePlaces: 'பஞ்சகர்மா · வர்மம் · யோகா · மூலிகை',
   },
 };
 
@@ -78,217 +89,234 @@ export default function HomeView({ locale }: { locale: Locale }) {
   const c = getContent(locale);
   const t = H[locale];
   const L = (p: string) => localePath(locale, p);
+  const wa = waLink(c.site.whatsapp, consultMsg(locale));
   const doc = c.doctors[0];
+  const story = c.home.story;
+
   const featured = ['narmadha-pain-care-oil', 'narmadha-kesha-raksha-oil', 'narmadha-bathing-soap', 'narmadha-seerana-sanjeevi-sooranam']
     .map(s => c.products.find(p => p.slug === s)!)
     .map(p => ({ slug: p.slug, name: p.name, category: p.category, summary: p.summary, image: p.image, href: L(`/products/${p.slug}`), form: productMeta[p.slug]?.form[locale], pack: productMeta[p.slug]?.pack }));
+
   const therapies = [
-    { href: '/panchakarma', title: c.panchakarma.h1, body: c.offerings.tabs[0].summary, img: 'images/clinic/potli-therapy-session.webp' },
-    { href: '/varmatherapy', title: c.varmatherapy.h1, body: c.home.pillars[1].body, img: 'images/clinic/varma-therapy-session.webp' },
-    { href: '/offerings#de-stress', title: c.offerings.tabs[1].title, body: c.offerings.tabs[1].summary, img: 'images/clinic/body-therapy-session.webp' },
-    { href: '/yoga-meditation', title: c.yoga.h1, body: c.home.pillars[2].body, img: 'images/clinic/yoga-meditation-hilltop.webp' },
-    { href: '/treatments', title: c.nav.treatments, body: c.treatments.items.slice(0, 4).map(i => i.short).join(', ') + '…', img: 'images/clinic/shoulder-therapy-session.webp' },
+    { href: '/panchakarma', title: c.panchakarma.h1, body: c.offerings.tabs[0].summary },
+    { href: '/varmatherapy', title: c.varmatherapy.h1, body: c.home.pillars[1].body },
+    { href: '/offerings#de-stress', title: c.offerings.tabs[1].title, body: c.offerings.tabs[1].summary },
+    { href: '/yoga-meditation', title: c.yoga.h1, body: c.home.pillars[2].body },
+    { href: '/treatments', title: c.nav.treatments, body: c.treatments.items.slice(0, 4).map(i => i.short).join(', ') + '…' },
   ];
   const gallery = ['team-green-uniform-pharmacy', 'therapists-preparing-herbs', 'lamp-and-flower-altar', 'therapists-in-white-coats', 'managing-director-in-pharmacy', 'therapists-grinding-herbs'];
-  const whyArt = [Tulsi, Neem, Turmeric, Lotus];
+  const arts = [MessageArt, LampArt, MortarArt];
 
   return (
     <main id="main" className="overflow-x-clip">
-      {/* ============ HERO ============ */}
-      <section className="relative">
-        <div className="hero-glow" aria-hidden="true" />
-        <div className="wrap relative grid items-center gap-8 pb-10 pt-6 md:pb-16 md:pt-12 lg:grid-cols-12 lg:gap-12 lg:pb-24">
-          <div className="lg:col-span-6">
-            <p className="fade-up inline-flex items-center gap-2 rounded-full border border-[var(--rule)] bg-card px-3 py-1.5 text-[0.82rem] font-semibold">
-              <span className="relative flex h-2 w-2"><span className="absolute h-full w-full animate-ping rounded-full bg-leaf opacity-60" /><span className="relative h-2 w-2 rounded-full bg-leaf" /></span>
-              {t.badge} · {c.site.city}
-            </p>
-            <h1 className="fade-up mt-5" style={{ ['--delay' as string]: '80ms', fontSize: 'clamp(2.6rem, 11vw, 5.4rem)', lineHeight: 0.98 }}><Rich t={t.h1} /></h1>
-            <p className="fade-up mt-5 max-w-lg text-[1.05rem] leading-relaxed text-moss md:text-[1.15rem]" style={{ ['--delay' as string]: '160ms' }}>{t.lead}</p>
-            <div className="fade-up mt-7 grid gap-3 sm:flex sm:flex-wrap" style={{ ['--delay' as string]: '240ms' }}>
-              <ConsultButton className="btn btn-primary justify-center !min-h-[58px] !px-7 text-[1.05rem]">{t.talk} <span className="rounded-full bg-ink px-2 py-0.5 text-[0.72rem] font-bold uppercase tracking-wide text-paper">{t.free}</span></ConsultButton>
-              <Link href={L('/products')} className="btn btn-ghost justify-center !min-h-[58px]">{t.shop}<Arrow /></Link>
+      {/* ============ FRONT PAGE ============ */}
+      <section className="wrap pt-4 md:pt-6">
+        <div className="dateline"><span>{c.site.city} · V.M. Chatram</span><span className="hidden sm:inline">{t.datePlaces}</span><a href={telHref(c.site.phones[0])} className="no-underline">{c.cta.call} {c.site.phones[0]}</a></div>
+
+        <div className="mt-8 grid gap-10 md:mt-12 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-7">
+            <p className="kicker fade-up">{t.kicker}</p>
+            <h1 className="lines mt-4" style={{ fontSize: 'var(--fs-hero)', lineHeight: 0.98 }}>
+              {c.home.hero.lines.map((l, i) => <span key={i} className="line" style={{ ['--i' as string]: i }}><span><Rich t={l} /></span></span>)}
+            </h1>
+            <hr className="rule2 mt-7 max-w-md" />
+            <p className="fade-up mt-7 max-w-2xl" style={{ ['--delay' as string]: '120ms', fontFamily: 'var(--display)', fontStyle: 'italic', fontSize: 'clamp(1.35rem, 2.6vw, 2rem)', lineHeight: 1.25 }}><Rich t={t.deck} /></p>
+            <p className="fade-up mt-5 max-w-xl text-[1.1rem] text-moss" style={{ ['--delay' as string]: '200ms' }}>{t.lead}</p>
+            <div className="fade-up mt-8 grid gap-3 sm:flex sm:flex-wrap" style={{ ['--delay' as string]: '280ms' }}>
+              <ConsultButton className="btn btn-primary justify-center !min-h-[56px]">{t.talk}<Arrow /></ConsultButton>
+              <a href={wa} className="btn btn-ghost justify-center !min-h-[56px]">{c.cta.freeConsult}</a>
             </div>
-            <dl className="fade-up mt-8 grid grid-cols-3 gap-2 sm:max-w-md" style={{ ['--delay' as string]: '320ms' }}>
-              {t.trust.map(([v, k]) => (
-                <div key={k} className="rounded-2xl bg-card px-3 py-3 text-center shadow-[var(--shadow)]">
-                  <dt className="sr-only">{k}</dt>
-                  <dd className="m-0 font-display text-[1.9rem] leading-none">{v}</dd>
-                  <p className="mt-1 text-[0.72rem] leading-tight text-moss">{k}</p>
-                </div>
-              ))}
-            </dl>
           </div>
 
-          <div className="relative lg:col-span-6">
-            <div className="clip-reveal relative mx-auto aspect-[4/4.4] w-full max-w-[30rem] overflow-hidden rounded-[28px] bg-ink">
-              <Image src={src(doc.image!)} alt={`${doc.name}, ${doc.jobTitle}`} fill priority fetchPriority="high" sizes="(min-width: 1024px) 40vw, 92vw" className="object-cover object-top" />
-              <div className="absolute inset-x-3 bottom-3 flex items-center gap-3 rounded-2xl bg-paper p-3 shadow-[var(--shadow)]">
-                <div className="grid h-11 w-11 flex-none place-items-center rounded-full bg-leaf text-paper"><Check /></div>
-                <div className="min-w-0">
-                  <p className="font-semibold leading-tight">{doc.name}</p>
-                  <p className="truncate text-[0.82rem] text-moss">{t.docCard} · {doc.experience}</p>
-                </div>
+          {/* the photograph is the LCP (smooth duotone: faces in a group shot would be lost to halftone dots), never animated */}
+          <div className="lg:col-span-5">
+            <figure className="fig relative">
+              <span className="tape" style={{ left: '38%', top: '-0.8rem' }} aria-hidden="true" />
+              <div className="frame relative aspect-[4/3.4] sm:aspect-[4/3] lg:aspect-[4/4.6]">
+                <Image src={src('images/clinic/team-at-shopfront.webp')} alt={c.home.hero.imageAlt} fill priority fetchPriority="high" sizes="(min-width: 1024px) 40vw, 94vw" className="object-cover" style={{ objectPosition: '50% 80%' }} />
               </div>
-            </div>
-            <div className="float-a absolute -left-1 top-6 hidden rounded-2xl bg-card px-4 py-3 shadow-[var(--shadow)] sm:block lg:-left-8">
-              <p className="text-[0.75rem] font-semibold uppercase tracking-wider text-moss">WhatsApp · {c.cta.call}</p>
-              <p className="mt-0.5 font-display text-[1.25rem] leading-tight">{t.bubble}</p>
-            </div>
-            <div className="float-b absolute -right-1 top-[38%] hidden w-28 overflow-hidden rounded-2xl bg-card p-2 shadow-[var(--shadow)] sm:block lg:-right-6">
-              <div className="relative aspect-square overflow-hidden rounded-xl"><Image src="/images/products/narmadha-bathing-soap.webp" alt="" fill sizes="112px" className="object-cover" /></div>
-              <p className="mt-1.5 text-center text-[0.75rem] font-semibold leading-tight">Narmadha</p>
+              <figcaption>{t.fig} {c.home.hero.caption}</figcaption>
+            </figure>
+            <div className="relative z-10 ml-auto mt-8 w-[92%] lg:w-[86%]">
+              <div className="torn" style={{ ['--torn' as string]: torn('bottom', 40, 9, 5) }}>
+                <p className="kicker">Stop press</p>
+                <p className="mt-2" style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: '1.55rem', lineHeight: 1.08 }}>{t.spTitle}</p>
+                <p className="mt-3 text-[1rem]">{t.spBody}</p>
+                <ConsultButton className="btn btn-primary mb-3 mt-5 justify-center">{t.talk}<Arrow /></ConsultButton>
+              </div>
+              <span className="stamp absolute -right-2 -top-8">{t.stamp}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ============ CONCERNS ============ */}
-      <section className="wrap pb-14 md:pb-20">
-        <div className="rounded-[28px] bg-ink p-5 text-paper sm:p-8 md:p-10">
+      {/* ============ CLASSIFIEDS: what is troubling you ============ */}
+      <section className="wrap py-16 md:py-24">
+        <div className="classifieds">
           <div className="flex flex-wrap items-end justify-between gap-3">
-            <h2 className="text-[2rem] leading-none md:text-[2.8rem]">{t.concernH}</h2>
-            <p className="text-[0.95rem] text-sage">{t.concernL}</p>
+            <h2 style={{ fontSize: 'var(--fs-h2)' }}>{t.concernH}</h2>
+            <p className="kicker">{t.concernL}</p>
           </div>
           <div className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
             {CONCERNS[locale].map(x => (
-              <ConsultButton key={x} concern={x} className="concern-tile">
-                <span>{x}</span><Arrow s={16} />
-              </ConsultButton>
+              <ConsultButton key={x} concern={x} className="concern-tile"><span>{x}</span><Arrow s={16} /></ConsultButton>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ============ HOW IT WORKS ============ */}
-      <section className="wrap pb-16 md:pb-24">
-        <h2 className="text-[2.1rem] leading-none md:text-[3rem]">{t.howH}</h2>
-        <ol className="m-0 mt-7 grid list-none gap-3 p-0 md:grid-cols-3 md:gap-5">
-          {t.how.map(([h, b], i) => (
-            <li key={h} className="relative flex gap-4 rounded-3xl bg-card p-5 shadow-[var(--shadow)] md:block md:p-7" data-reveal="" style={{ ['--d' as string]: `${i * 90}ms` }}>
-              <span className="grid h-12 w-12 flex-none place-items-center rounded-full bg-turmeric font-display text-[1.5rem] md:h-14 md:w-14">{i + 1}</span>
-              <div>
-                <h3 className="text-[1.5rem] leading-tight md:mt-5 md:text-[1.8rem]">{h}</h3>
-                <p className="mt-1.5 text-[0.95rem] leading-snug text-moss">{b}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* ============ THERAPIES ============ */}
-      <section className="pb-16 md:pb-24">
-        <div className="wrap flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h2 className="text-[2.1rem] leading-none md:text-[3rem]">{t.therH}</h2>
-            <p className="mt-2 max-w-md text-moss">{t.therL}</p>
-          </div>
-          <Link href={L('/treatments')} className="link font-semibold">{c.cta.viewAll} →</Link>
-        </div>
-        <div className="snap-row mt-7">
-          {therapies.map(th => (
-            <Link key={th.href} href={L(th.href)} className="ther-card group">
-              <Image src={src(th.img)} alt="" fill sizes="(min-width: 1024px) 22rem, 78vw" className="object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-              <div className="ther-shade" aria-hidden="true" />
-              <div className="absolute inset-x-0 bottom-0 p-5 text-paper">
-                <h3 className="text-[1.75rem] leading-none">{th.title}</h3>
-                <p className="mt-2 line-clamp-2 text-[0.9rem] text-[rgb(244_236_221/0.88)]">{th.body}</p>
-                <span className="mt-3 inline-flex items-center gap-2 text-[0.88rem] font-semibold">{c.cta.learnMore}<Arrow s={14} /></span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* ============ DOCTOR ============ */}
-      <section className="wrap pb-16 md:pb-24">
-        <div className="grid overflow-hidden rounded-[28px] bg-leaf text-paper md:grid-cols-2">
-          <div className="relative aspect-[4/3.6] md:aspect-auto md:min-h-[30rem]">
-            <Image src="/images/clinic/managing-director-in-pharmacy.webp" alt={doc.name} fill sizes="(min-width: 768px) 46vw, 92vw" className="object-cover" loading="lazy" />
-          </div>
-          <div className="flex flex-col justify-center p-6 sm:p-10">
-            <p className="text-[0.8rem] font-semibold uppercase tracking-[0.18em] text-sage">{t.docH}</p>
-            <h2 className="mt-3 text-[2.4rem] leading-none md:text-[3.2rem]">{doc.name}</h2>
-            <p className="mt-2 text-sage">{doc.jobTitle} · {doc.experience}</p>
-            <blockquote className="m-0 mt-6 border-l-2 border-turmeric pl-4 font-display text-[1.45rem] leading-snug md:text-[1.7rem]">“{t.docQ}”</blockquote>
-            <ConsultButton className="btn btn-primary mt-8 w-full justify-center sm:w-fit">{t.docCta}<Arrow /></ConsultButton>
-          </div>
-        </div>
-      </section>
-
-      {/* ============ SHOP ============ */}
-      <section className="wrap pb-16 md:pb-24">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h2 className="text-[2.1rem] leading-none md:text-[3rem]">{t.shopH}</h2>
-            <p className="mt-2 max-w-lg text-moss">{t.shopL}</p>
-          </div>
-          <Link href={L('/products')} className="link hidden font-semibold sm:inline-block">{t.shopAll} →</Link>
-        </div>
-        <div className="mt-7 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          {featured.map(p => <ProductCard key={p.slug} p={p} />)}
-        </div>
-        <Link href={L('/products')} className="btn btn-ghost mt-6 w-full justify-center sm:hidden">{t.shopAll}<Arrow /></Link>
-      </section>
-
-      {/* ============ WHY US ============ */}
-      <section className="bg-mint py-16 md:py-24">
+      {/* ============ 01 STORY: image pins, text scrolls ============ */}
+      <section id="story" className="alt py-20 md:py-32" data-story>
         <div className="wrap">
-          <h2 className="text-[2.1rem] leading-none md:text-[3rem]">{t.whyH}</h2>
-          <ul className="m-0 mt-8 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-            {t.why.map(([h, b], i) => {
-              const Art = whyArt[i];
-              return (
-                <li key={h} className="flex gap-4 rounded-3xl bg-card p-5 shadow-[var(--shadow)] lg:block lg:p-6" data-reveal="" style={{ ['--d' as string]: `${i * 80}ms` }}>
-                  <Art className="h-14 w-auto flex-none text-leaf lg:h-20" />
-                  <div><h3 className="text-[1.4rem] leading-tight lg:mt-4">{h}</h3><p className="mt-1 text-[0.93rem] leading-snug text-moss">{b}</p></div>
-                </li>
-              );
-            })}
-          </ul>
+          <Sec n="01" label={t.storyTag} />
+          <div className="story-grid mt-12">
+            <div className="story-visual" aria-hidden="true">
+              {story.map((st, i) => (
+                <div key={st.image} className="frame" data-frame data-on={i === 0}>
+                  <Image src={ht(st.image)} alt="" fill sizes="50vw" className="object-cover" loading="lazy" />
+                </div>
+              ))}
+            </div>
+            <div className="story-steps">
+              {story.map((st, i) => (
+                <article key={st.title} data-step>
+                  <figure className="story-mobile-fig fig" data-reveal="">
+                    <div className="frame relative aspect-[4/3]"><Image src={ht(st.image)} alt={st.alt} fill sizes="92vw" className="object-cover" loading="lazy" /></div>
+                  </figure>
+                  <p className="kicker">0{i + 1} · {st.kicker}</p>
+                  <h3 className="mt-3" data-lines=""><span className="line"><span><Rich t={st.title} /></span></span></h3>
+                  <p className="body mt-5 max-w-md text-[1.12rem]">{st.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ============ PLACE ============ */}
-      <section className="py-16 md:py-24">
-        <div className="wrap flex flex-wrap items-end justify-between gap-3">
-          <h2 className="text-[2.1rem] leading-none md:text-[3rem]">{t.placeH}</h2>
+      {/* ============ 02 HOW IT WORKS ============ */}
+      <section id="how" className="py-20 md:py-32">
+        <div className="wrap">
+          <Sec n="02" label={t.howTag} />
+          <h2 className="mt-8 max-w-3xl" data-lines="" style={{ fontSize: 'var(--fs-h1)' }}><span className="line"><span>{t.howH}</span></span></h2>
+          <div className="relative mt-14">
+            <svg className="botanical drawline pointer-events-none absolute left-0 top-[4.5rem] hidden w-full text-moss md:block" viewBox="0 0 1000 60" data-draw="" aria-hidden="true" focusable="false" style={{ strokeWidth: 1.2 }}>
+              <path pathLength={1} d="M0 30C120 -6 230 66 340 30S560 -6 670 30S890 66 1000 30" />
+            </svg>
+            <ol className="relative m-0 grid list-none gap-14 p-0 md:grid-cols-3 md:gap-10">
+              {t.how.map(([h, b], i) => {
+                const Art = arts[i];
+                return (
+                  <li key={h} className={i === 1 ? 'md:mt-14' : i === 2 ? 'md:mt-5' : ''} data-reveal="" style={{ ['--d' as string]: `${i * 110}ms` }}>
+                    <div className="patch inline-block pr-4"><Art className="h-32 w-auto text-ink" /></div>
+                    <p className="kicker mt-5">0{i + 1}</p>
+                    <h3 className="mt-2" style={{ fontSize: 'var(--fs-h3)' }}>{h}</h3>
+                    <p className="mt-3 max-w-xs text-moss">{b}</p>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ 03 THERAPIES: leaves on one cord ============ */}
+      <section className="alt py-20 md:py-32">
+        <div className="wrap">
+          <Sec n="03" label={t.therTag} />
+          <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-14">
+            <div className="lg:col-span-4">
+              <h2 style={{ fontSize: 'var(--fs-h1)' }}>{t.therH}</h2>
+              <p className="mt-5 max-w-sm text-moss">{t.therL}</p>
+              <p className="hand mt-6 hidden lg:block">{locale === 'ta' ? 'ஒரு இலையைத் தொடுங்கள் →' : 'tap a leaf →'}</p>
+              <Tulsi className="mt-6 hidden h-40 w-auto text-moss lg:block" />
+            </div>
+            <nav className="bundle lg:col-span-8" aria-label={t.therH}>
+              {therapies.map((th, i) => (
+                <Link key={th.href} href={L(th.href)}>
+                  <span className="n">0{i + 1}</span><span className="t">{th.title}</span><span className="d line-clamp-2 max-w-[18rem]">{th.body}</span>
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ 04 THE DOCTOR ============ */}
+      <section className="py-20 md:py-32">
+        <div className="wrap">
+          <Sec n="04" label={t.docTag} />
+          <div className="mt-12 grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+            <figure className="fig lg:col-span-5">
+              <span className="tape" style={{ left: '38%', top: '-0.8rem' }} aria-hidden="true" />
+              <div className="frame relative aspect-[4/5] bg-ink">
+                {doc.image && <Image src={src(doc.image)} alt={`${doc.name}, ${doc.jobTitle}`} fill sizes="(min-width: 1024px) 40vw, 92vw" className="object-cover object-top" loading="lazy" />}
+              </div>
+              <figcaption>{doc.name} · {doc.jobTitle}</figcaption>
+            </figure>
+            <div className="lg:col-span-7">
+              <h2 style={{ fontSize: 'var(--fs-h1)' }}>{t.docH}</h2>
+              <blockquote className="m-0 mt-8 border-l-[3px] border-ink pl-6" style={{ fontFamily: 'var(--display)', fontStyle: 'italic', fontSize: 'clamp(1.5rem, 3vw, 2.4rem)', lineHeight: 1.25 }}>“{t.docQ}”</blockquote>
+              <p className="kicker mt-6">{doc.name} · {doc.jobTitle}</p>
+              <ConsultButton className="btn btn-primary mt-8 w-full justify-center sm:w-fit">{t.docCta}<Arrow /></ConsultButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ 05 PHARMACY: labelled jars ============ */}
+      <section className="alt py-20 md:py-32">
+        <div className="wrap">
+          <Sec n="05" label={t.shopTag} />
+          <div className="mt-10 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h2 style={{ fontSize: 'var(--fs-h1)' }}>{t.shopH}</h2>
+              <p className="mt-4 max-w-lg text-moss">{t.shopL}</p>
+            </div>
+            <Link href={L('/products')} className="link hidden font-semibold sm:inline-block">{t.shopAll} →</Link>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+            {featured.map(p => <ProductCard key={p.slug} p={p} />)}
+          </div>
+          <Link href={L('/products')} className="btn btn-ghost mt-8 w-full justify-center sm:hidden">{t.shopAll}<Arrow /></Link>
+        </div>
+      </section>
+
+      {/* ============ 06 THE PLACE ============ */}
+      <section className="py-20 md:py-32">
+        <div className="wrap flex flex-wrap items-end justify-between gap-4">
+          <div><Sec n="06" label={t.placeTag} /><h2 className="mt-8" style={{ fontSize: 'var(--fs-h1)' }}>{t.placeH}</h2></div>
           <Link href={L('/gallery')} className="link font-semibold">{c.nav.gallery} →</Link>
         </div>
-        <div className="snap-row mt-7">
+        <div className="snap-row mt-10">
           {gallery.map(g => (
-            <Link key={g} href={L('/gallery')} className="relative aspect-[4/5] w-[62vw] max-w-[17rem] flex-none snap-start overflow-hidden rounded-3xl bg-paper2">
-              <Image src={`/images/clinic/${g}.webp`} alt="" fill sizes="17rem" className="object-cover" loading="lazy" />
+            <Link key={g} href={L('/gallery')} className="fig relative aspect-[4/5] w-[62vw] max-w-[17rem] flex-none snap-start border border-ink bg-paper2 p-[5px]">
+              <span className="relative block h-full w-full"><Image src={src(`images/clinic/${g}.webp`)} alt="" fill sizes="17rem" className="object-cover" loading="lazy" /></span>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* ============ FAQ ============ */}
-      <section className="wrap grid gap-8 pb-16 md:grid-cols-12 md:pb-24">
-        <h2 className="text-[2.1rem] leading-none md:col-span-4 md:text-[3rem]">{t.faqH}</h2>
+      {/* ============ 07 FAQ ============ */}
+      <section className="wrap grid gap-10 pb-16 md:grid-cols-12 md:pb-24">
+        <div className="md:col-span-4"><Sec n="07" label={t.faqTag} /><h2 className="mt-8" style={{ fontSize: 'var(--fs-h2)' }}>{t.faqH}</h2><Lotus className="mt-8 hidden h-32 w-auto text-moss md:block" /></div>
         <div className="md:col-span-8">
           {c.faq.map(f => (
             <details key={f.q} className="faq-card">
               <summary>{f.q}<svg className="plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg></summary>
-              <p className="pb-5 pr-6 text-[0.98rem] text-moss">{f.a}</p>
+              <p className="max-w-xl pb-6 pr-6 text-[1.05rem] text-moss">{f.a}</p>
             </details>
           ))}
         </div>
       </section>
 
-      {/* ============ END CTA ============ */}
-      <section className="wrap pb-6">
-        <div className="relative overflow-hidden rounded-[28px] bg-ink px-6 py-10 text-center text-paper sm:px-10 md:py-16">
-          <div className="mx-auto mb-6 flex w-fit -space-x-3">
-            {['images/doctors/s-rajkapoor.webp', 'images/clinic/therapists-in-white-coats.webp', 'images/doctors/mrs-r-shanthi.webp'].map(i => (
-              <div key={i} className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-ink bg-paper2"><Image src={src(i)} alt="" fill sizes="56px" className="object-cover object-top" loading="lazy" /></div>
-            ))}
-          </div>
-          <h2 className="text-[2.3rem] leading-none md:text-[3.4rem]">{t.endH}</h2>
-          <p className="mx-auto mt-4 max-w-md text-[rgb(244_236_221/0.85)]">{t.endL}</p>
-          <ConsultButton className="btn btn-primary mx-auto mt-8 w-full max-w-sm justify-center !min-h-[58px] text-[1.05rem]">{t.talk}<Arrow /></ConsultButton>
-          <p className="mt-4 text-[0.92rem] text-sage">{t.orCall} <a href={telHref(c.site.phones[0])} className="font-semibold text-paper underline underline-offset-4">{c.site.phones[0]}</a></p>
+      {/* ============ closing line ============ */}
+      <section className="wrap pb-6 pt-4 text-center">
+        <div className="text-moss"><KolamRule /></div>
+        <p className="mx-auto mt-10 max-w-4xl" style={{ fontFamily: 'var(--display)', fontWeight: 700, fontSize: 'var(--fs-h1)', lineHeight: 1.02 }}><Rich t={t.endH} /></p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <ConsultButton className="btn btn-primary justify-center">{t.talk}<Arrow /></ConsultButton>
+          <span className="text-moss">{t.orCall}</span>
+          <a href={telHref(c.site.phones[0])} className="link text-[1.2rem] font-semibold">{c.site.phones[0]}</a>
         </div>
       </section>
     </main>

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import '../globals.css';
-import { instrument, hanken } from '@/lib/fonts-latin';
+import { oldstd, newsreader, typew, hand } from '@/lib/fonts-latin';
 import { SITE_URL, catalogue, localePath } from '@/lib/content';
 import CartProvider from '@/components/cart/CartProvider';
 import SiteHeader from '@/components/SiteHeader';
@@ -9,11 +9,11 @@ import ActionBar from '@/components/ActionBar';
 import Motion from '@/components/Motion';
 
 export const metadata: Metadata = { metadataBase: new URL(SITE_URL), icons: { icon: [{ url: '/images/brand/favicon-32.png', sizes: '32x32', type: 'image/png' }, { url: '/images/brand/icon-192.png', sizes: '192x192', type: 'image/png' }], apple: '/images/brand/apple-touch-icon.png' }, manifest: '/site.webmanifest', robots: { index: false, follow: false } /* staging: switched on in the SEO phase */ };
-export const viewport: Viewport = { themeColor: '#F4ECDD', width: 'device-width', initialScale: 1 };
+export const viewport: Viewport = { themeColor: '#E9E6CF', width: 'device-width', initialScale: 1 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${instrument.variable} ${hanken.variable}`}>
+    <html lang="en" className={`${oldstd.variable} ${newsreader.variable} ${typew.variable} ${hand.variable}`}>
       <body>
         <CartProvider locale="en" catalogue={catalogue('en')} consultHref={localePath('en', '/consult')}>
         <a href="#main" className="skip-link">Skip to content</a>

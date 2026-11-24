@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ProductArt from './ProductArt';
 import Link from 'next/link';
 import { type Locale, getContent, localePath, waLink, consultMsg } from '@/lib/content';
 import { ui, productMeta } from '@/lib/ui';
@@ -25,7 +26,7 @@ export default function ProductDetailView({ locale, slug }: { locale: Locale; sl
       <section className="wrap grid gap-10 pb-20 pt-10 md:grid-cols-12 md:gap-14 md:pb-28 md:pt-14">
         <figure className="m-0 md:col-span-6 lg:col-span-7">
           <div className="relative aspect-square overflow-hidden rounded-3xl bg-paper2 md:sticky md:top-28">
-            <Image src={`/${p.image}`} alt={p.name} fill priority sizes="(min-width: 1024px) 54vw, (min-width: 768px) 48vw, 92vw" className="object-cover" />
+            <ProductArt p={p} alt={p.name} priority sizes="(min-width: 1024px) 54vw, (min-width: 768px) 48vw, 92vw" />
             <span className="pcard-tag">{p.category}</span>
           </div>
         </figure>
@@ -87,7 +88,7 @@ export default function ProductDetailView({ locale, slug }: { locale: Locale; sl
               <li key={r.slug} className="pcard">
                 <Link href={href} className="pcard-img" tabIndex={-1} aria-hidden="true">
                   <span className="pcard-tag">{r.category}</span>
-                  <Image src={`/${r.image}`} alt="" fill sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 92vw" loading="lazy" />
+                  <ProductArt p={r} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 92vw" />
                 </Link>
                 <h3 className="mt-5"><Link href={href}>{r.name}</Link></h3>
                 <p className="mt-2 flex-1 text-[0.98rem] text-moss">{r.summary}</p>

@@ -63,3 +63,20 @@ Live at `/moodboard` (isolated route group `web/src/app/(board)`, its own layout
 Palette is vintage light greens (newsprint #E9E6CF, celadon #D3DDC0, sage #B4C3A0, palm leaf #D4CF9C, ink green #2A3E30, stamp red-brown #94402C). Contrast computed with `tools/contrast2.mjs`; moss deepened to 5.4:1; turmeric limited to tiny fills; all buttons ink green.
 Photo treatments are baked with `tools/halftone.mjs` (duotone and 45-degree halftone). Halftone files are 270-390 KB: over budget, production versions must be coarser and under 150 KB.
 No overflow from 360 to 1440 px (`tools/overflow.mjs`).
+
+---
+## Gazette restyle (branch `feature/gazette-design`), applied to the real site
+Applied from the approved mood board to the home page, header/footer shell, product cards and product pages, cart drawer, the talk-to-the-doctor sheet, FAQ, forms and the phone bottom bar. All cart, request, tracking and doctor-desk logic is unchanged; only the visual layer moved.
+
+**What changed**
+- Tokens: newsprint, aged newsprint, celadon, sage, pistachio, palm leaf, faded ink green, stamp red-brown (`web/src/app/globals.css`, `tailwind.config.ts`). Corners are 2-3 px, shadows are flat 2/3 px offsets, no blur, no gradients, no glow.
+- Type: Old Standard TT headlines, Newsreader text, Special Elite typewriter for labels and buttons, Caveat for rare margin notes; Tamil uses Tiro Tamil (display) and Noto Serif Tamil (text).
+- Section tags are palm-leaf strips; treatments are leaves strung on one cord; the front page has a dateline, torn "Stop press" slip, tape, rubber stamp and a classifieds box for "What is troubling you?".
+- Photographs: every photo is baked to a green duotone (`tools/treat.mjs`); photos of 900 px or more also get a halftone twin under 150 KB (`*.ht.webp`). Halftone is used for close-up shots; the group hero uses the smooth duotone because halftone would lose faces.
+- Products: the old posters carry health-claim text, so only the clean soap packshot is shown as a photo; every other product is a drawn apothecary jar with a paper label (`web/src/components/shop/ProductArt.tsx`).
+- Removed from the home page: the stat tiles ("18+ years of practice" etc.), the "Free consultation call" badge, the glowing blob, floating cards, and "Shop herbal remedies" wording.
+
+**Checks**
+- `tools/sweep.mjs`: 16 routes x 6 widths (360-1440 px), English and Tamil: 0 horizontal-overflow problems.
+- `tools/perf.mjs` (slow 4G, 4x CPU slowdown, production build): LCP 0.9-1.8 s, CLS < 0.01, 520-610 KB, no motion libraries on phones.
+- `tools/states.mjs` screenshots the sheet, cart drawer, product and Tamil states. Screenshots: `design/gazette/`.

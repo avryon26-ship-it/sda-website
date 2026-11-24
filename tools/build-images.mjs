@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { manifest, MAX_W, MAX_KB, excludedByPath, POSTER_REASON } from './manifest.mjs';
+import { duotone, halftone } from './treat.mjs';
 
 const [R, C] = process.argv.slice(2);
 if (!R || !C) { console.error('usage: node build-images.mjs <assets> <content>'); process.exit(1); }
@@ -28,14 +29,38 @@ async function encode(srcPath, outPath, maxW, alpha, grade) {
   throw new Error('cannot fit under budget: ' + srcPath);
 }
 
+async function encodeDuotone(srcPath, outPath, maxW, alpha) {
+  let width = maxW;
+  for (let attempt = 0; attempt < 8; attempt++) {
+    for (let q = 78; q >= 40; q -= 6) {
+      const d = await duotone(srcPath, width);
+      const buf = await d.sharp.webp({ quality: q, effort: 5, alphaQuality: 80, smartSubsample: true }).toBuffer();
+      if (buf.length <= MAX_KB * 1024) { fs.mkdirSync(path.dirname(outPath), { recursive: true }); fs.writeFileSync(outPath, buf); return { q, width, bytes: buf.length }; }
+    }
+    width = Math.round(width * 0.85);
+  }
+  throw new Error('cannot fit under budget: ' + srcPath);
+}
+/** Halftone twin (*.ht.webp) must stay under 150 KB. */
+async function encodeHalftone(srcPath, outPath) {
+  for (const [w, cell] of [[1000, 9], [1000, 10], [900, 10], [900, 11], [800, 11]]) {
+    const h = await halftone(srcPath, w, cell);
+    for (const q of [70, 60, 50]) { const buf = await h.sharp.webp({ quality: q, effort: 5 }).toBuffer(); if (buf.length <= 150 * 1024) { fs.writeFileSync(outPath, buf); return { bytes: buf.length, w: h.width, h: h.height }; } }
+  }
+  return null;
+}
 const rows = [];
 for (const m of manifest) {
   const sp = path.join(R, m.src);
   if (!fs.existsSync(sp)) { console.error('MISSING', m.src); process.exit(1); }
   const meta = await sharp(sp).metadata();
-  const r = await encode(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha, m.grade);
+  // every photograph gets the green duotone; logo, products and brand art are left in their own colours
+  const toned = m.grade || m.cat === 'people';
+  const r = toned ? await encodeDuotone(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha) : await encode(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha, false);
+  let ht = null;
+  if (m.cat === 'clinic' && m.status === 'include' && meta.width >= 900) { const hp = m.out.replace(/\.webp$/, '.ht.webp'); const hr = await encodeHalftone(sp, path.join(IMG, hp)); if (hr) ht = { file: 'images/' + hp, kb: Math.round(hr.bytes / 1024), width: hr.w, height: hr.h }; }
   const o = await sharp(path.join(IMG, m.out)).metadata();
-  rows.push({ ...m, srcW: meta.width, srcH: meta.height, outW: o.width, outH: o.height, kb: Math.round(r.bytes / 1024) });
+  rows.push({ ...m, ht, srcW: meta.width, srcH: meta.height, outW: o.width, outH: o.height, kb: Math.round(r.bytes / 1024) });
 }
 
 // -------- brand icons (small PNGs, copied as-is) ----------------------------
@@ -51,7 +76,7 @@ for (const [s, d] of icons) { const dp = path.join(IMG, d); fs.mkdirSync(path.di
 
 // -------- machine-readable manifest ----------------------------------------
 fs.writeFileSync(path.join(C, 'images.json'), JSON.stringify(rows.map(r => ({
-  file: 'images/' + r.out, width: r.outW, height: r.outH, kb: r.kb, status: r.status, category: r.cat, alt: { en: r.en, ta: r.ta }, source: r.src, note: r.note ?? null,
+  file: 'images/' + r.out, ht: r.ht, width: r.outW, height: r.outH, kb: r.kb, status: r.status, category: r.cat, alt: { en: r.en, ta: r.ta }, source: r.src, note: r.note ?? null,
 })), null, 2) + '\n');
 
 // -------- photo-sources.md ---------------------------------------------------

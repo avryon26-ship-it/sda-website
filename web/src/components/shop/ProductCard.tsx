@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ProductArt from './ProductArt';
 import Link from 'next/link';
 import { AddButton } from '../cart/CartButtons';
 
@@ -9,7 +9,7 @@ export default function ProductCard({ p, priority }: { p: CardProduct; priority?
   return (
     <article className="pc group">
       <Link href={p.href} className="pc-img" tabIndex={-1} aria-hidden="true">
-        <Image src={`/${p.image}`} alt="" fill sizes="(min-width: 1024px) 24vw, (min-width: 640px) 31vw, 46vw" priority={priority} loading={priority ? undefined : 'lazy'} />
+        <ProductArt p={p} sizes="(min-width: 1024px) 24vw, (min-width: 640px) 31vw, 46vw" priority={priority} />
         <span className="pc-tag">{p.category}</span>
       </Link>
       <div className="flex flex-1 flex-col p-3 sm:p-4">

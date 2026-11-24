@@ -99,3 +99,13 @@ Sources are paths inside the old `public_html/pages/`. Quotes are shortened.
 | Footer | Address, three phone numbers, Facebook link, Google Maps search link | Confirm all are current. Opening hours are a labelled placeholder |
 | Panchakarma page | Five actions and what each is "traditionally associated with"; contraindication note | Doctor to confirm accuracy and extend the caution list |
 | Whole site | `noindex` is on while this is staging | Must be switched off at launch (see launch checklist) |
+
+## 4. Wording from the consultation-cart work (not written by the design pass): confirm each
+| Where | Statement | Why it needs confirming |
+|---|---|---|
+| Talk-to-the-doctor sheet | "Free call back. No payment, no app." | Is the call free? |
+| Home hero and closing line | "Free consultation on WhatsApp" (your brief's wording) | Same question |
+| Cart, product pages, how-it-works | "He calls you... then you collect from the pharmacy" | Confirm the real process: who calls, in what time, and that products may be collected without a visit |
+| Home hero | "Ayurveda, Siddha and Varma care" | Confirm Siddha is offered (the shopfront says Siddha) |
+| Doctor desk demo data | Seeded demo requests contain invented patient names, ailments and medicines (all marked demo) | Delete before launch; never leave invented medical data on a live system |
+| Doctor desk | Stores patient name, phone, age, concern and medicines in `web/data/requests.json` | Personal health data: needs a lawful basis, a privacy notice, backups and a real database before launch |

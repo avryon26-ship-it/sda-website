@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import Image from 'next/image';
+import ProductArt from '../shop/ProductArt';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { Locale } from '@/lib/content';
@@ -83,7 +83,7 @@ function Toast({ slug, onView }: { slug: string; onView: () => void }) {
   if (!p) return null;
   return (
     <div className="cart-toast" role="status">
-      <div className="relative h-12 w-12 flex-none overflow-hidden rounded-[3px] bg-paper2"><Image src={`/${p.image}`} alt="" fill sizes="48px" className="object-cover" /></div>
+      <div className="relative h-12 w-12 flex-none overflow-hidden rounded-[3px] bg-paper2"><ProductArt p={p} sizes="48px" /></div>
       <div className="min-w-0 flex-1">
         <p className="label text-sage">{t.added} · {t.items(count)}</p>
         <p className="truncate text-[0.95rem]">{p.name}</p>
@@ -145,7 +145,7 @@ function CartDrawer({ consultHref }: { consultHref: string }) {
                 return (
                   <li key={l.slug} className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-[var(--rule)] py-5">
                     <Link href={`${shop}/${p.slug}`} className="relative aspect-square overflow-hidden rounded-[3px] bg-paper2" tabIndex={isOpen ? 0 : -1}>
-                      <Image src={`/${p.image}`} alt="" fill sizes="72px" className="object-cover" />
+                      <ProductArt p={p} sizes="72px" />
                     </Link>
                     <div className="min-w-0">
                       <p className="label text-moss">{p.category}</p>
