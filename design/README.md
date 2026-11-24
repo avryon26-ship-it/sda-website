@@ -56,3 +56,10 @@ Easing `cubic-bezier(0.22, 1, 0.36, 1)`; reveals 600-1000 ms, hovers 200-320 ms;
 - The supplied photos are saturated and uneven even after a warm grade.
 - Three photos show patients being treated; the portrait of the Managing Director in the story is an illustrated backdrop shot. All need consent/replacement.
 - Nav links to pages not yet built (About, Treatments, Offerings, Products, Gallery, Contact) 404 until those pages exist.
+
+---
+## Mood board: "The Gazette on palm leaf" (hybrid), awaiting approval
+Live at `/moodboard` (isolated route group `web/src/app/(board)`, its own layout and CSS; no live page was changed). Screenshots: `design/moodboard/moodboard-1440.jpg`, `moodboard-390.jpg`.
+Palette is vintage light greens (newsprint #E9E6CF, celadon #D3DDC0, sage #B4C3A0, palm leaf #D4CF9C, ink green #2A3E30, stamp red-brown #94402C). Contrast computed with `tools/contrast2.mjs`; moss deepened to 5.4:1; turmeric limited to tiny fills; all buttons ink green.
+Photo treatments are baked with `tools/halftone.mjs` (duotone and 45-degree halftone). Halftone files are 270-390 KB: over budget, production versions must be coarser and under 150 KB.
+No overflow from 360 to 1440 px (`tools/overflow.mjs`).

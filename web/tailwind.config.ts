@@ -8,6 +8,7 @@ export default {
       paper: 'var(--paper)', paper2: 'var(--paper-2)',
       ink: 'var(--ink)', moss: 'var(--moss)', sage: 'var(--sage)',
       turmeric: 'var(--turmeric)', clay: 'var(--clay)',
+      card: 'var(--card)', leaf: 'var(--leaf)', mint: 'var(--mint)',
     },
     extend: {
       fontFamily: { display: ['var(--display)', 'Georgia', 'serif'], body: ['var(--body)', 'system-ui', 'sans-serif'] },

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { altPath, type Locale } from '@/lib/content';
 import { CartButton } from './cart/CartButtons';
+import { useCart } from './cart/CartProvider';
 
 type Item = { href: string; label: string };
 export default function HeaderClient({ locale, home, title, sub, items, labels, wa, call }: {
@@ -24,6 +25,8 @@ export default function HeaderClient({ locale, home, title, sub, items, labels, 
     return () => document.removeEventListener('keydown', onKey);
   }, [open]);
   const alt = altPath(locale, pathname);
+  const { openConsult } = useCart();
+  const talk = locale === 'ta' ? 'மருத்துவரிடம் பேசுங்கள்' : 'Talk to the doctor';
   return (
     <header className="site-header">
       <div className="wrap bar">
@@ -35,7 +38,7 @@ export default function HeaderClient({ locale, home, title, sub, items, labels, 
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
           <Link href={alt} lang={locale === 'en' ? 'ta' : 'en'} hrefLang={locale === 'en' ? 'ta' : 'en'} className="langlink">{labels.language}</Link>
-          <a href={wa} className={`btn btn-primary hidden !min-h-[46px] !px-5 text-[0.92rem] ${locale === 'ta' ? '2xl:inline-flex' : 'xl:inline-flex'}`}>{labels.consult}</a>
+          <button type="button" onClick={() => openConsult()} className={`btn btn-primary hidden !min-h-[46px] !px-5 text-[0.92rem] ${locale === 'ta' ? '2xl:inline-flex' : 'lg:inline-flex'}`}>{talk}</button>
           <CartButton />
           <button ref={btn} type="button" className={`menu-btn ${locale === 'ta' ? 'xl:hidden' : 'lg:hidden'}`} aria-expanded={open} aria-controls="menu-overlay" onClick={() => setOpen(true)}>
             <span className="sr-only">{labels.menu}</span>
@@ -56,7 +59,8 @@ export default function HeaderClient({ locale, home, title, sub, items, labels, 
             <Link key={i.href} href={i.href} className="big" tabIndex={open ? 0 : -1}><span className="n">0{n + 1}</span>{i.label}</Link>
           ))}
           <div className="mt-10 grid gap-3">
-            <a href={wa} className="btn btn-primary justify-center" tabIndex={open ? 0 : -1}>{labels.consult}</a>
+            <button type="button" onClick={() => { setOpen(false); openConsult(); }} className="btn btn-primary justify-center" tabIndex={open ? 0 : -1}>{talk}</button>
+            <a href={wa} className="btn btn-ghost justify-center" tabIndex={open ? 0 : -1}>WhatsApp</a>
             <a href={call} className="btn btn-ghost justify-center" tabIndex={open ? 0 : -1}>{labels.callUs}</a>
           </div>
         </nav>

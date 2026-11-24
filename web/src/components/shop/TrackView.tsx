@@ -54,7 +54,7 @@ export default async function TrackView({ locale, id }: { locale: Locale; id: st
           </div>
         </div>
 
-        <aside className="lg:col-span-4 lg:col-start-9">
+        {r.items.length > 0 && (<aside className="lg:col-span-4 lg:col-start-9">
           <p className="label text-moss">{t.summary} · {t.items(r.items.reduce((s, i) => s + i.qty, 0))}</p>
           <ul className="m-0 mt-5 list-none border-t border-[var(--ink)] p-0">
             {r.items.map(i => {
@@ -70,7 +70,7 @@ export default async function TrackView({ locale, id }: { locale: Locale; id: st
           </ul>
           <Link href={localePath(locale, '/products')} className="link mt-6 inline-block font-semibold">{t.continue} →</Link>
           <p className="mt-10 text-[0.88rem] text-moss">{locale === 'ta' ? 'இந்தப் பக்கத்தைச் சேமித்து வைக்கவும். மருத்துவர் ஆலோசனை கூறியதும் இங்கே புதுப்பிக்கப்படும்.' : 'Bookmark this page. It updates as soon as the doctor records his advice.'}</p>
-        </aside>
+        </aside>)}
       </section>
     </main>
   );

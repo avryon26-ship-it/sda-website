@@ -24,7 +24,7 @@ export default function ProductDetailView({ locale, slug }: { locale: Locale; sl
 
       <section className="wrap grid gap-10 pb-20 pt-10 md:grid-cols-12 md:gap-14 md:pb-28 md:pt-14">
         <figure className="m-0 md:col-span-6 lg:col-span-7">
-          <div className="relative aspect-square overflow-hidden rounded-[3px] bg-paper2 md:sticky md:top-28">
+          <div className="relative aspect-square overflow-hidden rounded-3xl bg-paper2 md:sticky md:top-28">
             <Image src={`/${p.image}`} alt={p.name} fill priority sizes="(min-width: 1024px) 54vw, (min-width: 768px) 48vw, 92vw" className="object-cover" />
             <span className="pcard-tag">{p.category}</span>
           </div>

@@ -1,0 +1,113 @@
+/* Mood board: the Gazette on palm leaf. Self-contained; nothing here touches the live site. */
+.mb { --np: #e9e6cf; --np2: #dde0c4; --cel: #d3ddc0; --sage: #b4c3a0; --pist: #f2f3e1; --leaf: #d4cf9c; --leaf2: #c3bd85;
+  --ink: #2a3e30; --moss: #48623f; --stamp: #94402c; --tur: #c28a2c; --rule: rgb(42 62 48 / 0.28); --rule2: rgb(42 62 48 / 0.14);
+  --head: var(--f-oldstd), 'Times New Roman', serif; --text: var(--f-news), Georgia, serif; --typew: var(--f-type), 'Courier New', monospace; --hand: var(--f-hand), cursive;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16 0 0 0 0 .24 0 0 0 0 .18 0 0 0 .11 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --fibre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5'%3E%3Cpath d='M0 2.5h10' stroke='%232a3e30' stroke-opacity='.10' stroke-width='.7'/%3E%3C/svg%3E");
+  background-color: var(--np); background-image: var(--grain); color: var(--ink); font-family: var(--text); font-size: 1.125rem; line-height: 1.65; min-height: 100vh; }
+.mb *, .mb *::before, .mb *::after { box-sizing: border-box; }
+.mb h1, .mb h2, .mb h3, .mb h4 { font-family: var(--head); font-weight: 700; margin: 0; line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance; }
+.mb p { margin: 0; text-wrap: pretty; }
+.mb a { color: inherit; }
+.mb em { font-style: italic; }
+.mb-wrap { width: 100%; max-width: 78rem; margin: 0 auto; padding-inline: clamp(1rem, 4vw, 3rem); }
+.mb-typew { font-family: var(--typew); letter-spacing: 0.04em; }
+.mb-label { font-family: var(--typew); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.mb-hand { font-family: var(--hand); font-size: 1.45rem; line-height: 1.1; color: var(--stamp); }
+.mb-sec { padding-block: clamp(3rem, 7vw, 6rem); }
+.mb-sec.alt { background-color: var(--np2); background-image: var(--grain); }
+.mb-sec.dark { background-color: var(--ink); background-image: none; color: var(--np); }
+
+/* ----- newspaper rules ----- */
+.mb-rule { border: 0; border-top: 1px solid var(--ink); margin: 0; }
+.mb-rule2 { border: 0; height: 5px; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink); margin: 0; }
+.mb-colrule { border-left: 1px solid var(--rule); }
+.mb-dropcap::first-letter { font-family: var(--head); font-weight: 700; float: left; font-size: 4.2em; line-height: 0.8; padding: 0.06em 0.1em 0 0; color: var(--ink); }
+
+/* ----- masthead ----- */
+.mb-mast { text-align: center; padding-top: 1.25rem; }
+.mb-mast-ears { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.72rem; }
+.mb-ear { border: 1px solid var(--ink); padding: 0.45rem 0.7rem; max-width: 11rem; text-align: center; line-height: 1.35; }
+.mb-mast img { display: block; margin: 0.6rem auto; width: min(24rem, 62vw); height: auto; }
+.mb-dateline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.35rem 1.5rem; padding: 0.5rem 0; font-size: 0.74rem; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+
+/* ----- palm-leaf strip (ola): fibre lines, punched holes, string ----- */
+.mb-leaf { position: relative; display: block; background-color: var(--leaf); background-image: var(--fibre); border: 1px solid var(--leaf2); border-radius: 6px 26px 26px 6px / 6px 50% 50% 6px; padding: 0.9rem 3.2rem 0.9rem 3.1rem; color: var(--ink); }
+.mb-leaf::before, .mb-leaf::after { content: ''; position: absolute; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--np); border: 1px solid var(--leaf2); translate: 0 -50%; }
+.mb-leaf::before { left: 1.05rem; } .mb-leaf::after { right: 1.2rem; }
+.mb-leaf h3, .mb-leaf h2 { font-size: clamp(1.5rem, 3.4vw, 2.3rem); }
+.mb-bundle { position: relative; display: grid; gap: 0.35rem; padding-left: 0.2rem; }
+.mb-bundle::before { content: ''; position: absolute; left: calc(1.05rem + 5px); top: -14px; bottom: -14px; border-left: 2px solid var(--stamp); opacity: 0.8; z-index: 2; }
+.mb-bundle .mb-leaf { z-index: 1; }
+.mb-bundle .mb-leaf:nth-child(odd) { transform: rotate(-0.35deg); } .mb-bundle .mb-leaf:nth-child(even) { transform: rotate(0.4deg) translateX(6px); }
+.mb-bundle .mb-leaf { display: flex; align-items: baseline; gap: 1.2rem; }
+.mb-bundle .n { font-family: var(--typew); font-size: 0.78rem; letter-spacing: 0.12em; color: var(--moss); }
+.mb-bundle .t { font-family: var(--head); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; }
+
+/* ----- torn paper, tape, stamps ----- */
+.mb-paper { background-color: var(--pist); background-image: var(--grain); padding: 1.6rem; position: relative; filter: drop-shadow(2px 3px 0 rgb(42 62 48 / 0.16)); }
+.mb-torn { clip-path: var(--torn); }
+.mb-tape { position: absolute; width: 5.2rem; height: 1.5rem; background-color: rgb(180 195 160 / 0.78); background-image: var(--fibre); transform: rotate(-4deg); border-left: 1px dashed rgb(42 62 48 / 0.3); border-right: 1px dashed rgb(42 62 48 / 0.3); }
+.mb-stamp-rect { display: inline-block; border: 3px double var(--stamp); color: var(--stamp); padding: 0.45rem 0.9rem; font-family: var(--typew); letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.85rem; transform: rotate(-5deg); mix-blend-mode: multiply; opacity: 0.9; }
+.mb-fig { margin: 0; position: relative; }
+.mb-fig img { display: block; width: 100%; height: auto; }
+.mb-cap { font-family: var(--typew); font-size: 0.74rem; letter-spacing: 0.04em; margin-top: 0.5rem; padding-top: 0.4rem; border-top: 1px solid var(--rule); }
+.mb-frame { border: 1px solid var(--ink); padding: 6px; background: var(--pist); }
+
+/* ----- buttons ----- */
+.mb-btn { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 52px; padding: 0.8rem 1.5rem; background: var(--ink); color: var(--np); border: 2px solid var(--ink); font-family: var(--typew); font-size: 0.92rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; cursor: pointer; border-radius: 2px; }
+.mb-btn.ghost { background: transparent; color: var(--ink); }
+.mb a.mb-btn { color: var(--np); }
+.mb a.mb-btn.ghost { color: var(--ink); }
+.mb a.mb-btn:hover { color: var(--pist); }
+.mb a.mb-btn.ghost:hover { color: var(--np); }
+.mb-btn:hover { background: var(--stamp); border-color: var(--stamp); color: var(--pist); }
+.mb-btn.ghost:hover { background: var(--ink); color: var(--np); border-color: var(--ink); }
+
+/* ----- apothecary: jars and labels ----- */
+.mb-shelf { display: flex; align-items: flex-end; gap: clamp(0.8rem, 3vw, 2rem); padding-inline: 0.5rem; border-bottom: 3px solid var(--ink); background-image: var(--fibre); }
+.mb-jar { display: flex; flex-direction: column; align-items: center; }
+.mb-jar svg { display: block; width: 100%; height: auto; }
+.mb-label-paper { position: absolute; left: 12%; right: 12%; top: 38%; background: var(--pist); border: 1px solid var(--ink); outline: 2px solid var(--pist); outline-offset: -5px; text-align: center; padding: 0.55rem 0.35rem; }
+.mb-label-paper b { display: block; font-family: var(--head); font-size: 1.05rem; line-height: 1.05; }
+.mb-label-paper span { font-size: 0.6rem; }
+
+/* ----- prescription slip ----- */
+.mb-rx { background-color: var(--pist); background-image: var(--grain); border: 1px solid var(--ink); padding: 1.6rem 1.6rem 1.8rem 2.6rem; position: relative; }
+.mb-rx::before { content: ''; position: absolute; left: 1.7rem; top: 0; bottom: 0; border-left: 1px solid var(--stamp); opacity: 0.55; }
+.mb-rx .rx { font-family: var(--head); font-style: italic; font-size: 3.4rem; line-height: 1; color: var(--stamp); }
+.mb-field { display: grid; grid-template-columns: 6.5rem 1fr; align-items: end; gap: 0.5rem; margin-top: 1.1rem; font-family: var(--typew); font-size: 0.85rem; }
+.mb-field i { border-bottom: 1.5px dotted var(--ink); height: 1.6rem; }
+.mb-perf { border-top: 2px dashed var(--ink); margin: 1.4rem -1.6rem 0 -2.6rem; }
+
+.mb-swatch { border: 1px solid var(--rule); }
+.mb-swatch .chip { height: 6.5rem; display: flex; align-items: flex-end; padding: 0.6rem 0.8rem; font-family: var(--head); font-size: 1.4rem; }
+.mb-pillrow { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.mb-pill { border: 1px solid var(--ink); padding: 0.3rem 0.8rem; font-family: var(--typew); font-size: 0.78rem; letter-spacing: 0.08em; }
+
+.mb-front { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .mb-front { grid-template-columns: minmax(0, 2.4fr) minmax(0, 6fr) minmax(0, 3fr); gap: 0; } .mb-front > * { padding-inline: 1.6rem; } .mb-front > :first-child { padding-left: 0; } .mb-front > :last-child { padding-right: 0; } }
+.mb-cols2 { column-count: 1; column-gap: 1.8rem; column-rule: 1px solid var(--rule); }
+@media (min-width: 640px) { .mb-cols2 { column-count: 2; } }
+.mb-grid2 { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr); } @media (min-width: 800px) { .mb-grid2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.mb-grid3 { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); } @media (min-width: 800px) { .mb-grid3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.mb-grid4 { display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); } @media (min-width: 800px) { .mb-grid4 { grid-template-columns: repeat(4, 1fr); } }
+.mb .botanical { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.mb .botanical * { vector-effect: non-scaling-stroke; }
+.mb-ta { font-family: var(--f-tiro), 'Noto Serif Tamil', serif; }
+@keyframes mb-land { 0% { transform: rotate(-12deg) scale(1.5); opacity: 0; } 55% { transform: rotate(-7deg) scale(0.96); opacity: 1; } 100% { transform: rotate(-8deg) scale(1); opacity: 0.92; } }
+.mb-stampsvg { animation: mb-land 700ms cubic-bezier(0.22, 1, 0.36, 1) both; mix-blend-mode: multiply; }
+@media (prefers-reduced-motion: reduce) { .mb-stampsvg { animation: none; } }
+
+@media (max-width: 600px) {
+  .mb-ear { display: none; }
+  .mb-mast-ears { justify-content: center; }
+  .mb-leaf { padding: 0.8rem 2.4rem 0.8rem 2.4rem; }
+  .mb-leaf::before { left: 0.75rem; } .mb-leaf::after { right: 0.85rem; }
+  .mb-bundle .mb-leaf { flex-wrap: wrap; gap: 0.2rem 0.8rem; }
+  .mb-bundle .mb-leaf:nth-child(even) { transform: rotate(0.4deg); }
+  .mb-bundle::before { left: calc(0.75rem + 5px); }
+}
+.mb-shelf { overflow-x: auto; }
+.mb-shelf > * { flex: 0 0 auto; }
+.mb-mast, .mb-sec { overflow-x: clip; }

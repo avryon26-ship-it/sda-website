@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { Locale } from '@/lib/content';
 import { ui } from '@/lib/ui';
+import QuickConsult from './QuickConsult';
 
 export type CartProduct = { slug: string; name: string; category: string; image: string };
 export type Line = { slug: string; qty: number };
@@ -12,6 +13,7 @@ type Ctx = {
   lines: Line[]; count: number; products: Map<string, CartProduct>; locale: Locale; ready: boolean;
   add: (slug: string, qty?: number) => void; setQty: (slug: string, qty: number) => void; remove: (slug: string) => void; clear: () => void;
   has: (slug: string) => boolean; open: () => void; close: () => void; isOpen: boolean;
+  openConsult: (concern?: string) => void;
 };
 const CartCtx = createContext<Ctx | null>(null);
 const KEY = 'sda-cart-v1';
@@ -28,6 +30,8 @@ export default function CartProvider({ locale, catalogue, consultHref, children 
   const [ready, setReady] = useState(false);
   const [isOpen, setOpen] = useState(false);
   const [toast, setToast] = useState<{ slug: string; n: number } | null>(null);
+  const [consult, setConsult] = useState<{ open: boolean; concern?: string }>({ open: false });
+  const closeConsult = useCallback(() => setConsult(c => ({ ...c, open: false })), []);
   const products = useMemo(() => new Map(catalogue.map(p => [p.slug, p])), [catalogue]);
   const pathname = usePathname();
 
@@ -39,7 +43,7 @@ export default function CartProvider({ locale, catalogue, consultHref, children 
     return () => removeEventListener('storage', onStorage);
   }, []);
   useEffect(() => { if (ready) try { localStorage.setItem(KEY, JSON.stringify(lines)); } catch { /* ignore */ } }, [lines, ready]);
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => { setOpen(false); setConsult(c => ({ ...c, open: false })); }, [pathname]);
 
   const toastTimer = useRef<number>(undefined);
   const add = useCallback((slug: string, qty = 1) => {
@@ -60,11 +64,13 @@ export default function CartProvider({ locale, catalogue, consultHref, children 
   const value: Ctx = {
     lines: visible, count, products, locale, ready, add, setQty, remove, clear,
     has: s => visible.some(l => l.slug === s), open: () => setOpen(true), close: () => setOpen(false), isOpen,
+    openConsult: (concern?: string) => setConsult({ open: true, concern }),
   };
   return (
     <CartCtx.Provider value={value}>
       {children}
       <CartDrawer consultHref={consultHref} />
+      <QuickConsult open={consult.open} concern={consult.concern} locale={locale} onClose={closeConsult} />
       {toast && !isOpen && <Toast key={toast.n} slug={toast.slug} onView={() => { setToast(null); setOpen(true); }} />}
     </CartCtx.Provider>
   );

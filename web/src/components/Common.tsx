@@ -20,14 +20,14 @@ export function Crumbs({ locale, trail }: { locale: Locale; trail: { label: stri
 /** Oversized editorial page title used by every inner page. */
 export function PageHead({ locale, crumb, title, lead, kicker, children }: { locale: Locale; crumb: string; title: string; lead?: string; kicker?: string; children?: React.ReactNode }) {
   return (
-    <header className="wrap pb-14 pt-8 md:pb-20">
+    <header className="wrap pb-10 pt-6 md:pb-20 md:pt-8">
       <Crumbs locale={locale} trail={[{ label: crumb }]} />
-      <div className="mt-10 grid gap-8 md:mt-16 md:grid-cols-12">
+      <div className="mt-6 grid gap-4 md:mt-16 md:grid-cols-12 md:gap-8">
         <div className="md:col-span-8">
           {kicker && <p className="label text-moss">{kicker}</p>}
-          <h1 className="fade-up mt-4" style={{ fontSize: 'var(--fs-h1)', lineHeight: 1 }}><Rich t={title} /></h1>
+          <h1 className="fade-up mt-4" style={{ fontSize: 'clamp(2.4rem, 9vw, 6rem)', lineHeight: 1 }}><Rich t={title} /></h1>
         </div>
-        {lead && <p className="md:col-span-4 md:pt-6" style={{ fontSize: 'var(--fs-lead)', lineHeight: 1.55 }}>{lead}</p>}
+        {lead && <p className="text-moss md:col-span-4 md:pt-6" style={{ fontSize: 'var(--fs-lead)', lineHeight: 1.55 }}>{lead}</p>}
       </div>
       {children}
     </header>

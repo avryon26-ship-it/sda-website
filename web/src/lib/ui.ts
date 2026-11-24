@@ -191,3 +191,9 @@ export const productMeta: Record<string, { form: { en: string; ta: string }; use
   'narmadha-seerana-sanjeevi-sooranam': { form: { en: 'Sooranam', ta: 'சூரணம்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' } },
   'narmadha-dried-fig': { form: { en: 'Dried fruit', ta: 'உலர் பழம்' }, use: { en: 'Food', ta: 'உணவு' } },
 };
+
+/** Concerns offered as one-tap options (home page tiles and the call-back sheet). */
+export const CONCERNS = {
+  en: ['Back & joint pain', 'Neck pain', 'Skin problems', 'Hair fall', 'Digestion', 'PCOD', 'Stress & sleep', 'Diabetes support', 'Weight', 'Something else'],
+  ta: ['முதுகு & மூட்டு வலி', 'கழுத்து வலி', 'தோல் பிரச்சினை', 'முடி உதிர்தல்', 'செரிமானம்', 'PCOD', 'மன அழுத்தம் & தூக்கம்', 'சர்க்கரை நோய்', 'உடல் எடை', 'மற்றவை'],
+};

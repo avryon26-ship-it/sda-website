@@ -21,7 +21,7 @@ export function AboutView({ locale }: { locale: Locale }) {
       <PageHead locale={locale} crumb={c.nav.about} kicker={c.site.city} title={a.h1} lead={a.lead} />
       <section className="wrap grid gap-10 pb-24 md:grid-cols-12 md:pb-32">
         <figure className="m-0 md:col-span-6">
-          <div className="relative aspect-[4/5] overflow-hidden" data-parallax=""><Image src="/images/clinic/team-in-reception.webp" alt={T(locale, 'The Sri Dhanvanthri team at reception', 'வரவேற்பறையில் ஸ்ரீ தன்வந்திரி குழு')} fill priority sizes="(min-width: 768px) 46vw, 92vw" className="object-cover" /></div>
+          <div className="relative overflow-hidden rounded-3xl aspect-[4/5] overflow-hidden" data-parallax=""><Image src="/images/clinic/team-in-reception.webp" alt={T(locale, 'The Sri Dhanvanthri team at reception', 'வரவேற்பறையில் ஸ்ரீ தன்வந்திரி குழு')} fill priority sizes="(min-width: 768px) 46vw, 92vw" className="object-cover" /></div>
         </figure>
         <div className="md:col-span-5 md:col-start-8 md:pt-16">
           <Sec n="01" label={T(locale, 'Our story', 'எங்கள் கதை')} />
@@ -54,7 +54,7 @@ export function AboutView({ locale }: { locale: Locale }) {
         <div className="mt-14 grid gap-16 md:grid-cols-12">
           {people.map((d, i) => (
             <figure key={d.slug} className={`m-0 ${i === 0 ? 'md:col-span-6' : 'md:col-span-5 md:col-start-8 md:mt-32'}`} data-reveal="">
-              <div className="relative aspect-[4/5] bg-ink">{d.image && <Image src={img(d.image)} alt={d.name} fill sizes="(min-width: 768px) 46vw, 92vw" className="object-cover object-top" loading="lazy" />}</div>
+              <div className="relative overflow-hidden rounded-3xl aspect-[4/5] bg-ink">{d.image && <Image src={img(d.image)} alt={d.name} fill sizes="(min-width: 768px) 46vw, 92vw" className="object-cover object-top" loading="lazy" />}</div>
               <figcaption className="mt-6">
                 <p className="label text-moss">{d.jobTitle}</p>
                 <h3 className="mt-2" style={{ fontSize: 'var(--fs-h2)' }}>{d.name}</h3>
@@ -88,7 +88,7 @@ export function TreatmentsView({ locale }: { locale: Locale }) {
         <div className="grid gap-6 md:grid-cols-3">
           {programmes.map((p, i) => (
             <Link key={p.href} href={localePath(locale, p.href)} className="group block no-underline" data-reveal="" style={{ ['--d' as string]: `${i * 90}ms` }}>
-              <div className="relative aspect-[4/5] overflow-hidden bg-ink">
+              <div className="relative overflow-hidden rounded-3xl aspect-[4/5] overflow-hidden bg-ink">
                 <Image src={img(p.image)} alt="" fill sizes="(min-width: 768px) 31vw, 92vw" className="object-cover opacity-80 transition-transform duration-[900ms] ease-out group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-x-0 bottom-0 bg-ink p-5 text-paper">
                   <p className="label text-sage">0{i + 1}</p>
@@ -115,7 +115,7 @@ export function TreatmentsView({ locale }: { locale: Locale }) {
                   <a href={waLink(c.site.whatsapp, consultMsg(locale, it.short))} className="link text-[0.92rem] font-semibold">{T(locale, 'Ask the doctor', 'மருத்துவரிடம் கேளுங்கள்')} ↗</a>
                 </div>
                 {i % 4 === 1 && (
-                  <div className="relative hidden aspect-[21/8] overflow-hidden md:col-span-11 md:col-start-2 md:block">
+                  <div className="relative hidden overflow-hidden rounded-3xl aspect-[21/8] overflow-hidden md:col-span-11 md:col-start-2 md:block">
                     <Image src={`/images/clinic/${photos[(i >> 1) % photos.length]}.webp`} alt="" fill sizes="80vw" className="object-cover" loading="lazy" />
                   </div>
                 )}
@@ -209,7 +209,7 @@ export function ContactView({ locale }: { locale: Locale }) {
         </div>
       </section>
       <section className="wrap pb-10">
-        <div className="relative aspect-[21/9] overflow-hidden" data-parallax=""><Image src="/images/clinic/team-at-shopfront.webp" alt={c.home.hero.imageAlt} fill sizes="92vw" className="object-cover object-[50%_70%]" loading="lazy" /></div>
+        <div className="relative overflow-hidden rounded-3xl aspect-[21/9] overflow-hidden" data-parallax=""><Image src="/images/clinic/team-at-shopfront.webp" alt={c.home.hero.imageAlt} fill sizes="92vw" className="object-cover object-[50%_70%]" loading="lazy" /></div>
         <p className="caption mt-3 text-moss">{c.home.hero.caption}</p>
       </section>
     </main>
@@ -228,7 +228,7 @@ export function TherapyView({ locale, kind }: { locale: Locale; kind: 'varma' | 
     <main id="main">
       <PageHead locale={locale} crumb={page.h1} kicker={c.nav.treatments} title={page.h1} lead={page.lead} />
       <section className="wrap pb-20">
-        <div className="relative aspect-[21/9] overflow-hidden" data-parallax=""><Image src={img(page.image)} alt="" fill priority sizes="92vw" className="object-cover" /></div>
+        <div className="relative overflow-hidden rounded-3xl aspect-[21/9] overflow-hidden" data-parallax=""><Image src={img(page.image)} alt="" fill priority sizes="92vw" className="object-cover" /></div>
       </section>
       <section className="wrap pb-20">
         {sections.map((s, i) => (

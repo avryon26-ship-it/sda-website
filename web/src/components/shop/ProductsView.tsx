@@ -17,12 +17,12 @@ export default function ProductsView({ locale }: { locale: Locale }) {
     <main id="main">
       <PageHead locale={locale} crumb={c.nav.products} kicker={ta ? 'நர்மதா மூலிகை மருந்தகம்' : 'The Narmadha herbal pharmacy'}
         title={ta ? 'மூலிகைப் *பொருட்கள்*' : 'Herbal *remedies*, chosen with the doctor'} lead={c.narmadha.lead}>
-        <div className="mt-12 grid gap-6 md:grid-cols-12 md:items-stretch">
-          <div className="relative aspect-[16/10] min-w-0 overflow-hidden md:col-span-8 md:aspect-auto md:min-h-[24rem]" data-parallax="">
+        <div className="mt-8 grid gap-6 md:mt-12 md:grid-cols-12 md:items-stretch">
+          <div className="relative hidden min-w-0 overflow-hidden rounded-[24px] md:col-span-8 md:block md:min-h-[24rem]" data-parallax="">
             <Image src="/images/clinic/managing-director-in-pharmacy.webp" alt={ta ? 'மருந்தகத்தில் நிர்வாக இயக்குநர்' : 'The managing director in the Sri Dhanvanthri pharmacy'} fill priority sizes="(min-width: 768px) 62vw, 92vw" className="object-cover object-[50%_35%]" />
           </div>
-          <div className="assure flex flex-col justify-between gap-6 md:col-span-4">
-            <ShieldIcon className="h-10 w-10" />
+          <div className="assure flex gap-4 md:col-span-4 md:flex-col md:justify-between md:gap-6">
+            <ShieldIcon className="h-9 w-9 flex-none md:h-10 md:w-10" />
             <div>
               <h2 style={{ fontSize: 'var(--fs-h3)', lineHeight: 1.05 }}>{t.reviewedBy}</h2>
               <p className="mt-3 text-[0.98rem]">{t.reviewedBody}</p>
@@ -31,7 +31,7 @@ export default function ProductsView({ locale }: { locale: Locale }) {
         </div>
       </PageHead>
 
-      <section className="wrap pb-24 md:pb-32">
+      <section className="wrap pb-20 md:pb-32">
         <ProductGrid locale={locale} products={products} />
       </section>
 
@@ -43,7 +43,7 @@ export default function ProductsView({ locale }: { locale: Locale }) {
           <h2 className="mt-4" style={{ fontSize: 'var(--fs-h2)' }}>{c.narmadha.elakizhi.heading}</h2>
           <p className="mt-6 max-w-md">{c.narmadha.elakizhi.body}</p>
         </div>
-        <div className="relative aspect-[4/3] md:col-span-6 md:col-start-7">
+        <div className="relative overflow-hidden rounded-3xl aspect-[4/3] md:col-span-6 md:col-start-7">
           <Image src="/images/clinic/potli-therapy-session.webp" alt={ta ? 'மூலிகைக் கிழி சிகிச்சை' : 'Herbal leaf pouch therapy at the clinic'} fill sizes="(min-width: 768px) 46vw, 92vw" className="object-cover" loading="lazy" />
         </div>
       </section>
