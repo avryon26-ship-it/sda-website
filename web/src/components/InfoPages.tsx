@@ -206,19 +206,19 @@ export function ContactView({ locale }: { locale: Locale }) {
     <main id="main">
       <PageHead locale={locale} crumb={c.nav.contact} kicker={c.site.city} title={c.contact.h1} lead={c.contact.lead} />
       <section className="wrap grid gap-16 pb-20 md:grid-cols-12">
-        <div className="md:col-span-5">
+        <div className="min-w-0 md:col-span-5">
           <Sec n="01" label={c.home.sections.visit} />
-          <address className="classifieds mt-8 font-display not-italic" style={{ fontSize: 'var(--fs-h3)', lineHeight: 1.2 }}>{a.line1}, {a.line2}<br />{a.city}, {a.region} {a.postalCode}</address>
+          <address className="classifieds mt-8 break-words font-display not-italic" style={{ fontSize: 'var(--fs-h3)', lineHeight: 1.2 }}>{a.line1}, {a.line2}<br />{a.city}, {a.region} {a.postalCode}</address>
           <a href={mapsUrl(c)} target="_blank" rel="noopener noreferrer" className="btn btn-ghost mt-8">{c.home.mapLink}<Arrow /></a>
-          <div className="mt-12 grid gap-2">
+          <div className="mt-12 grid grid-cols-[minmax(0,1fr)] gap-2">
             <p className="label text-moss">{c.cta.call}</p>
-            {c.site.phones.map(p => <a key={p} href={telHref(p)} className="font-display text-[1.8rem] leading-tight no-underline">{p}</a>)}
+            {c.site.phones.map(p => <a key={p} href={telHref(p)} className="break-words font-display text-[1.8rem] leading-tight no-underline">{p}</a>)}
             <a href={`mailto:${c.site.email}`} className="mt-4 break-words">{c.site.email}</a>
             <a href={waLink(c.site.whatsapp, consultMsg(locale))} className="btn btn-primary mt-6 w-fit">{c.cta.freeConsult}<Arrow /></a>
           </div>
           <p className="placeholder-note mt-12">{c.home.hoursPlaceholder}</p>
         </div>
-        <div className="md:col-span-6 md:col-start-7">
+        <div className="min-w-0 md:col-span-6 md:col-start-7">
           <Sec n="02" label={t.contactForm} />
           <p className="mt-8 max-w-md">{T(locale, 'Leave your number and a line about your concern. The clinic calls you back, usually the same day.', 'உங்கள் எண்ணையும் பிரச்சினையையும் தரவும். மருத்துவமனை உங்களைத் திரும்ப அழைக்கும்.')}</p>
           <div className="mt-8"><ConsultForm kind="callback" /></div>
