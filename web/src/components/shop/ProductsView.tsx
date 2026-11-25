@@ -15,7 +15,7 @@ export default function ProductsView({ locale }: { locale: Locale }) {
   }));
   return (
     <main id="main">
-      <PageHead locale={locale} crumb={c.nav.products} kicker={ta ? 'நர்மதா மூலிகை மருந்தகம்' : 'The Narmadha herbal pharmacy'}
+      <PageHead locale={locale} crumb={c.nav.products} kicker={ta ? 'ஸ்ரீ தன்வந்திரி மூலிகை மருந்தகம்' : 'The Sri Dhanvanthri herbal pharmacy'}
         title={ta ? 'மூலிகைப் *பொருட்கள்*' : 'Herbal *remedies*, chosen with the doctor'} lead={c.narmadha.lead}>
         <div className="mt-8 grid gap-6 md:mt-12 md:grid-cols-12 md:items-stretch">
           <div className="relative hidden min-w-0 overflow-hidden rounded-[24px] md:col-span-8 md:block md:min-h-[24rem]" data-parallax="">

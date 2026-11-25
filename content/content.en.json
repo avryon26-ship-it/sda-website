@@ -710,6 +710,118 @@
         "Pack size"
       ],
       "imageStatus": "old ad with baked-in text: replace with packshot"
+    },
+    {
+      "slug": "elite-respicare",
+      "name": "Elite Respicare",
+      "category": "Capsules",
+      "image": "images/products/elite-respicare.webp",
+      "summary": "Ayurvedic proprietary medicine, 60 capsules.",
+      "description": "An Ayurvedic proprietary medicine in capsule form from Sri Dhanvanthri Siddha Ayurveda Herbal Remedies, in packs of 60 capsules. The pack names these herbs: Vasaka, Tulasi, Bharangi, Pippali. Please talk to the doctor before you start it, especially if you are pregnant, take other medicines or are being treated for a long-term condition.",
+      "factsNeeded": [
+        "Full ingredient list with quantities",
+        "Dosage and directions (from the doctor)",
+        "Cautions and who should avoid it",
+        "Licence number",
+        "Batch, expiry and price"
+      ],
+      "imageStatus": "bottle cropped from owner poster; poster claims not used"
+    },
+    {
+      "slug": "elite-hiruthayaraksha",
+      "name": "Elite Hiruthayaraksha",
+      "category": "Capsules",
+      "image": "images/products/elite-hiruthayaraksha.webp",
+      "summary": "Ayurvedic proprietary medicine, 60 capsules.",
+      "description": "An Ayurvedic proprietary medicine in capsule form from Sri Dhanvanthri Siddha Ayurveda Herbal Remedies, in packs of 60 capsules. The pack names these herbs: Arjuna, Lasuna, Punarnava, Sarpgandha, Hawthorn. Please talk to the doctor before you start it, especially if you are pregnant, take other medicines or are being treated for a long-term condition.",
+      "factsNeeded": [
+        "Full ingredient list with quantities",
+        "Dosage and directions (from the doctor)",
+        "Cautions and who should avoid it",
+        "Licence number",
+        "Batch, expiry and price"
+      ],
+      "imageStatus": "bottle cropped from owner poster; poster claims not used"
+    },
+    {
+      "slug": "elite-memocare",
+      "name": "Elite Memocare",
+      "category": "Capsules",
+      "image": "images/products/elite-memocare.webp",
+      "summary": "Ayurvedic proprietary medicine, 60 capsules.",
+      "description": "An Ayurvedic proprietary medicine in capsule form from Sri Dhanvanthri Siddha Ayurveda Herbal Remedies, in packs of 60 capsules. The pack names these herbs: Brahmi, Shankapushpi, Ashwagandha, Vaca. Please talk to the doctor before you start it, especially if you are pregnant, take other medicines or are being treated for a long-term condition.",
+      "factsNeeded": [
+        "Full ingredient list with quantities",
+        "Dosage and directions (from the doctor)",
+        "Cautions and who should avoid it",
+        "Licence number",
+        "Batch, expiry and price"
+      ],
+      "imageStatus": "bottle cropped from owner poster; poster claims not used"
+    },
+    {
+      "slug": "elite-pureskin",
+      "name": "Elite Pureskin",
+      "category": "Capsules",
+      "image": "images/products/elite-pureskin.webp",
+      "summary": "Ayurvedic proprietary medicine, 60 capsules.",
+      "description": "An Ayurvedic proprietary medicine in capsule form from Sri Dhanvanthri Siddha Ayurveda Herbal Remedies, in packs of 60 capsules. The pack names these herbs: Madhusnuhi (aloe vera), Marica (black pepper), Guduchi, Sariva. Please talk to the doctor before you start it, especially if you are pregnant, take other medicines or are being treated for a long-term condition.",
+      "factsNeeded": [
+        "Full ingredient list with quantities",
+        "Dosage and directions (from the doctor)",
+        "Cautions and who should avoid it",
+        "Licence number",
+        "Batch, expiry and price"
+      ],
+      "imageStatus": "bottle cropped from owner poster; poster claims not used"
+    },
+    {
+      "slug": "elite-kesharaksha",
+      "name": "Elite Kesharaksha",
+      "category": "Capsules",
+      "image": "images/products/elite-kesharaksha.webp",
+      "summary": "Ayurvedic proprietary medicine, 60 capsules.",
+      "description": "An Ayurvedic proprietary medicine in capsule form from Sri Dhanvanthri Siddha Ayurveda Herbal Remedies, in packs of 60 capsules. The pack names these herbs: Bhringaraja, Amalaki, Nili, Ashwagandha. Please talk to the doctor before you start it, especially if you are pregnant, take other medicines or are being treated for a long-term condition.",
+      "factsNeeded": [
+        "Full ingredient list with quantities",
+        "Dosage and directions (from the doctor)",
+        "Cautions and who should avoid it",
+        "Licence number",
+        "Batch, expiry and price"
+      ],
+      "imageStatus": "bottle cropped from owner poster; poster claims not used"
+    },
+    {
+      "slug": "elite-rheuma-care",
+      "name": "Elite Rheuma Care",
+      "category": "Capsules",
+      "image": "images/products/elite-rheuma-care.webp",
+      "summary": "Ayurvedic proprietary medicine, 60 capsules.",
+      "description": "An Ayurvedic proprietary medicine in capsule form from Sri Dhanvanthri Siddha Ayurveda Herbal Remedies, in packs of 60 capsules. The pack names these herbs: Kirathathiktha, Bala, Ashwagandha, Guggulu. Please talk to the doctor before you start it, especially if you are pregnant, take other medicines or are being treated for a long-term condition.",
+      "factsNeeded": [
+        "Full ingredient list with quantities",
+        "Dosage and directions (from the doctor)",
+        "Cautions and who should avoid it",
+        "Licence number",
+        "Batch, expiry and price"
+      ],
+      "imageStatus": "bottle cropped from owner poster; poster claims not used"
+    },
+    {
+      "slug": "elite-men-o",
+      "name": "Elite Men-O",
+      "category": "Capsules",
+      "image": "images/products/elite-men-o.webp",
+      "summary": "Ayurvedic proprietary medicine, 60 capsules.",
+      "description": "An Ayurvedic proprietary medicine in capsule form from Sri Dhanvanthri Siddha Ayurveda Herbal Remedies, in packs of 60 capsules. The pack names these herbs: Jathiphala, Ashwagandha, Aparajitha, Musali. Please talk to the doctor before you start it, especially if you are pregnant, take other medicines or are being treated for a long-term condition.",
+      "factsNeeded": [
+        "Full ingredient list with quantities",
+        "Dosage and directions (from the doctor)",
+        "Cautions and who should avoid it",
+        "Licence number",
+        "Batch, expiry and price"
+      ],
+      "imageStatus": "bottle cropped from owner poster; poster claims not used"
     }
   ],
   "faq": [

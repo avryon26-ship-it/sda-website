@@ -53,6 +53,13 @@ Statuses: **Use** = clinic's own photo; **PENDING** = identity/use needs the own
 | `stock-unverified/herbal-potli-pair.webp` | `gallery/33.webp` | HOLD: licence unknown | 512×512, 16 KB |  |
 | `stock-unverified/grains-and-spices-plate.webp` | `gallery/35.webp` | HOLD: licence unknown | 1000×1000, 86 KB |  |
 | `stock-unverified/potli-massage-hands.webp` | `gallery/37.webp` | HOLD: licence unknown | 1000×1000, 25 KB |  |
+| `products/elite-respicare.webp` | `IMG_0775.JPG` | Use | 355×560, 15 KB | Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site. |
+| `products/elite-hiruthayaraksha.webp` | `IMG_0776.JPG` | Use | 339×586, 19 KB | Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site. |
+| `products/elite-memocare.webp` | `IMG_0777.JPG` | Use | 301×529, 13 KB | Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site. |
+| `products/elite-pureskin.webp` | `IMG_0778.JPG` | Use | 321×586, 15 KB | Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site. |
+| `products/elite-kesharaksha.webp` | `IMG_0779.JPG` | Use | 328×618, 19 KB | Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site. |
+| `products/elite-rheuma-care.webp` | `IMG_0780.JPG` | Use | 353×593, 20 KB | Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site. |
+| `products/elite-men-o.webp` | `IMG_20261114_132604.jpg` | Use | 321×579, 19 KB | Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site. |
 | `products/narmadha-bathing-soap.webp` | `gallery/38.webp` | Use | 512×512, 13 KB |  |
 | `products/narmadha-pain-care-oil.webp` | `other/narmadha-knee-pain-oil.webp` | Provisional (replace with clean packshot) | 1575×1575, 97 KB |  |
 | `products/narmadha-pal-podi.webp` | `other/narmadha-palpodi.webp` | Provisional (replace with clean packshot) | 1575×1575, 116 KB |  |

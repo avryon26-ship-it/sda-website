@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 /** Only products with a clean packshot photograph show a photo. The old product posters carry claim text,
  *  so every other product is shown as a drawn apothecary jar with a paper label (name and category only). */
-export const PACKSHOTS = new Set(['narmadha-bathing-soap']);
+export const PACKSHOTS = new Set(['narmadha-bathing-soap', 'elite-respicare', 'elite-hiruthayaraksha', 'elite-memocare', 'elite-pureskin', 'elite-kesharaksha', 'elite-rheuma-care', 'elite-men-o']);
 type P = { slug: string; name: string; category?: string; image: string };
 
 function split(name: string): string[] {
@@ -15,7 +15,7 @@ function split(name: string): string[] {
 
 export default function ProductArt({ p, sizes = '24vw', priority, alt = '' }: { p: P; sizes?: string; priority?: boolean; alt?: string }) {
   if (PACKSHOTS.has(p.slug)) {
-    return <Image src={`/${p.image}`} alt={alt} fill sizes={sizes} priority={priority} loading={priority ? undefined : 'lazy'} className="object-cover" />;
+    return <Image src={`/${p.image}`} alt={alt} fill sizes={sizes} priority={priority} loading={priority ? undefined : 'lazy'} className={p.slug.startsWith('elite-') ? 'fit-bottle p-3' : 'object-cover'} />;
   }
   const L = split(p.name);
   const longest = Math.max(...L.map(l => l.length));

@@ -189,6 +189,13 @@ export const productMeta: Record<string, { form: { en: string; ta: string }; use
   'narmadha-omam-water': { form: { en: 'Distillate', ta: 'திரவம்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' } },
   'narmadha-thakasa-sooranam': { form: { en: 'Sooranam', ta: 'சூரணம்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' } },
   'narmadha-seerana-sanjeevi-sooranam': { form: { en: 'Sooranam', ta: 'சூரணம்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' } },
+  'elite-respicare': { form: { en: 'Capsules', ta: 'காப்ஸ்யூல்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' }, pack: '60 capsules' },
+  'elite-hiruthayaraksha': { form: { en: 'Capsules', ta: 'காப்ஸ்யூல்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' }, pack: '60 capsules' },
+  'elite-memocare': { form: { en: 'Capsules', ta: 'காப்ஸ்யூல்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' }, pack: '60 capsules' },
+  'elite-pureskin': { form: { en: 'Capsules', ta: 'காப்ஸ்யூல்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' }, pack: '60 capsules' },
+  'elite-kesharaksha': { form: { en: 'Capsules', ta: 'காப்ஸ்யூல்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' }, pack: '60 capsules' },
+  'elite-rheuma-care': { form: { en: 'Capsules', ta: 'காப்ஸ்யூல்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' }, pack: '60 capsules' },
+  'elite-men-o': { form: { en: 'Capsules', ta: 'காப்ஸ்யூல்' }, use: { en: 'Internal, as advised', ta: 'உள்ளுக்கு, ஆலோசனைப்படி' }, pack: '60 capsules' },
   'narmadha-dried-fig': { form: { en: 'Dried fruit', ta: 'உலர் பழம்' }, use: { en: 'Food', ta: 'உணவு' } },
 };
 

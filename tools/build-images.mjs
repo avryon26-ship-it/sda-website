@@ -10,13 +10,21 @@ import { duotone, halftone } from './treat.mjs';
 const [R, C] = process.argv.slice(2);
 if (!R || !C) { console.error('usage: node build-images.mjs <assets> <content>'); process.exit(1); }
 const IMG = path.join(C, 'images');
+const NEWP = process.env.NEW_PRODUCTS_DIR || '/Users/ramvenkateshk/Documents/sda-website/images of new products';
 fs.rmSync(IMG, { recursive: true, force: true });
 
-async function encode(srcPath, outPath, maxW, alpha, grade) {
+/** crop700 = [x0,y0,x1,y1] measured on a 700px-wide preview of the source; scaled to the real pixels here. */
+async function cropBox(srcPath, crop700) {
+  const meta = await sharp(srcPath).metadata();
+  const k = meta.width / 700;
+  return { left: Math.round(crop700[0] * k), top: Math.round(crop700[1] * k), width: Math.round((crop700[2] - crop700[0]) * k), height: Math.round((crop700[3] - crop700[1]) * k) };
+}
+async function encode(srcPath, outPath, maxW, alpha, grade, crop700) {
+  const box = crop700 ? await cropBox(srcPath, crop700) : null;
   let width = maxW;
   for (let attempt = 0; attempt < 8; attempt++) {
     for (let q = 82; q >= 40; q -= 6) {
-      let pipe = sharp(srcPath).rotate().resize({ width, withoutEnlargement: true });
+      let pipe = sharp(srcPath).rotate(); if (box) pipe = pipe.extract(box); pipe = pipe.resize({ width, withoutEnlargement: true });
       // one-time warm grade: calm neon colours toward the paper palette (baked, never a live CSS filter)
       if (grade) pipe = pipe.modulate({ saturation: 0.74 }).recomb([[1.03, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 0.9]]);
       const buf = await pipe
@@ -51,12 +59,12 @@ async function encodeHalftone(srcPath, outPath) {
 }
 const rows = [];
 for (const m of manifest) {
-  const sp = path.join(R, m.src);
+  const sp = m.abs ? path.join(NEWP, m.src) : path.join(R, m.src);
   if (!fs.existsSync(sp)) { console.error('MISSING', m.src); process.exit(1); }
   const meta = await sharp(sp).metadata();
   // every photograph gets the green duotone; logo, products and brand art are left in their own colours
   /* decided: original photographs, no tone, no filter */ const toned = false;
-  const r = toned ? await encodeDuotone(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha) : await encode(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha, false);
+  const r = toned ? await encodeDuotone(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha) : await encode(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha, false, m.crop700);
   let ht = null;
   /* halftone twins removed: original photographs only */ if (false) { const hp = m.out.replace(/\.webp$/, '.ht.webp'); const hr = await encodeHalftone(sp, path.join(IMG, hp)); if (hr) ht = { file: 'images/' + hp, kb: Math.round(hr.bytes / 1024), width: hr.w, height: hr.h }; }
   const o = await sharp(path.join(IMG, m.out)).metadata();
@@ -89,13 +97,14 @@ md += '\nBrand icons `brand/icon-*.png`, `apple-touch-icon.png`, `favicon-32.png
 fs.writeFileSync(path.join(C, 'photo-sources.md'), md);
 
 // -------- excluded-images.md -------------------------------------------------
-const used = new Set(manifest.map(m => m.src));
+const oldAssets = manifest.filter(m => !m.abs); // the new-product photos live outside the old site
+const used = new Set(oldAssets.map(m => m.src));
 const skipDirs = new Set(['fontawesome', 'js', 'css', 'swiper', 'svg', 'icons']);
 const all = [];
 (function walk(d) { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, e.name); if (e.isDirectory()) { if (!skipDirs.has(e.name)) walk(p); } else all.push(path.relative(R, p)); } })(R);
 
 const hash = f => crypto.createHash('sha1').update(fs.readFileSync(path.join(R, f))).digest('hex');
-const usedHashes = new Map(manifest.map(m => [hash(m.src), m.src]));
+const usedHashes = new Map(oldAssets.map(m => [hash(m.src), m.src]));
 function reason(f) {
   if (excludedByPath[f]) return excludedByPath[f];
   const ext = path.extname(f).toLowerCase();

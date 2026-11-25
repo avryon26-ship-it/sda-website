@@ -27,7 +27,7 @@ export type ConsultRequest = {
   demo?: boolean;
 };
 
-const FILE = path.join(process.cwd(), 'data', 'requests.json');
+const FILE = process.env.VERCEL ? '/tmp/requests.json' : path.join(process.cwd(), 'data', 'requests.json'); // Vercel disk is temporary: demo only
 export const STATUSES: Status[] = ['new', 'called', 'approved', 'visit', 'declined'];
 
 let queue: Promise<unknown> = Promise.resolve();

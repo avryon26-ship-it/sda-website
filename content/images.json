@@ -705,6 +705,111 @@
     "note": null
   },
   {
+    "file": "images/products/elite-respicare.webp",
+    "ht": null,
+    "width": 355,
+    "height": 560,
+    "kb": 15,
+    "status": "include",
+    "category": "product",
+    "alt": {
+      "en": "Elite Respicare capsule bottle, 60 capsules",
+      "ta": "எலைட் ரெஸ்பிகேர் காப்ஸ்யூல் புட்டி, 60 காப்ஸ்யூல்கள்"
+    },
+    "source": "IMG_0775.JPG",
+    "note": "Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site."
+  },
+  {
+    "file": "images/products/elite-hiruthayaraksha.webp",
+    "ht": null,
+    "width": 339,
+    "height": 586,
+    "kb": 19,
+    "status": "include",
+    "category": "product",
+    "alt": {
+      "en": "Elite Hiruthayaraksha capsule bottle, 60 capsules",
+      "ta": "எலைட் ஹிருதயரக்ஷா காப்ஸ்யூல் புட்டி, 60 காப்ஸ்யூல்கள்"
+    },
+    "source": "IMG_0776.JPG",
+    "note": "Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site."
+  },
+  {
+    "file": "images/products/elite-memocare.webp",
+    "ht": null,
+    "width": 301,
+    "height": 529,
+    "kb": 13,
+    "status": "include",
+    "category": "product",
+    "alt": {
+      "en": "Elite Memocare capsule bottle, 60 capsules",
+      "ta": "எலைட் மெமோகேர் காப்ஸ்யூல் புட்டி, 60 காப்ஸ்யூல்கள்"
+    },
+    "source": "IMG_0777.JPG",
+    "note": "Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site."
+  },
+  {
+    "file": "images/products/elite-pureskin.webp",
+    "ht": null,
+    "width": 321,
+    "height": 586,
+    "kb": 15,
+    "status": "include",
+    "category": "product",
+    "alt": {
+      "en": "Elite Pureskin capsule bottle, 60 capsules",
+      "ta": "எலைட் பியூர்ஸ்கின் காப்ஸ்யூல் புட்டி, 60 காப்ஸ்யூல்கள்"
+    },
+    "source": "IMG_0778.JPG",
+    "note": "Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site."
+  },
+  {
+    "file": "images/products/elite-kesharaksha.webp",
+    "ht": null,
+    "width": 328,
+    "height": 618,
+    "kb": 19,
+    "status": "include",
+    "category": "product",
+    "alt": {
+      "en": "Elite Kesharaksha capsule bottle, 60 capsules",
+      "ta": "எலைட் கேசரக்ஷா காப்ஸ்யூல் புட்டி, 60 காப்ஸ்யூல்கள்"
+    },
+    "source": "IMG_0779.JPG",
+    "note": "Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site."
+  },
+  {
+    "file": "images/products/elite-rheuma-care.webp",
+    "ht": null,
+    "width": 353,
+    "height": 593,
+    "kb": 20,
+    "status": "include",
+    "category": "product",
+    "alt": {
+      "en": "Elite Rheuma Care capsule bottle, 60 capsules",
+      "ta": "எலைட் ரூமா கேர் காப்ஸ்யூல் புட்டி, 60 காப்ஸ்யூல்கள்"
+    },
+    "source": "IMG_0780.JPG",
+    "note": "Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site."
+  },
+  {
+    "file": "images/products/elite-men-o.webp",
+    "ht": null,
+    "width": 321,
+    "height": 579,
+    "kb": 19,
+    "status": "include",
+    "category": "product",
+    "alt": {
+      "en": "Elite Men-O capsule bottle, 60 capsules",
+      "ta": "எலைட் மென்-ஓ காப்ஸ்யூல் புட்டி, 60 காப்ஸ்யூல்கள்"
+    },
+    "source": "IMG_20261114_132604.jpg",
+    "note": "Bottle only, cropped from the owner poster. Poster claim text is not shown anywhere on the site."
+  },
+  {
     "file": "images/products/narmadha-bathing-soap.webp",
     "ht": null,
     "width": 512,

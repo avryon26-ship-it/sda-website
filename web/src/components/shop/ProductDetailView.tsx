@@ -25,14 +25,14 @@ export default function ProductDetailView({ locale, slug }: { locale: Locale; sl
 
       <section className="wrap grid gap-10 pb-20 pt-10 md:grid-cols-12 md:gap-14 md:pb-28 md:pt-14">
         <figure className="m-0 md:col-span-6 lg:col-span-7">
-          <div className="relative aspect-square overflow-hidden rounded-3xl bg-paper2 md:sticky md:top-28">
+          <div className="pdp-img relative aspect-square overflow-hidden rounded-3xl bg-paper2 md:sticky md:top-28">
             <ProductArt p={p} alt={p.name} priority sizes="(min-width: 1024px) 54vw, (min-width: 768px) 48vw, 92vw" />
             <span className="pcard-tag">{p.category}</span>
           </div>
         </figure>
 
         <div className="md:col-span-6 lg:col-span-5">
-          <p className="label text-moss">Narmadha · {String(i + 1).padStart(2, '0')} / {String(c.products.length).padStart(2, '0')}</p>
+          <p className="label text-moss">{slug.startsWith('elite-') ? 'Elite' : 'Narmadha'} · {String(i + 1).padStart(2, '0')} / {String(c.products.length).padStart(2, '0')}</p>
           <h1 className="mt-4" style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)', lineHeight: 0.98 }}>{p.name}</h1>
           <p className="mt-6" style={{ fontSize: 'var(--fs-lead)', lineHeight: 1.5 }}>{p.summary}</p>
 

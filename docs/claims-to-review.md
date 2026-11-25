@@ -77,6 +77,14 @@ Sources are paths inside the old `public_html/pages/`. Quotes are shortened.
 ### Wider team photos (About page)
 Nine staff portraits that were on the old About page are shown with first names only: Santhosima, Lakshmi Meera, Keerthiga, Thayammal S, Parameswari, Rajesh TR, M. Manikandan, Muthaiah, M. Muthu Selvi. No titles and no "Dr." (the old page used "Dr." for some). Two further names on the old page (Suganthi Manju, T. Kanna Devi, P. Shanthi) have no usable photo file. Confirm each person's consent, spelling and role.
 
+### Elite capsule range (7 products, added from the owner's new product posters)
+Respicare, Hiruthayaraksha, Memocare, Pureskin, Kesharaksha, Rheuma Care, Men-O. Only the **bottle** is cropped from each poster. The posters themselves are NOT used because they carry claims that need approval before they go anywhere: "boosts immunity", "relieves sciatica", "maintains healthy blood pressure", "supports healthy testosterone levels", "clinically proven herbs", "no side effects", "100% safe", "reduces hair fall", and similar. The site lists only the herb names printed on each pack, and says "talk to the doctor first".
+- Confirm the herb lists are exact, and give quantities per capsule.
+- Hiruthayaraksha lists Sarpgandha (Rauwolfia), which has real drug effects. The doctor should write the cautions (blood pressure medicines, pregnancy).
+- Licence number, batch, expiry, price and dosage are missing. "Ayurvedic Proprietary Medicine" implies a manufacturing licence; confirm it before sale.
+- Manufacturer on the posters is "Sri Dhanvanthri Siddha Ayurveda Herbal Remedies", Anna Stadium Road, Karungulam, Tirunelveli 627356. Confirm this is the same business as the hospital and whether to show that address.
+- The bottle photos are small (about 350 px wide). A proper packshot would look sharper.
+
 ### Social proof
 | Where | Concern |
 |---|---|

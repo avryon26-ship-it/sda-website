@@ -567,3 +567,7 @@ img { max-width: 100%; display: block; }
   .facts dd { overflow-wrap: anywhere; }
 }
 :lang(ta) .italic, :lang(ta) .font-display.italic { font-style: normal; }
+
+img.fit-bottle { object-fit: contain !important; }
+
+.pc-img:has(img.fit-bottle), .pdp-img:has(img.fit-bottle) { background-color: var(--card); background-image: none; }
