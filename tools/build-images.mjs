@@ -55,10 +55,10 @@ for (const m of manifest) {
   if (!fs.existsSync(sp)) { console.error('MISSING', m.src); process.exit(1); }
   const meta = await sharp(sp).metadata();
   // every photograph gets the green duotone; logo, products and brand art are left in their own colours
-  const toned = m.grade || m.cat === 'people';
+  /* decided: original photographs, no tone, no filter */ const toned = false;
   const r = toned ? await encodeDuotone(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha) : await encode(sp, path.join(IMG, m.out), Math.min(m.maxW ?? MAX_W, MAX_W), m.alpha, false);
   let ht = null;
-  if (m.cat === 'clinic' && m.status === 'include' && meta.width >= 900) { const hp = m.out.replace(/\.webp$/, '.ht.webp'); const hr = await encodeHalftone(sp, path.join(IMG, hp)); if (hr) ht = { file: 'images/' + hp, kb: Math.round(hr.bytes / 1024), width: hr.w, height: hr.h }; }
+  /* halftone twins removed: original photographs only */ if (false) { const hp = m.out.replace(/\.webp$/, '.ht.webp'); const hr = await encodeHalftone(sp, path.join(IMG, hp)); if (hr) ht = { file: 'images/' + hp, kb: Math.round(hr.bytes / 1024), width: hr.w, height: hr.h }; }
   const o = await sharp(path.join(IMG, m.out)).metadata();
   rows.push({ ...m, ht, srcW: meta.width, srcH: meta.height, outW: o.width, outH: o.height, kb: Math.round(r.bytes / 1024) });
 }

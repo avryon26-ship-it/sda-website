@@ -4,7 +4,7 @@
     "ht": null,
     "width": 800,
     "height": 800,
-    "kb": 47,
+    "kb": 58,
     "status": "include",
     "category": "people",
     "alt": {
@@ -19,7 +19,7 @@
     "ht": null,
     "width": 800,
     "height": 800,
-    "kb": 54,
+    "kb": 66,
     "status": "include",
     "category": "people",
     "alt": {
@@ -34,7 +34,7 @@
     "ht": null,
     "width": 600,
     "height": 400,
-    "kb": 33,
+    "kb": 46,
     "status": "pending-confirmation",
     "category": "people",
     "alt": {
@@ -49,7 +49,7 @@
     "ht": null,
     "width": 600,
     "height": 400,
-    "kb": 13,
+    "kb": 16,
     "status": "pending-confirmation",
     "category": "people",
     "alt": {
@@ -64,7 +64,7 @@
     "ht": null,
     "width": 512,
     "height": 512,
-    "kb": 14,
+    "kb": 19,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -79,7 +79,7 @@
     "ht": null,
     "width": 512,
     "height": 512,
-    "kb": 32,
+    "kb": 43,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -91,15 +91,10 @@
   },
   {
     "file": "images/clinic/team-at-shopfront.webp",
-    "ht": {
-      "file": "images/clinic/team-at-shopfront.ht.webp",
-      "kb": 145,
-      "width": 800,
-      "height": 800
-    },
+    "ht": null,
     "width": 980,
     "height": 980,
-    "kb": 100,
+    "kb": 144,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -111,15 +106,10 @@
   },
   {
     "file": "images/clinic/team-in-reception.webp",
-    "ht": {
-      "file": "images/clinic/team-in-reception.ht.webp",
-      "kb": 143,
-      "width": 800,
-      "height": 800
-    },
+    "ht": null,
     "width": 980,
     "height": 980,
-    "kb": 107,
+    "kb": 156,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -131,15 +121,10 @@
   },
   {
     "file": "images/clinic/therapists-in-white-coats.webp",
-    "ht": {
-      "file": "images/clinic/therapists-in-white-coats.ht.webp",
-      "kb": 147,
-      "width": 800,
-      "height": 800
-    },
+    "ht": null,
     "width": 980,
     "height": 980,
-    "kb": 124,
+    "kb": 187,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -151,15 +136,10 @@
   },
   {
     "file": "images/clinic/therapists-preparing-herbs.webp",
-    "ht": {
-      "file": "images/clinic/therapists-preparing-herbs.ht.webp",
-      "kb": 140,
-      "width": 800,
-      "height": 800
-    },
+    "ht": null,
     "width": 980,
     "height": 980,
-    "kb": 112,
+    "kb": 169,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -171,15 +151,10 @@
   },
   {
     "file": "images/clinic/therapists-grinding-herbs.webp",
-    "ht": {
-      "file": "images/clinic/therapists-grinding-herbs.ht.webp",
-      "kb": 144,
-      "width": 900,
-      "height": 900
-    },
+    "ht": null,
     "width": 980,
     "height": 980,
-    "kb": 93,
+    "kb": 148,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -194,7 +169,7 @@
     "ht": null,
     "width": 512,
     "height": 512,
-    "kb": 24,
+    "kb": 29,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -206,15 +181,10 @@
   },
   {
     "file": "images/clinic/shoulder-therapy-session.webp",
-    "ht": {
-      "file": "images/clinic/shoulder-therapy-session.ht.webp",
-      "kb": 147,
-      "width": 800,
-      "height": 800
-    },
+    "ht": null,
     "width": 1000,
     "height": 1000,
-    "kb": 26,
+    "kb": 32,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -226,15 +196,10 @@
   },
   {
     "file": "images/clinic/lamp-and-flower-altar.webp",
-    "ht": {
-      "file": "images/clinic/lamp-and-flower-altar.ht.webp",
-      "kb": 140,
-      "width": 900,
-      "height": 900
-    },
+    "ht": null,
     "width": 1000,
     "height": 1000,
-    "kb": 32,
+    "kb": 45,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -246,15 +211,10 @@
   },
   {
     "file": "images/clinic/body-therapy-session.webp",
-    "ht": {
-      "file": "images/clinic/body-therapy-session.ht.webp",
-      "kb": 112,
-      "width": 1000,
-      "height": 1000
-    },
+    "ht": null,
     "width": 1000,
     "height": 1000,
-    "kb": 18,
+    "kb": 26,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -266,15 +226,10 @@
   },
   {
     "file": "images/clinic/lamp-and-flower-altar-2.webp",
-    "ht": {
-      "file": "images/clinic/lamp-and-flower-altar-2.ht.webp",
-      "kb": 144,
-      "width": 900,
-      "height": 900
-    },
+    "ht": null,
     "width": 1000,
     "height": 1000,
-    "kb": 30,
+    "kb": 41,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -286,15 +241,10 @@
   },
   {
     "file": "images/clinic/managing-director-in-pharmacy.webp",
-    "ht": {
-      "file": "images/clinic/managing-director-in-pharmacy.ht.webp",
-      "kb": 139,
-      "width": 900,
-      "height": 900
-    },
+    "ht": null,
     "width": 1000,
     "height": 1000,
-    "kb": 28,
+    "kb": 38,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -306,15 +256,10 @@
   },
   {
     "file": "images/clinic/potli-therapy-session.webp",
-    "ht": {
-      "file": "images/clinic/potli-therapy-session.ht.webp",
-      "kb": 150,
-      "width": 1000,
-      "height": 666
-    },
+    "ht": null,
     "width": 1280,
     "height": 853,
-    "kb": 58,
+    "kb": 106,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -326,15 +271,10 @@
   },
   {
     "file": "images/clinic/varma-therapy-session.webp",
-    "ht": {
-      "file": "images/clinic/varma-therapy-session.ht.webp",
-      "kb": 132,
-      "width": 1000,
-      "height": 563
-    },
+    "ht": null,
     "width": 1280,
     "height": 720,
-    "kb": 97,
+    "kb": 155,
     "status": "include",
     "category": "clinic",
     "alt": {
@@ -349,7 +289,7 @@
     "ht": null,
     "width": 1156,
     "height": 650,
-    "kb": 96,
+    "kb": 128,
     "status": "pending-confirmation",
     "category": "clinic",
     "alt": {
@@ -409,7 +349,7 @@
     "ht": null,
     "width": 1600,
     "height": 600,
-    "kb": 58,
+    "kb": 112,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -424,7 +364,7 @@
     "ht": null,
     "width": 1600,
     "height": 600,
-    "kb": 115,
+    "kb": 233,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -439,7 +379,7 @@
     "ht": null,
     "width": 1600,
     "height": 600,
-    "kb": 62,
+    "kb": 122,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -454,7 +394,7 @@
     "ht": null,
     "width": 1600,
     "height": 600,
-    "kb": 46,
+    "kb": 89,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -469,7 +409,7 @@
     "ht": null,
     "width": 1280,
     "height": 858,
-    "kb": 61,
+    "kb": 79,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -484,7 +424,7 @@
     "ht": null,
     "width": 1280,
     "height": 853,
-    "kb": 33,
+    "kb": 40,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -499,7 +439,7 @@
     "ht": null,
     "width": 1280,
     "height": 853,
-    "kb": 45,
+    "kb": 61,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -514,7 +454,7 @@
     "ht": null,
     "width": 1000,
     "height": 668,
-    "kb": 31,
+    "kb": 46,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -529,7 +469,7 @@
     "ht": null,
     "width": 1000,
     "height": 691,
-    "kb": 41,
+    "kb": 70,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -544,7 +484,7 @@
     "ht": null,
     "width": 1000,
     "height": 1000,
-    "kb": 44,
+    "kb": 58,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -559,7 +499,7 @@
     "ht": null,
     "width": 1000,
     "height": 1000,
-    "kb": 66,
+    "kb": 92,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -574,7 +514,7 @@
     "ht": null,
     "width": 1000,
     "height": 1000,
-    "kb": 36,
+    "kb": 44,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -589,7 +529,7 @@
     "ht": null,
     "width": 512,
     "height": 512,
-    "kb": 15,
+    "kb": 16,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -604,7 +544,7 @@
     "ht": null,
     "width": 1000,
     "height": 1000,
-    "kb": 68,
+    "kb": 86,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {
@@ -619,7 +559,7 @@
     "ht": null,
     "width": 1000,
     "height": 1000,
-    "kb": 17,
+    "kb": 25,
     "status": "stock-unverified",
     "category": "stock",
     "alt": {

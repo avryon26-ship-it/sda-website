@@ -72,7 +72,7 @@ Applied from the approved mood board to the home page, header/footer shell, prod
 - Tokens: newsprint, aged newsprint, celadon, sage, pistachio, palm leaf, faded ink green, stamp red-brown (`web/src/app/globals.css`, `tailwind.config.ts`). Corners are 2-3 px, shadows are flat 2/3 px offsets, no blur, no gradients, no glow.
 - Type: Old Standard TT headlines, Newsreader text, Special Elite typewriter for labels and buttons, Caveat for rare margin notes; Tamil uses Tiro Tamil (display) and Noto Serif Tamil (text).
 - Section tags are palm-leaf strips; treatments are leaves strung on one cord; the front page has a dateline, torn "Stop press" slip, tape, rubber stamp and a classifieds box for "What is troubling you?".
-- Photographs: every photo is baked to a green duotone (`tools/treat.mjs`); photos of 900 px or more also get a halftone twin under 150 KB (`*.ht.webp`). Halftone is used for close-up shots; the group hero uses the smooth duotone because halftone would lose faces.
+- Photographs: **original colour, no filter, tone, blur or halftone** (decision after review). The pipeline only resizes (max 1600 px) and compresses to WebP under 250 KB. `tools/treat.mjs` (duotone/halftone) is kept for reference but switched off; the `/moodboard` page still shows those treatments as the earlier proposal.
 - Products: the old posters carry health-claim text, so only the clean soap packshot is shown as a photo; every other product is a drawn apothecary jar with a paper label (`web/src/components/shop/ProductArt.tsx`).
 - Removed from the home page: the stat tiles ("18+ years of practice" etc.), the "Free consultation call" badge, the glowing blob, floating cards, and "Shop herbal remedies" wording.
 
@@ -80,3 +80,5 @@ Applied from the approved mood board to the home page, header/footer shell, prod
 - `tools/sweep.mjs`: 16 routes x 6 widths (360-1440 px), English and Tamil: 0 horizontal-overflow problems.
 - `tools/perf.mjs` (slow 4G, 4x CPU slowdown, production build): LCP 0.9-1.8 s, CLS < 0.01, 520-610 KB, no motion libraries on phones.
 - `tools/states.mjs` screenshots the sheet, cart drawer, product and Tamil states. Screenshots: `design/gazette/`.
+
+**Update:** photographs reverted to untreated originals at the owner's request. Note that Next caches optimised images for a year, so after changing image files delete `web/.next` (or the `cache/images` folder) before checking.
