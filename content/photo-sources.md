@@ -10,6 +10,15 @@ Statuses: **Use** = clinic's own photo; **PENDING** = identity/use needs the own
 | `doctors/mrs-r-shanthi.webp` | `faculties/rounded/2.webp` | Use | 800×800, 66 KB |  |
 | `doctors/robinson-candidate-hilltop.webp` | `other/about-us-robinson-2.jpg` | PENDING: owner must confirm | 600×400, 46 KB | Is this Guru Brahmashree A.M. Robinson? Also used by the old site as the yoga page photo. |
 | `doctors/robinson-candidate-group.webp` | `about-us/robinson.webp` | PENDING: owner must confirm | 600×400, 16 KB | Group photo of five men in white; which one is Guru Brahmashree A.M. Robinson? Old photo, 600x400 only. |
+| `team/santhosima.webp` | `faculties/rounded/3.webp` | Use | 600×600, 27 KB | Listed on the live About page. Name only, no title. Owner to confirm consent and roles. |
+| `team/lakshmi-meera.webp` | `faculties/rounded/4.webp` | Use | 600×600, 29 KB | Listed on the live About page. Name only, no title. Owner to confirm consent and roles. |
+| `team/keerthiga.webp` | `faculties/rounded/5.webp` | Use | 600×600, 30 KB | Listed on the live About page. Name only, no title. Owner to confirm consent and roles. |
+| `team/thayammal-s.webp` | `faculties/rounded/6.webp` | Use | 600×600, 27 KB | Listed on the live About page. Name only, no title. Owner to confirm consent and roles. |
+| `team/parameswari.webp` | `faculties/rounded/7.webp` | Use | 600×600, 45 KB | Listed on the live About page. Name only, no title. Owner to confirm consent and roles. |
+| `team/rajesh-tr.webp` | `faculties/rounded/8.webp` | Use | 600×600, 43 KB | Listed on the live About page. Name only, no title. Owner to confirm consent and roles. |
+| `team/m-manikandan.webp` | `faculties/rounded/9.webp` | Use | 600×600, 32 KB | Listed on the live About page. Name only, no title. Owner to confirm consent and roles. |
+| `team/muthaiah.webp` | `faculties/rounded/10.webp` | Use | 600×600, 39 KB | Listed on the live About page. Name only, no title. Owner to confirm consent and roles. |
+| `team/m-muthu-selvi.webp` | `faculties/rounded/11.webp` | Use | 279×279, 11 KB | Listed on the live About page. Name only, no title. Owner to confirm consent and roles. |
 | `clinic/managing-director-at-desk.webp` | `gallery/1.webp` | Use | 512×512, 19 KB |  |
 | `clinic/team-green-uniform-pharmacy.webp` | `gallery/2.webp` | Use | 512×512, 43 KB | Staff faces visible: confirm staff consent. |
 | `clinic/team-at-shopfront.webp` | `gallery/3.webp` | Use | 980×980, 144 KB | Staff faces visible: confirm staff consent. |

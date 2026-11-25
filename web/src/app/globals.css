@@ -566,3 +566,4 @@ img { max-width: 100%; display: block; }
   .facts > div { min-width: 0; }
   .facts dd { overflow-wrap: anywhere; }
 }
+:lang(ta) .italic, :lang(ta) .font-display.italic { font-style: normal; }

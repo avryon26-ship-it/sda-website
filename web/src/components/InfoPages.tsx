@@ -3,13 +3,15 @@ import Link from 'next/link';
 import { type Locale, getContent, localePath, waLink, telHref, mapsUrl, consultMsg } from '@/lib/content';
 import { ui } from '@/lib/ui';
 import images from '@/content/images.json';
-import { PageHead, Sec, Arrow, CartFlow, ClosingCta } from './Common';
+import { PageHead, Sec, Arrow, CartFlow, ClosingCta, Fig } from './Common';
 import GalleryGrid, { type Shot } from './GalleryGrid';
 import ConsultForm from './shop/ConsultForm';
 import { Tulsi, Neem, Lotus, Turmeric, Ashwagandha } from './Botanicals';
 
 const img = (p: string) => `/${p}`;
 const T = (l: Locale, en: string, ta: string) => (l === 'ta' ? ta : en);
+
+const TEAM = [['santhosima', 'Santhosima'], ['lakshmi-meera', 'Lakshmi Meera'], ['keerthiga', 'Keerthiga'], ['thayammal-s', 'Thayammal S'], ['parameswari', 'Parameswari'], ['rajesh-tr', 'Rajesh TR'], ['m-manikandan', 'M. Manikandan'], ['muthaiah', 'Muthaiah'], ['m-muthu-selvi', 'M. Muthu Selvi']];
 
 /* ------------------------------------------------------------------ About */
 export function AboutView({ locale }: { locale: Locale }) {
@@ -20,9 +22,9 @@ export function AboutView({ locale }: { locale: Locale }) {
     <main id="main">
       <PageHead locale={locale} crumb={c.nav.about} kicker={c.site.city} title={a.h1} lead={a.lead} />
       <section className="wrap grid gap-10 pb-24 md:grid-cols-12 md:pb-32">
-        <figure className="m-0 md:col-span-6">
-          <div className="relative overflow-hidden rounded-3xl aspect-[4/5] overflow-hidden" data-parallax=""><Image src="/images/clinic/team-in-reception.webp" alt={T(locale, 'The Sri Dhanvanthri team at reception', 'வரவேற்பறையில் ஸ்ரீ தன்வந்திரி குழு')} fill priority sizes="(min-width: 768px) 46vw, 92vw" className="object-cover" /></div>
-        </figure>
+        <Fig className="md:col-span-6" ratio="aspect-[4/5]" no={T(locale, 'FIG. 1.', 'படம் 1.')} caption={T(locale, 'The team at reception, V.M. Chatram.', 'வரவேற்பறையில் எங்கள் குழு, வி.எம். சத்திரம்.')}>
+          <Image src="/images/clinic/team-in-reception.webp" alt={T(locale, 'The Sri Dhanvanthri team at reception', 'வரவேற்பறையில் ஸ்ரீ தன்வந்திரி குழு')} fill priority sizes="(min-width: 768px) 46vw, 92vw" className="object-cover" />
+        </Fig>
         <div className="md:col-span-5 md:col-start-8 md:pt-16">
           <Sec n="01" label={T(locale, 'Our story', 'எங்கள் கதை')} />
           {a.story.map((p, i) => (
@@ -53,15 +55,29 @@ export function AboutView({ locale }: { locale: Locale }) {
         <Sec n="03" label={a.teamHeading} />
         <div className="mt-14 grid gap-16 md:grid-cols-12">
           {people.map((d, i) => (
-            <figure key={d.slug} className={`m-0 ${i === 0 ? 'md:col-span-6' : 'md:col-span-5 md:col-start-8 md:mt-32'}`} data-reveal="">
-              <div className="relative overflow-hidden rounded-3xl aspect-[4/5] bg-ink">{d.image && <Image src={img(d.image)} alt={d.name} fill sizes="(min-width: 768px) 46vw, 92vw" className="object-cover object-top" loading="lazy" />}</div>
-              <figcaption className="mt-6">
-                <p className="label text-moss">{d.jobTitle}</p>
+            <div key={d.slug} className={i === 0 ? 'md:col-span-6' : 'md:col-span-5 md:col-start-8 md:mt-32'} data-reveal="">
+              <Fig ratio="aspect-[4/5]">{d.image && <Image src={img(d.image)} alt={d.name} fill sizes="(min-width: 768px) 46vw, 92vw" className="object-cover object-top" loading="lazy" />}</Fig>
+              <div className="mt-6">
+                <p className="kicker">{d.jobTitle}</p>
                 <h3 className="mt-2" style={{ fontSize: 'var(--fs-h2)' }}>{d.name}</h3>
                 <p className="mt-4 max-w-md">{d.bio}</p>
-              </figcaption>
-            </figure>
+              </div>
+            </div>
           ))}
+        </div>
+      </section>
+      <section className="alt py-20 md:py-28">
+        <div className="wrap">
+          <Sec n="04" label={T(locale, 'The wider team', 'எங்கள் குழு')} />
+          <p className="mt-6 max-w-xl italic text-moss">{T(locale, 'The people you will meet at the clinic, at reception, in the therapy rooms and in the pharmacy.', 'மருத்துவமனையில், வரவேற்பில், சிகிச்சை அறைகளில், மருந்தகத்தில் நீங்கள் சந்திக்கும் எங்கள் குழுவினர்.')}</p>
+          <ul className="m-0 mt-10 grid list-none grid-cols-2 gap-x-4 gap-y-9 p-0 sm:grid-cols-3 lg:grid-cols-5">
+            {TEAM.map(([slug, name], i) => (
+              <li key={slug} data-reveal="" style={{ ['--d' as string]: `${(i % 5) * 70}ms` }}>
+                <Fig ratio="aspect-[4/5]" tape={i % 3 === 0}><Image src={`/images/team/${slug}.webp`} alt={name} fill sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 46vw" className="object-cover object-top" loading="lazy" /></Fig>
+                <p className="mt-3 font-display" style={{ fontSize: '1.05rem', lineHeight: 1.2 }}>{name}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       <CartFlow locale={locale} compact />
@@ -88,13 +104,13 @@ export function TreatmentsView({ locale }: { locale: Locale }) {
         <div className="grid gap-6 md:grid-cols-3">
           {programmes.map((p, i) => (
             <Link key={p.href} href={localePath(locale, p.href)} className="group block no-underline" data-reveal="" style={{ ['--d' as string]: `${i * 90}ms` }}>
-              <div className="relative overflow-hidden rounded-3xl aspect-[4/5] overflow-hidden bg-ink">
-                <Image src={img(p.image)} alt="" fill sizes="(min-width: 768px) 31vw, 92vw" className="object-cover opacity-80 transition-transform duration-[900ms] ease-out group-hover:scale-105" loading="lazy" />
-                <div className="absolute inset-x-0 bottom-0 bg-ink p-5 text-paper">
-                  <p className="label text-sage">0{i + 1}</p>
-                  <h2 className="mt-2" style={{ fontSize: 'var(--fs-h3)' }}>{p.title}</h2>
+              <Fig ratio="aspect-[4/5]" tape={i === 1}>
+                <Image src={img(p.image)} alt="" fill sizes="(min-width: 768px) 31vw, 92vw" className="object-cover" loading="lazy" />
+                <div className="absolute inset-x-0 bottom-0 border-t border-ink bg-paper p-4 text-ink">
+                  <p className="kicker">0{i + 1}</p>
+                  <h2 className="mt-1" style={{ fontSize: 'var(--fs-h3)' }}>{p.title}</h2>
                 </div>
-              </div>
+              </Fig>
               <p className="mt-4 line-clamp-3 text-[0.98rem] text-moss">{p.body}</p>
               <span className="link mt-3 inline-block font-semibold">{c.cta.learnMore} →</span>
             </Link>
@@ -108,16 +124,16 @@ export function TreatmentsView({ locale }: { locale: Locale }) {
           <ol className="m-0 mt-12 list-none p-0">
             {t.items.map((it, i) => (
               <li key={it.slug} id={it.slug} className="grid scroll-mt-28 gap-6 border-t border-[var(--rule)] py-10 md:grid-cols-12 md:items-center" data-reveal="">
-                <span className="label text-moss md:col-span-1">{String(i + 1).padStart(2, '0')}</span>
+                <span className="kicker md:col-span-1">{String(i + 1).padStart(2, '0')}</span>
                 <h3 className="md:col-span-5" style={{ fontSize: 'var(--fs-h3)', lineHeight: 1.05 }}>{it.title}</h3>
                 <p className="md:col-span-4">{it.body}</p>
                 <div className="md:col-span-2 md:text-right">
                   <a href={waLink(c.site.whatsapp, consultMsg(locale, it.short))} className="link text-[0.92rem] font-semibold">{T(locale, 'Ask the doctor', 'மருத்துவரிடம் கேளுங்கள்')} ↗</a>
                 </div>
                 {i % 4 === 1 && (
-                  <div className="relative hidden overflow-hidden rounded-3xl aspect-[21/8] overflow-hidden md:col-span-11 md:col-start-2 md:block">
+                  <Fig className="hidden md:col-span-11 md:col-start-2 md:block" ratio="aspect-[21/8]" tape={false}>
                     <Image src={`/images/clinic/${photos[(i >> 1) % photos.length]}.webp`} alt="" fill sizes="80vw" className="object-cover" loading="lazy" />
-                  </div>
+                  </Fig>
                 )}
               </li>
             ))}
@@ -146,13 +162,13 @@ export function OfferingsView({ locale }: { locale: Locale }) {
         return (
           <section key={tb.slug} id={tb.slug} className={`scroll-mt-24 py-16 md:py-24 ${flip ? 'alt' : ''}`}>
             <div className="wrap grid items-center gap-10 md:grid-cols-12">
-              <div className={`relative aspect-[4/3] overflow-hidden md:col-span-6 ${flip ? 'md:order-2 md:col-start-7' : ''}`} data-parallax="">
+              <Fig className={`md:col-span-6 ${flip ? 'md:order-2 md:col-start-7' : ''}`} no={T(locale, `FIG. ${i + 1}.`, `படம் ${i + 1}.`)} caption={tb.title}>
                 <Image src={`/images/clinic/${pics[i % pics.length]}.webp`} alt="" fill sizes="(min-width: 768px) 46vw, 92vw" className="object-cover" loading={i < 1 ? 'eager' : 'lazy'} />
-              </div>
+              </Fig>
               <div className={`md:col-span-5 ${flip ? 'md:order-1' : 'md:col-start-8'}`} data-reveal="">
-                <div className="flex items-center gap-4"><span className="label text-moss">{String(i + 1).padStart(2, '0')} / {String(o.tabs.length).padStart(2, '0')}</span><Art className="h-12 w-auto text-moss" /></div>
+                <div className="flex items-center gap-4"><span className="kicker">{String(i + 1).padStart(2, '0')} / {String(o.tabs.length).padStart(2, '0')}</span><Art className="h-12 w-auto text-moss" /></div>
                 <h2 className="mt-4" style={{ fontSize: 'var(--fs-h2)' }}>{tb.title}</h2>
-                <p className="mt-5 font-display" style={{ fontSize: 'var(--fs-lead)', lineHeight: 1.4 }}>{tb.summary}</p>
+                <p className="mt-5 font-display italic" style={{ fontSize: 'var(--fs-lead)', lineHeight: 1.4 }}>{tb.summary}</p>
                 <p className="mt-4 text-moss">{tb.body}</p>
                 <a href={waLink(c.site.whatsapp, consultMsg(locale, tb.title))} className="btn btn-primary mt-8">{T(locale, 'Ask about this programme', 'இத்திட்டம் பற்றிக் கேளுங்கள்')}<Arrow /></a>
               </div>
@@ -192,7 +208,7 @@ export function ContactView({ locale }: { locale: Locale }) {
       <section className="wrap grid gap-16 pb-20 md:grid-cols-12">
         <div className="md:col-span-5">
           <Sec n="01" label={c.home.sections.visit} />
-          <address className="mt-8 font-display not-italic" style={{ fontSize: 'var(--fs-h3)', lineHeight: 1.2 }}>{a.line1}, {a.line2}<br />{a.city}, {a.region} {a.postalCode}</address>
+          <address className="classifieds mt-8 font-display not-italic" style={{ fontSize: 'var(--fs-h3)', lineHeight: 1.2 }}>{a.line1}, {a.line2}<br />{a.city}, {a.region} {a.postalCode}</address>
           <a href={mapsUrl(c)} target="_blank" rel="noopener noreferrer" className="btn btn-ghost mt-8">{c.home.mapLink}<Arrow /></a>
           <div className="mt-12 grid gap-2">
             <p className="label text-moss">{c.cta.call}</p>
@@ -209,8 +225,7 @@ export function ContactView({ locale }: { locale: Locale }) {
         </div>
       </section>
       <section className="wrap pb-10">
-        <div className="relative overflow-hidden rounded-3xl aspect-[21/9] overflow-hidden" data-parallax=""><Image src="/images/clinic/team-at-shopfront.webp" alt={c.home.hero.imageAlt} fill sizes="92vw" className="object-cover object-[50%_70%]" loading="lazy" /></div>
-        <p className="caption mt-3 text-moss">{c.home.hero.caption}</p>
+        <Fig ratio="aspect-[4/3] sm:aspect-[21/9]" caption={c.home.hero.caption} no={T(locale, 'FIG. 1.', 'படம் 1.')}><Image src="/images/clinic/team-at-shopfront.webp" alt={c.home.hero.imageAlt} fill sizes="92vw" className="object-cover object-[50%_70%]" loading="lazy" /></Fig>
       </section>
     </main>
   );
@@ -228,14 +243,14 @@ export function TherapyView({ locale, kind }: { locale: Locale; kind: 'varma' | 
     <main id="main">
       <PageHead locale={locale} crumb={page.h1} kicker={c.nav.treatments} title={page.h1} lead={page.lead} />
       <section className="wrap pb-20">
-        <div className="relative overflow-hidden rounded-3xl aspect-[21/9] overflow-hidden" data-parallax=""><Image src={img(page.image)} alt="" fill priority sizes="92vw" className="object-cover" /></div>
+        <Fig ratio="aspect-[4/3] sm:aspect-[21/9]" no={T(locale, 'FIG. 1.', 'படம் 1.')} caption={page.h1}><Image src={img(page.image)} alt="" fill priority sizes="92vw" className="object-cover" /></Fig>
       </section>
       <section className="wrap pb-20">
         {sections.map((s, i) => (
           <div key={s.heading} className="grid gap-6 border-t border-[var(--rule)] py-12 md:grid-cols-12" data-reveal="">
-            <span className="label text-moss md:col-span-1">0{i + 1}</span>
+            <span className="kicker md:col-span-1">0{i + 1}</span>
             <h2 className="md:col-span-4" style={{ fontSize: 'var(--fs-h3)' }}>{s.heading}</h2>
-            <p className="md:col-span-6 md:col-start-7" style={{ fontSize: '1.1rem' }}>{s.body}</p>
+            <p className={`md:col-span-6 md:col-start-7 ${i === 0 && locale !== 'ta' ? 'dropcap' : ''}`} style={{ fontSize: '1.1rem' }}>{s.body}</p>
           </div>
         ))}
         <p className="placeholder-note mt-6 max-w-3xl">{page.caution}</p>

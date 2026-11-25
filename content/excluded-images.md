@@ -2,7 +2,7 @@
 
 Everything in the old `assets/` folder that is **not** in `content/images/`, with the reason. Fonts, JS, CSS and icon-font folders (`fontawesome`, `js`, `css`, `swiper`, `svg`, `icons`) are code, not photos, and are omitted from this list.
 
-298 files excluded of 345 scanned (402 MB).
+289 files excluded of 345 scanned (402 MB).
 
 | File | Size | Reason |
 |---|---|---|
@@ -62,17 +62,8 @@ Everything in the old `assets/` folder that is **not** in `content/images/`, wit
 | `faculties/9.webp` | 235 KB | Other staff member or uncropped original: not published without owner confirmation |
 | `faculties/Santhosima.jpeg` | 50 KB | Other staff member or uncropped original: not published without owner confirmation |
 | `faculties/lakshmi meera.jpg` | 450 KB | Other staff member or uncropped original: not published without owner confirmation |
-| `faculties/rounded/10.webp` | 65 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
 | `faculties/rounded/11.png` | 65 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
-| `faculties/rounded/11.webp` | 11 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
-| `faculties/rounded/3.webp` | 56 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
-| `faculties/rounded/4.webp` | 62 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
 | `faculties/rounded/5.png` | 78 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
-| `faculties/rounded/5.webp` | 57 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
-| `faculties/rounded/6.webp` | 54 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
-| `faculties/rounded/7.webp` | 75 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
-| `faculties/rounded/8.webp` | 73 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
-| `faculties/rounded/9.webp` | 56 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
 | `faculties/rounded/default.webp` | 9 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
 | `faculties/rounded/old/1.jpg` | 376 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |
 | `faculties/rounded/old/1.png` | 191 KB | Other staff member: only the two named in the brief are published; add others only with their consent and details |

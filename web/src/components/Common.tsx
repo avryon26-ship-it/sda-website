@@ -17,20 +17,32 @@ export function Crumbs({ locale, trail }: { locale: Locale; trail: { label: stri
   );
 }
 
-/** Oversized editorial page title used by every inner page. */
+/** Newspaper-style page head: crumbs as a dateline, clay kicker, heavy title, double rule, italic deck. */
 export function PageHead({ locale, crumb, title, lead, kicker, children }: { locale: Locale; crumb: string; title: string; lead?: string; kicker?: string; children?: React.ReactNode }) {
   return (
-    <header className="wrap pb-10 pt-6 md:pb-20 md:pt-8">
-      <Crumbs locale={locale} trail={[{ label: crumb }]} />
-      <div className="mt-6 grid gap-4 md:mt-16 md:grid-cols-12 md:gap-8">
+    <header className="wrap pb-8 pt-5 md:pb-14 md:pt-8">
+      <div className="dateline"><Crumbs locale={locale} trail={[{ label: crumb }]} /><span className="hidden sm:inline">{locale === 'ta' ? 'திருநெல்வேலி · வி.எம். சத்திரம்' : 'Tirunelveli · V.M. Chatram'}</span></div>
+      <div className="mt-8 grid gap-5 md:mt-12 md:grid-cols-12 md:gap-10">
         <div className="md:col-span-8">
-          {kicker && <p className="label text-moss">{kicker}</p>}
-          <h1 className="fade-up mt-4" style={{ fontSize: 'clamp(2.4rem, 9vw, 6rem)', lineHeight: 1 }}><Rich t={title} /></h1>
+          {kicker && <p className="kicker">{kicker}</p>}
+          <h1 className="fade-up mt-3" style={{ fontSize: 'clamp(2.3rem, 8.5vw, 5.4rem)', lineHeight: 1.02 }}><Rich t={title} /></h1>
+          <hr className="rule2 mt-6 max-w-md" />
         </div>
-        {lead && <p className="text-moss md:col-span-4 md:pt-6" style={{ fontSize: 'var(--fs-lead)', lineHeight: 1.55 }}>{lead}</p>}
+        {lead && <p className="italic text-moss md:col-span-4 md:pt-3" style={{ fontSize: 'var(--fs-lead)', lineHeight: 1.5 }}>{lead}</p>}
       </div>
       {children}
     </header>
+  );
+}
+
+/** A photograph pasted onto the page: thin ink frame, paper margin, tape, typewriter caption. */
+export function Fig({ children, caption, tape = true, className = '', ratio = 'aspect-[4/3]', no }: { children: React.ReactNode; caption?: string; tape?: boolean; className?: string; ratio?: string; no?: string }) {
+  return (
+    <figure className={`fig relative ${className}`}>
+      {tape && <span className="tape" style={{ left: '38%', top: '-0.8rem' }} aria-hidden="true" />}
+      <div className={`frame relative ${ratio}`}>{children}</div>
+      {caption && <figcaption>{no ? `${no} ` : ''}{caption}</figcaption>}
+    </figure>
   );
 }
 
@@ -62,7 +74,7 @@ export function ClosingCta({ locale }: { locale: Locale }) {
   const c = getContent(locale);
   const t = ui(locale);
   return (
-    <section className="wrap pb-8 pt-24 text-center md:pt-32">
+    <section className="wrap pb-10 pt-20 text-center md:pt-28"><hr className="rule2 mx-auto mb-12 max-w-2xl" />
       <p className="mx-auto max-w-4xl" style={{ fontFamily: 'var(--display)', fontSize: 'var(--fs-h1)', lineHeight: 1 }}><Rich t={locale === 'ta' ? 'முதலில் மருத்துவருடன் *பேசுங்கள்*.' : 'Come and *talk* to the doctor first.'} /></p>
       <div className="mt-10 flex flex-wrap justify-center gap-4">
         <Link href={localePath(locale, '/products')} className="btn btn-primary">{t.browse}<Arrow /></Link>

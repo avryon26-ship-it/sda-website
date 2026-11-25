@@ -74,6 +74,9 @@ Sources are paths inside the old `public_html/pages/`. Quotes are shortened.
 | "Narmadha" vs "Narmatha" | Packaging says "Narmatha"; your URL says "narmadha". Confirm the registered brand spelling |
 | Dried fig | Sold as a food; confirm FSSAI labelling |
 
+### Wider team photos (About page)
+Nine staff portraits that were on the old About page are shown with first names only: Santhosima, Lakshmi Meera, Keerthiga, Thayammal S, Parameswari, Rajesh TR, M. Manikandan, Muthaiah, M. Muthu Selvi. No titles and no "Dr." (the old page used "Dr." for some). Two further names on the old page (Suganthi Manju, T. Kanna Devi, P. Shanthi) have no usable photo file. Confirm each person's consent, spelling and role.
+
 ### Social proof
 | Where | Concern |
 |---|---|

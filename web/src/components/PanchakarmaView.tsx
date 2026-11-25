@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { type Locale, getContent, localePath, waLink, consultMsg } from '@/lib/content';
 import Rich from './Rich';
+import { Fig } from './Common';
 import { Neem, Tulsi, Lotus, Turmeric, Ashwagandha } from './Botanicals';
 
 const Arrow = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
@@ -19,27 +20,28 @@ export default function PanchakarmaView({ locale }: { locale: Locale }) {
 
   return (
     <main id="main">
-      <div className="wrap pt-8">
-        <nav aria-label="Breadcrumb" className="crumbs label"><Link href={localePath(locale, '/')}>{L.home}</Link><span aria-hidden="true"> / </span><span>{p.h1}</span></nav>
+      <div className="wrap pt-5">
+        <div className="dateline"><nav aria-label="Breadcrumb" className="crumbs label"><Link href={localePath(locale, '/')}>{L.home}</Link><span aria-hidden="true"> / </span><span>{p.h1}</span></nav><span className="hidden sm:inline">{ta ? 'திருநெல்வேலி · வி.எம். சத்திரம்' : 'Tirunelveli · V.M. Chatram'}</span></div>
       </div>
 
       {/* Oversized title + asymmetric photograph */}
-      <header className="wrap grid gap-10 pb-20 pt-10 md:grid-cols-12 md:pb-32 md:pt-16">
+      <header className="wrap grid gap-10 pb-16 pt-8 md:grid-cols-12 md:pb-24 md:pt-12">
         <div className="md:col-span-8">
+          <p className="kicker mb-3">{ta ? 'சிகிச்சை முறை' : 'The programme'}</p>
           <h1 className="lines" style={{ fontSize: 'var(--fs-hero)', lineHeight: 0.9 }}>
             <span className="sr-only">{p.h1}</span>
             {L.title.map((l, i) => <span key={i} className="line" aria-hidden="true" style={{ ['--i' as string]: i }}><span><Rich t={l} /></span></span>)}
           </h1>
-          <p className="mt-10 max-w-xl" style={{ fontSize: 'var(--fs-lead)', lineHeight: 1.55 }}>{p.lead}</p>
+          <hr className="rule2 mt-8 max-w-md" />
+          <p className="mt-6 max-w-xl italic" style={{ fontSize: 'var(--fs-lead)', lineHeight: 1.55 }}>{p.lead}</p>
           <div className="mt-10"><a href={wa} className="btn btn-primary">{c.cta.freeConsult}<Arrow /></a></div>
         </div>
-        <figure className="m-0 md:col-span-4 md:col-start-9 md:mt-24">
-          <div className="relative aspect-[3/4]"><Image src={`/${p.image}`} alt={L.caption} fill priority sizes="(min-width: 768px) 30vw, 92vw" className="object-cover" /></div>
-          <figcaption className="caption mt-3 text-moss">{L.caption}</figcaption>
-        </figure>
+        <Fig className="md:col-span-4 md:col-start-9 md:mt-16" ratio="aspect-[3/4]" no={ta ? 'படம் 1.' : 'FIG. 1.'} caption={L.caption}>
+          <Image src={`/${p.image}`} alt={L.caption} fill priority sizes="(min-width: 768px) 30vw, 92vw" className="object-cover" />
+        </Fig>
       </header>
 
-      <hr className="rule" />
+      <hr className="rule2" />
 
       {/* 01 overview */}
       <section className="wrap py-20 md:py-32">
@@ -58,7 +60,7 @@ export default function PanchakarmaView({ locale }: { locale: Locale }) {
               const Art = marginalia[i];
               return (
                 <li key={s.name} className="grid items-start gap-6 border-t border-[var(--rule)] py-10 md:grid-cols-12 md:gap-8 md:py-14" data-reveal="">
-                  <span className="label text-moss md:col-span-1">0{i + 1}</span>
+                  <span className="kicker md:col-span-1">0{i + 1}</span>
                   <h3 className="md:col-span-6" style={{ fontSize: 'var(--fs-h2)' }}>{s.name}</h3>
                   <p className="max-w-md md:col-span-4">{s.body}</p>
                   <Art className="hidden h-24 w-12 justify-self-end text-moss md:col-span-1 md:block" />
@@ -97,7 +99,7 @@ export default function PanchakarmaView({ locale }: { locale: Locale }) {
         <Sec n="06" label={L.faq} />
         <div className="mt-12 max-w-3xl md:ml-auto">
           {p.faq.map(f => (
-            <details key={f.q} className="faq">
+            <details key={f.q} className="faq-card">
               <summary>{f.q}<svg className="plus" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg></summary>
               <p className="max-w-xl pb-8 text-[1.05rem]">{f.a}</p>
             </details>
