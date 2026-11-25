@@ -253,8 +253,9 @@ img { max-width: 100%; display: block; }
   dialog.lightbox img { max-height: 76svh; width: 100%; object-fit: contain; background: var(--ink); }
 
   /* ---- footer wordmark ---- */
-  .giant { font-family: var(--display); font-size: clamp(3.6rem, 17.5vw, 17rem); line-height: 0.85; letter-spacing: -0.035em; white-space: nowrap; overflow: hidden; }
-  :lang(ta) .giant { font-size: clamp(2.4rem, 9vw, 9rem); line-height: 1.1; letter-spacing: 0; }
+  .giant { font-family: var(--display); font-size: clamp(2rem, 9.2vw, 8rem); line-height: 0.95; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+  .giant span { white-space: nowrap; }
+  :lang(ta) .giant { font-size: clamp(2rem, 8vw, 8rem); line-height: 1.15; letter-spacing: 0; }
 
   /* ---- mobile action bar: flat paper, hairline, two squared buttons ---- */
   .actionbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; background-color: var(--paper); border-top: 1px solid var(--rule); padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom)); display: grid; grid-template-columns: 1fr 1.4fr; gap: 0.6rem; }

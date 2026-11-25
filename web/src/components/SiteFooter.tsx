@@ -40,7 +40,7 @@ export default function SiteFooter({ locale }: { locale: Locale }) {
             </ul>
           </nav>
         </div>
-        <p className="giant mt-20" aria-hidden="true">{locale === 'ta' ? c.site.shortName : 'Sri Dhanvanthri'}</p>
+        <p className="giant mt-20" aria-hidden="true">{locale === 'ta' ? c.site.shortName : <><span className="block">Sri Dhanvanthri</span><span className="block">Ayurveda Hospital</span></>}</p>
         <hr className="rule mt-10" />
         <p className="mt-6 max-w-4xl text-[0.88rem] leading-relaxed text-[rgb(244_236_221/0.75)]">{c.site.disclaimer}</p>
       </div>
